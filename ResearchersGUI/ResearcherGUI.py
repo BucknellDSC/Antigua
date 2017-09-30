@@ -1,9 +1,18 @@
-import tkinter as tk                # python 3
-from tkinter import font  as tkfont # python 3
-from tkinter import *
-#import Tkinter as tk     # python 2
-#import tkFont as tkfont  # python 2
+# Antigua Researcher's GUI
+# Author: Alexander Murph
+# Last Edited: 9/30 by Murph
+# Please run on Python 3
 
+import tkinter as tk				# python 3
+from tkinter import font  as tkfont # python 3
+from tkinter import ttk
+from tkinter import *
+
+
+# DATA SECTION
+# SECTIONS is editable based on what data sections are wanted, but Fix_Names must then also be edited and run befor
+# GUI will work.
+# MILL_DATA is assumed to remain constant.
 SECTIONS = ["Extant or Ruin", "Founding Date", "Chronology", "Additional Information", "Enslaved Peoples"]
 
 MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisles', 'Date Hill', \
@@ -51,191 +60,223 @@ MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisl
 
 
 class SampleApp(tk.Tk):
+	"""
+		Class to create and implement the root frame of the GUI.
+	"""
 
-    def __init__(self, *args, **kwargs):
-        tk.Tk.__init__(self, *args, **kwargs)
+	def __init__(self, *args, **kwargs):
+		tk.Tk.__init__(self, *args, **kwargs)
 
-        self.title_font = tkfont.Font(family='Helvetica', size=30, weight="bold", slant="italic")
+		# Set relevant styling
+		self.title_font = tkfont.Font(family='Helvetica', size=30, weight="bold", slant="italic")
 
-        # the container is where we'll stack a bunch of frames
-        # on top of each other, then the one we want visible
-        # will be raised above the others
-        container = tk.Frame(self)
-        container.config(bg='steelblue')
-        container.grid(row=0)
-        # container.grid_rowconfigure(0, weight=2)
-        # container.grid_columnconfigure(0, weight=2)
+		# the container is where we'll stack a bunch of frames
+		# on top of each other, then the one we want visible
+		# will be raised above the others
+		container = tk.Frame(self)
+		container.config(bg='steelblue')
+		container.grid(row=0)
 
-        self.frames = {}
-        for F in (StartPage, PageOne):
-            page_name = F.__name__
-            frame = F(parent=container, controller=self)
-            self.frames[page_name] = frame
+		#Create the particular frames for the two types of pages.  Use the classes created later.
+		self.frames = {}
+		for F in (StartPage, PageOne):
+			page_name = F.__name__
+			frame = F(parent=container, controller=self)
+			self.frames[page_name] = frame
 
-            # put all of the pages in the same location;
-            # the one on the top of the stacking order
-            # will be the one that is visible.
-            frame.grid(row=1, sticky="nsew")
+			# put all of the pages in the same location;
+			# the one on the top of the stacking order
+			# will be the one that is visible.
+			frame.grid(row=1, sticky="nsew")
+		# Begin by showing the starting page.
+		self.show_frame("StartPage", "NA")
 
-        self.show_frame("StartPage", "NA")
-
-    def show_frame(self, page_name, mill_name):
-        '''Show a frame for the given page name'''
-        frame = self.frames[page_name]
-        if page_name == "StartPage":
-            frame.show_again()
-        elif page_name == "PageOne":
-            frame.grid_propagate(1)
-            frame.add_mill_specific(mill_name)
-        frame.tkraise()
+	def show_frame(self, page_name, mill_name):
+		"""
+			When called, swaps the current frame to be the page we wish to see.
+		"""
+		frame = self.frames[page_name]
+		if page_name == "StartPage":
+			frame.show_again()
+		elif page_name == "PageOne":
+			frame.grid_propagate(1)
+			frame.add_mill_specific(mill_name)
+		frame.tkraise()
 
 
 class StartPage(tk.Frame):
+	"""
+		Class for the opening page of the python GUI.  Will have a title, a list of the available mills, and the ability
+		to choose a mill to go to its researcher's page.
+	"""
 
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        self.controller.config(bg='steelblue')
-        label = tk.Label(self, text="Antigua Map Researcher's GUI", font=controller.title_font, bg = 'steelblue')
-        label.grid(row=0)
-        label.grid_rowconfigure(0, weight=1)
+	def __init__(self, parent, controller):
+		"""
+			Initialize all frames for displaying for the Start Page.
+		"""
+		tk.Frame.__init__(self, parent)
+		self.controller = controller
+		self.controller.config(bg='steelblue')
+		self.button_frame = tk.Frame(self.controller)
 
-        # self.scrollbar = Scrollbar(controller)
+		# Creating the main label.
+		label = tk.Label(self, text="Antigua Map Researcher's GUI", font=controller.title_font, bg = 'dark turquoise')
+		label.grid(row=0)
+		label.grid_rowconfigure(0, weight=1)
 
-        self.listbox = Listbox(controller, \
-            background = 'steelblue', width=60)
+		# Create the Listbox and load into it all Mill names.
+		self.listbox = Listbox(controller, background = 'goldenrod', width=60)
 
-        for i in MILL_DATA:
-            self.listbox.insert(END, str(i))
+		for i in MILL_DATA:
+			self.listbox.insert(END, str(i))
+		
+		# Initialize the style for buttons (so that it will function for Macs)
+		ttk.Style().configure('green/black.TButton', foreground='goldenrod', background='steelblue')
 
-        
-        # self.scrollbar.config(command=self.listbox.yview)
-        self.listbox.grid(sticky='nsew')
-        # self.scrollbar.grid()
-        # side=RIGHT, fill = BOTH, expand = True
+		button1 = ttk.Button(self.button_frame, text="Go to Mill's Page", style='green/black.TButton',
+							command=lambda: self.swap_and_forget("PageOne", self.listbox.curselection()))
+		button1.pack()
 
-        button1 = tk.Button(self, text="Go to Selected Mill's Page",
-                            command=lambda: self.swap_and_forget("PageOne",\
-                             MILL_DATA[self.listbox.curselection()[0]]))
-        button1.config(bg='steelblue')
-        button1.grid()
-        # button2.pack(side = BOTTOM)
+		# Place the buttons and listbox onto the frame.
+		self.button_frame.grid(row=1)
+		self.button_frame.grid_rowconfigure(1, weight=1)
+		self.button_frame.config(bg = 'steelblue')
+		self.listbox.grid(row = 2, sticky='nsew')
 
-    def swap_and_forget(self, page_info, mill_name):
-        self.listbox.grid_forget()
-        # self.scrollbar.grid_forget()
-        self.controller.show_frame(page_info, mill_name)
+	def swap_and_forget(self, page_info, box_input):
+		"""
+			Change to a specific mill's page.  Remove all information for the start page and tell
+			Root to swap pages.
+		"""
+		# We first check to see if there is any input at all
+		if box_input:
+			self.listbox.grid_forget()
+			self.controller.show_frame(page_info, MILL_DATA[box_input[0]])
+		else:
+			return
 
-    def show_again(self):
-        self.listbox.grid()
-        # side=LEFT, fill=BOTH, expand = True
-        # self.scrollbar.grid()
+	def show_again(self):
+		"""
+			Put things back on the root frame.
+		"""
+		self.listbox.grid()
 
 
 class PageOne(tk.Frame):
+	"""
+		Frame that allows user to edit information for a specific Mill.  Loads that Mill's current information,
+		allows a user to edit it and save it to the Mill's relevant files.  
+	"""
 
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        self.main_label_frame = tk.Frame(self.controller)
-        self.main_label = None
-        self.button_frame = tk.Frame(self.controller, highlightbackground='dark turquoise')
-        self.button_list = []
-        self.sub_label_list = []
-        self.entry_list = []
-        self.frame_list = []
-
-
-    def add_mill_specific(self, mill_name):
-
-        self.main_label = tk.Label(self.main_label_frame, text=mill_name, \
-            font=self.controller.title_font, bg='steelblue')
-        self.main_label.pack()
-        self.main_label_frame.grid(row=0, sticky=E+W+N+S)
-        self.main_label_frame.grid_rowconfigure(0, weight=1)
-        self.main_label_frame.config(background = 'steelblue')
-
-        orig_filename = mill_name.strip()
-
-        for index in range(len(SECTIONS)):
-            new_frame = tk.Frame(self.controller, bg = 'steelblue')
-            filename = SECTIONS[index] + "_" + orig_filename + ".txt"
-            filename = filename.replace("/", "")
-            filename = "Mill_Files/" + filename
-
-            temp_box = tk.Text(new_frame, height=5, width=130, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
-            with open(filename, 'r') as text_file:
-                try:
-                    temp_box.insert(END, text_file.read())
-                except AttributeError:
-                    pass
-            temp_label = tk.Label(new_frame, text=SECTIONS[index], font=12, bg = 'dark turquoise')
-            temp_label.pack()
-            temp_box.pack()
-            new_frame.grid(row = (index + 1))
-            new_frame.grid_rowconfigure((index+1), weight=1)
-            self.sub_label_list += [temp_label]
-            self.entry_list += [temp_box]
-            self.frame_list += [new_frame]
-
-        reset_button = tk.Button(self.button_frame, text="Update Information!", \
-            command=lambda: self.update(orig_filename))
-        button = tk.Button(self.button_frame, text="Go to the start page",
-                           command=lambda: self.clear_and_return())
-        self.button_list = [reset_button, button]
-        reset_button.grid(row=0)
-        reset_button.grid_rowconfigure(0, weight=1)
-        button.grid(row=1)
-        button.grid_rowconfigure(0, weight=1)
-        self.button_frame.grid(row = len(SECTIONS)+2)
-        self.button_frame.grid_rowconfigure(0, weight=1)
-
-        # LAYOUT
+	def __init__(self, parent, controller):
+		"""
+			Create all relevant frames, and lists of widgets that will need to disappear later.
+		"""
+		tk.Frame.__init__(self, parent)
+		self.controller = controller
+		self.main_label_frame = tk.Frame(self.controller)
+		self.main_label = None
+		self.button_frame = tk.Frame(self.controller, highlightbackground='dark turquoise')
+		self.button_list = []
+		self.sub_label_list = []
+		self.entry_list = []
+		self.frame_list = []
 
 
-        # self.entry.pack()
+	def add_mill_specific(self, mill_name):
+		"""
+			Depending on which mill is chosen, that mill's information must be gathered, and its name
+			must be displayed.
+		"""
+
+		# Display relevant mill's name
+		self.main_label = tk.Label(self.main_label_frame, text=mill_name, \
+			font=self.controller.title_font, bg='steelblue')
+		self.main_label.pack()
+		self.main_label_frame.grid(row=0, sticky=E+W+N+S)
+		self.main_label_frame.grid_rowconfigure(0, weight=1)
+		self.main_label_frame.config(background = 'steelblue')
+
+		# Prepare to find the file name for the specific information
+		orig_filename = mill_name.strip()
+
+		# For each section, find the relevant file and create a textbox with a label.  
+		for index in range(len(SECTIONS)):
+			new_frame = tk.Frame(self.controller, bg = 'steelblue')
+			filename = SECTIONS[index] + "_" + orig_filename + ".txt"
+			filename = filename.replace("/", "")
+			filename = "Mill_Files/" + filename
+
+			temp_box = tk.Text(new_frame, height=5, width=130, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
+			with open(filename, 'r') as text_file:
+				try:
+					temp_box.insert(END, text_file.read())
+				except AttributeError:
+					pass
+			temp_label = tk.Label(new_frame, text=SECTIONS[index], font=12, bg = 'dark turquoise')
+			temp_label.pack()
+			temp_box.pack()
+
+			# Place the text box and label into a frame, then place that frame in the next available location.
+			new_frame.grid(row = (index + 1))
+			new_frame.grid_rowconfigure((index+1), weight=1)
+			self.sub_label_list += [temp_label]
+			self.entry_list += [temp_box]
+			self.frame_list += [new_frame]
+
+		# Style the two buttons at the bottom to follow Griot conventions.
+		ttk.Style().configure('green/black.TButton', foreground='goldenrod', background='steelblue')
+
+		reset_button = ttk.Button(self.button_frame, text="Update Information!", style='green/black.TButton',\
+			command=lambda: self.update(orig_filename))
+
+		button = ttk.Button(self.button_frame, text="Go to the start page", style='green/black.TButton',
+						   command=lambda: self.clear_and_return())
+
+		# Hold onto the buttons so that we can erase them later, then place them under everything else.
+		self.button_list = [reset_button, button]
+		reset_button.grid(row=0)
+		reset_button.grid_rowconfigure(0, weight=1)
+		button.grid(row=1)
+		button.grid_rowconfigure(0, weight=1)
+		self.button_frame.grid(row = len(SECTIONS)+2)
+		self.button_frame.grid_rowconfigure(0, weight=1)
+
+	def clear_and_return(self):
+		"""
+			If we wish to return to the main page, we need to delete everything we put on the frame.  Since we 
+			held onto everything as instance variables, this happens quickly.
+		"""
+		self.main_label_frame.grid_forget()
+		[x.grid_forget() for x in self.entry_list]
+		[x.grid_forget() for x in self.sub_label_list]
+		[x.grid_forget() for x in self.frame_list]
+		[x.grid_forget() for x in self.button_list]
+		self.main_label.pack_forget()
+		self.button_frame.grid_forget()
+		self.grid_forget()
+		self.controller.show_frame("StartPage", "NA")
+
+	def update(self, orig_filename):
+		"""
+			If the user wishes to update the information, this method grabs what is currently in the textboxes
+			and writes it to the files where the information belongs.  
+		"""
+		my_input_list = [x.get("1.0",END) for x in self.entry_list]
+
+		for index in range(len(SECTIONS)):
+			filename = SECTIONS[index] + "_" + orig_filename + ".txt"
+			filename = filename.replace("/", "")
+			filename = "Mill_Files/" + filename
+			with open(filename, 'w') as text_file:
+				text_file.write(my_input_list[index])
 
 
-    def clear_and_return(self):
-        self.main_label_frame.grid_forget()
-        [x.grid_forget() for x in self.entry_list]
-        [x.grid_forget() for x in self.sub_label_list]
-        [x.grid_forget() for x in self.frame_list]
-        [x.grid_forget() for x in self.button_list]
-        self.main_label.pack_forget()
-        self.button_frame.grid_forget()
-        self.grid_forget()
-        self.controller.show_frame("StartPage", "NA")
+		for my_input in my_input_list:
+			with open(filename, 'w') as text_file:
+				text_file.write(my_input)
 
-    def update(self, orig_filename):
-        my_input_list = [x.get("1.0",END) for x in self.entry_list]
-
-        for index in range(len(SECTIONS)):
-            filename = SECTIONS[index] + "_" + orig_filename + ".txt"
-            filename = filename.replace("/", "")
-            filename = "Mill_Files/" + filename
-            with open(filename, 'w') as text_file:
-                text_file.write(my_input_list[index])
-
-
-        for my_input in my_input_list:
-            with open(filename, 'w') as text_file:
-                text_file.write(my_input)
-
-
-
-# class PageTwo(tk.Frame):
-
-#     def __init__(self, parent, controller):
-#         tk.Frame.__init__(self, parent)
-#         self.controller = controller
-#         label = tk.Label(self, text="This is page 2", font=controller.title_font)
-#         label.pack(side="top", fill="x", pady=10)
-#         button = tk.Button(self, text="Go to the start page",
-#                            command=lambda: controller.show_frame("StartPage", "NA"))
-#         button.pack()
-
-
+# Begin process -- call classes
 if __name__ == "__main__":
-    app = SampleApp()
-    app.mainloop()
+	app = SampleApp()
+	app.mainloop()
