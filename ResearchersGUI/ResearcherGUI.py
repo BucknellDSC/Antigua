@@ -7,6 +7,7 @@ import tkinter as tk				# python 3
 from tkinter import font  as tkfont # python 3
 from tkinter import ttk
 from tkinter import *
+from subprocess import call
 
 
 # DATA SECTION
@@ -58,6 +59,13 @@ MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisl
 'Young / Nantons', 'Brook (Old Road)', "Morris' (Old Mill / Brambles)", "Douglas' Estate (Ravenscroft)", \
 "Yorke' (Musketo Cove & Bear Gardens)", 'Christia Valley / Biffins']
 
+def popupBonus():
+    toplevel = Toplevel()
+    label1 = Label(toplevel, text="Data has been Updated!", height=5, width=50)
+    label1.pack()
+    label2 = Label(toplevel, text="YAY!", height=5, width=50)
+    label2.pack()
+
 
 class SampleApp(tk.Tk):
 	"""
@@ -66,6 +74,8 @@ class SampleApp(tk.Tk):
 
 	def __init__(self, *args, **kwargs):
 		tk.Tk.__init__(self, *args, **kwargs)
+
+		call(["git", "pull"])
 
 		# Set relevant styling
 		self.title_font = tkfont.Font(family='Helvetica', size=30, weight="bold", slant="italic")
@@ -118,11 +128,12 @@ class StartPage(tk.Frame):
 		self.controller = controller
 		self.controller.config(bg='steelblue')
 		self.button_frame = tk.Frame(self.controller)
+		self.bottom_button_frame = tk.Frame(self.controller)
 
 		# Creating the main label.
-		label = tk.Label(self, text="Antigua Map Researcher's GUI", font=controller.title_font, bg = 'dark turquoise')
-		label.grid(row=0)
-		label.grid_rowconfigure(0, weight=1)
+		self.label = tk.Label(self, text="Antigua Map Researcher's GUI", font=controller.title_font, bg = 'dark turquoise')
+		self.label.grid(row=0)
+		self.label.grid_rowconfigure(0, weight=1)
 
 		# Create the Listbox and load into it all Mill names.
 		self.listbox = Listbox(controller, background = 'goldenrod', width=60)
@@ -137,11 +148,18 @@ class StartPage(tk.Frame):
 							command=lambda: self.swap_and_forget("PageOne", self.listbox.curselection()))
 		button1.pack()
 
+		button2 = ttk.Button(self.bottom_button_frame, text="Update the Map!", style='green/black.TButton',
+							command=lambda: self.push_changes())
+		button2.pack()
+
 		# Place the buttons and listbox onto the frame.
 		self.button_frame.grid(row=1)
 		self.button_frame.grid_rowconfigure(1, weight=1)
 		self.button_frame.config(bg = 'steelblue')
 		self.listbox.grid(row = 2, sticky='nsew')
+		self.bottom_button_frame.grid(row=3)
+		self.bottom_button_frame.grid_rowconfigure(3, weight=1)
+		self.bottom_button_frame.config(bg = 'steelblue')
 
 	def swap_and_forget(self, page_info, box_input):
 		"""
@@ -159,7 +177,21 @@ class StartPage(tk.Frame):
 		"""
 			Put things back on the root frame.
 		"""
-		self.listbox.grid()
+		self.label.grid(row=0)
+		self.button_frame.grid(row=1)
+		self.listbox.grid(row=2)
+		self.bottom_button_frame.grid(row=3)
+
+	def push_changes(self):
+		"""
+			Pushes changes to the Mill Files to the remote repository.
+		"""
+		call(["git", "remote", "set-url", "origin", "git@github.com:particknewhart/Antigua.git"])
+		call(["git", "add", "Mill_Files"])
+		call(["git", "commit", "-m", '"Mill files updated"'])
+		call(["git", "pull"])
+		call(["git", "push"])
+		popupBonus()
 
 
 class PageOne(tk.Frame):
@@ -268,6 +300,7 @@ class PageOne(tk.Frame):
 			filename = SECTIONS[index] + "_" + orig_filename + ".txt"
 			filename = filename.replace("/", "")
 			filename = "Mill_Files/" + filename
+			print(filename)
 			with open(filename, 'w') as text_file:
 				text_file.write(my_input_list[index])
 
@@ -275,6 +308,8 @@ class PageOne(tk.Frame):
 		for my_input in my_input_list:
 			with open(filename, 'w') as text_file:
 				text_file.write(my_input)
+
+		popupBonus()
 
 # Begin process -- call classes
 if __name__ == "__main__":
