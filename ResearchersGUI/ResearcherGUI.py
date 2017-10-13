@@ -15,6 +15,7 @@ from subprocess import call
 # GUI will work.
 # MILL_DATA is assumed to remain constant.
 SECTIONS = ["Extant or Ruin", "Founding Date", "Chronology", "Additional Information", "Enslaved Peoples"]
+SECTIONS_NOSPACE = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInformation", "EnslavedPeoples"]
 
 MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisles', 'Date Hill', \
 "Donovan's (Vaughans)", 'Fitches Creek', 'Giles Blizzard', "Gravenor's", 'Gunthorpes (ASF)', 'Hight Point', \
@@ -237,7 +238,7 @@ class PageOne(tk.Frame):
 			new_frame = tk.Frame(self.controller, bg = 'steelblue')
 			filename = SECTIONS[index] + "_" + orig_filename + ".txt"
 			filename = filename.replace("/", "")
-			filename = "Mill_Files/" + filename
+			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 
 			temp_box = tk.Text(new_frame, height=5, width=130, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
 			with open(filename, 'r') as text_file:
@@ -299,7 +300,7 @@ class PageOne(tk.Frame):
 		for index in range(len(SECTIONS)):
 			filename = SECTIONS[index] + "_" + orig_filename + ".txt"
 			filename = filename.replace("/", "")
-			filename = "Mill_Files/" + filename
+			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 			print(filename)
 			with open(filename, 'w') as text_file:
 				text_file.write(my_input_list[index])
