@@ -1,0 +1,364 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Oswald|Slabo+27px';
+
+body,  html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#logo {
+    width: 30%;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+    cursor: pointer;
+}
+
+#description{
+    text-align: center;
+    font-style: italic;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16px;
+}
+
+#sidepanel {
+    top: 0;
+    left: 0;
+    padding: 30px;
+    background-color: #1C1D21;
+    height: calc(100vh - 60px);
+    width: 490px;
+    min-height: 830px;
+    position: absolute;
+    vertical-align: middle;
+    text-align: left;
+    font-family: "Open Sans", sans-serif;
+    color: #eeeff7;
+    transform: translate3d(-550px, 0, 0);
+    transition: transform 0.3s;
+    z-index: 10;
+
+}
+
+#sidepanel.active {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
+    box-shadow: 20px 0 50px -5px rgba(0,0,0,0.75);
+}
+
+#sidepanel-toggle {
+    position: absolute;
+    top: 100px;
+    text-decoration: none;
+    background-color: #FF5E17;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    right: -34px;
+}
+
+#sidepanel-toggle:hover {
+    background-color: #d9581f;
+    transition: transform 0.3s;
+}
+
+#map {
+    height: 100vh;
+    min-height: 890px;
+    position: absolute;
+    width: 100%;
+    min-width: 890px;
+    overflow: hidden;
+}
+
+/*
+ * InfoWindow styling
+ */
+
+#iw-container .iw-content {
+    max-height: 160px;
+}
+
+#iw-container .iw-summary {
+    width: calc(70% - 28px);
+    float: right;
+    padding-right: 14px;
+}
+
+#iw-container .iw-contacts {
+    max-width: 30%;
+    width: 30%;
+    float: left;
+    word-wrap: break-word;
+    line-height: 300%;
+}
+#iw-container {
+    font-family: "Open Sans", sans-serif;
+    color: #1C1D21;
+    padding: 5px;
+    width: 550px;
+    word-wrap: break-word;
+}
+
+#iw-container .iw-header {
+    max-height: 160px;
+}
+
+#iw-container .iw-image {
+    width: 30%;
+    height: 150px;
+    float: left;
+}
+
+#iw-container .iw-category {
+    font-weight: bold;
+    font-size: x-large;
+    background-color: #FF5E17;
+    color: #eeeff7;
+}
+
+#iw-container .iw-header-text {
+    float: right;
+    width: calc(70% - 28px);
+    padding-right: 14px;
+}
+#iw-container .iw-title {
+    font-weight: bold;
+    color: #FF5E17;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+#iw-container .iw-researchers {
+    font-size: 13px;
+    padding-top: 15px;
+    font-style: italic;
+}
+
+#iw-container .iw-subtitle {
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 15px;
+    text-transform: uppercase;
+}
+
+#iw-container .iw-content-text {
+    font-size: 14px;
+    padding-top: 14px;
+}
+
+#iw-container .iw-tags {
+    padding-top: 14px;
+}
+
+#search {
+    padding-top: 24px;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+/* Search 3 - zoom in looking glass */
+#search{
+    width: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+#aSearch{
+    padding-bottom: 10px;
+    color: #eeeff7;
+    width: calc(100% - 30px);
+    border: 0;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    outline: 0;
+    transition: all 0.3s;
+    font-family: "Open Sans", sans-serif;
+}
+
+#aSearch:focus, #aSearch:hover{
+    border-bottom: 2px solid #FF5E17;
+}
+
+#aSearch::-webkit-input-placeholder {
+    color: #65737e;
+}
+#aSearch:-moz-placeholder { /* Firefox 18- */
+    color: #65737e;
+}
+#aSearch::-moz-placeholder {  /* Firefox 19+ */
+    color: #65737e;
+}
+#aSearch:-ms-input-placeholder {
+    color: #65737e;
+}
+
+#searchIcon{
+    text-decoration: none;
+    color: #eeeff7;
+    float: right;
+    cursor: pointer;
+}
+
+#searchIcon:hover{
+    color: #FF5E17;
+    transition: all 0.3s;
+}
+.tags{
+    background-color: transparent;
+    color: #eeeff7;
+    padding-top: .2em;
+    padding-left: .4em;
+    padding-bottom: .2em;
+    padding-right: .4em;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-color: #eeeff7;
+    border: solid 1px;
+    cursor: pointer;
+    overflow-y: scroll;
+}
+
+.tags.in {
+    color: #1C1D21;
+    border-color: #1C1D21;
+}
+
+.tags:hover, .tags.active{
+    background-color: #FF5E17;
+    transition: all 0.3s;
+    border-color: #FF5E17;
+    color: #eeeff7;
+}
+
+.tags.in:hover{
+    color: white;
+}
+
+#areas {
+    padding-top: 32px;
+    line-height: 200%;
+}
+
+#popularTags {
+    padding-top: 32px;
+    line-height: 200%;
+}
+
+.material-icons.iw {
+    padding: 3px;
+    border-radius: 1000px;
+    border: solid 1px #1C1D21;
+}
+
+.material-icons.iw:hover {
+    padding: 3px;
+    background-color: #FF5E17;
+    border-color: #FF5E17;
+    color: white;
+    transition: all 0.3s;
+}
+
+.iw-icon {
+    color: #1C1D21;
+}
+
+.iw-researchers-link {
+    text-decoration: none;
+    color: #1C1D21;
+}
+
+.iw-researchers-link:hover {
+    font-weight: bold;
+    color: #FF5E17;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 30px;
+    width: 100%;
+    height: 60px;
+    font-family: "Open Sans", sans-serif;
+}
+
+#feedback {
+    font-size: 13px;
+    color: #eeeff7;
+    text-decoration: none;
+}
+
+#feedback:hover {
+    color: #FF5E17;
+    transition: all 0.3s;
+}
+
+.info {
+    opacity: 1;
+    max-width: 350px;
+    min-width: 250px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 5px;
+    display: block;
+    position: relative;
+    background: #f0f0f0;
+}
+
+@media screen and (min-width: 30em) {
+    .info_button {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        min-width: 50px;
+        width: 50px;
+        height: 50px;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        /*overflow: hidden;*/
+        margin: 5px;
+        cursor: pointer;
+        background: rgba(228, 93, 39, 0.5);
+    }
+
+    .info_button:hover {
+        background: rgba(228, 93, 39, 0.8);
+    }
+
+    .info {
+        opacity: 0;
+        display: none;
+        position: absolute;
+        right: 0;
+        left: -150%;
+        top: 120%;
+        margin: auto;
+    }
+
+    .info_button:hover > .info {
+        opacity: 1;
+        display: block;
+    }
+
+    .info_button > .info:hover {
+        opacity: 0;
+        display: none;
+    }
+}
+
