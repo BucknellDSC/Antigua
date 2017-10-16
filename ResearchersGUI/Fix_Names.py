@@ -12,11 +12,18 @@ name_list = name_list[1:]
 
 def touch(path):
 	sections = ["Extant or Ruin", "Founding Date", "Chronology", "Additional Information", "Enslaved Peoples"]
+	sections_nospace = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInformation", "EnslavedPeoples"]
 	orig_filename = path.strip()
-	for value in sections:
-		filename = value + "_" + orig_filename + ".txt"
+	for index in range(len(sections)):
+		filename = sections[index] + "_" + orig_filename + ".txt"
 		filename = filename.replace("/", "")
-		filename = "Mill_Files/" + filename
+
+		newpath = 'Mill_Files\\'
+		newpath = os.path.join('Mill_Files', sections_nospace[index])
+		if not os.path.exists(newpath):
+			os.makedirs(newpath)
+
+		filename = "Mill_Files/" + sections_nospace[index] + "/" + filename
 		try:
 			open(filename, 'x').close()
 		except FileExistsError:
