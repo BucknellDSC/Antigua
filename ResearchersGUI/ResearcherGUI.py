@@ -6,6 +6,7 @@
 import tkinter as tk				# python 3
 from tkinter import font  as tkfont # python 3
 from tkinter import ttk
+from tkinter import filedialog
 from tkinter import *
 from subprocess import call
 
@@ -60,13 +61,18 @@ MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisl
 'Young / Nantons', 'Brook (Old Road)', "Morris' (Old Mill / Brambles)", "Douglas' Estate (Ravenscroft)", \
 "Yorke' (Musketo Cove & Bear Gardens)", 'Christia Valley / Biffins']
 
-def popupBonus():
-    toplevel = Toplevel()
-    label1 = Label(toplevel, text="Data has been Updated!", height=5, width=50)
-    label1.pack()
-    label2 = Label(toplevel, text="YAY!", height=5, width=50)
-    label2.pack()
-
+def popupBonus(image_name):
+	toplevel = Toplevel()
+	image = tk.PhotoImage(file = image_name)
+	label = tk.Label(toplevel,image=image)
+	label.image = image
+	image.write('some_name.gif', format='gif')
+	label.place(x=0, y=0, relwidth=1.0, relheight=1.0, anchor="nw")
+	toplevel.geometry('650x500')
+	# label1 = Label(toplevel, text="Data has been Updated!", height=5, width=50)
+	# label1.pack()
+	# label2 = Label(toplevel, text="YAY!", height=5, width=50)
+	# label2.pack()
 
 class SampleApp(tk.Tk):
 	"""
@@ -87,6 +93,7 @@ class SampleApp(tk.Tk):
 		container = tk.Frame(self)
 		container.config(bg='steelblue')
 		container.grid(row=0)
+		container.master.title("Researcher's Interface")
 
 		#Create the particular frames for the two types of pages.  Use the classes created later.
 		self.frames = {}
@@ -192,7 +199,7 @@ class StartPage(tk.Frame):
 		call(["git", "commit", "-m", '"Mill files updated"'])
 		call(["git", "pull"])
 		call(["git", "push"])
-		popupBonus()
+		popupBonus("GriotTree.gif")
 
 
 class PageOne(tk.Frame):
@@ -230,6 +237,22 @@ class PageOne(tk.Frame):
 		self.main_label_frame.grid_rowconfigure(0, weight=1)
 		self.main_label_frame.config(background = 'steelblue')
 
+		# Prepare and implement all things for the image processing
+		self.image_frame = tk.Frame(self.controller, bg = 'steelblue')
+		self.image_label = tk.Label(self.image_frame, text = "Mill's Image:", \
+			font=12, bg = 'dark turquoise')
+
+		updated_mill_name = "Mill_Files/Photos/" + mill_name.replace("/", "") + ".gif"
+		self.image_view = ttk.Button(self.image_frame, text="View Current Image", style='green/black.TButton',\
+			command=lambda: self.find_and_view_image(updated_mill_name))
+		self.image_upload = ttk.Button(self.image_frame, text="Upload New Image", style='green/black.TButton',\
+			command=lambda: self.find_and_upload_image(updated_mill_name))
+
+		self.image_label.grid(row=0, column=0)
+		self.image_view.grid(row=0, column=1)
+		self.image_upload.grid(row=0, column=2)
+		self.image_frame.grid(row=1)
+
 		# Prepare to find the file name for the specific information
 		orig_filename = mill_name.strip()
 
@@ -251,8 +274,8 @@ class PageOne(tk.Frame):
 			temp_box.pack()
 
 			# Place the text box and label into a frame, then place that frame in the next available location.
-			new_frame.grid(row = (index + 1))
-			new_frame.grid_rowconfigure((index+1), weight=1)
+			new_frame.grid(row = (index + 2))
+			new_frame.grid_rowconfigure((index+2), weight=1)
 			self.sub_label_list += [temp_label]
 			self.entry_list += [temp_box]
 			self.frame_list += [new_frame]
@@ -272,7 +295,7 @@ class PageOne(tk.Frame):
 		reset_button.grid_rowconfigure(0, weight=1)
 		button.grid(row=1)
 		button.grid_rowconfigure(0, weight=1)
-		self.button_frame.grid(row = len(SECTIONS)+2)
+		self.button_frame.grid(row = len(SECTIONS)+3)
 		self.button_frame.grid_rowconfigure(0, weight=1)
 
 	def clear_and_return(self):
@@ -310,7 +333,16 @@ class PageOne(tk.Frame):
 			with open(filename, 'w') as text_file:
 				text_file.write(my_input)
 
-		popupBonus()
+		popupBonus("GriotTreeData.gif")
+
+
+	def find_and_upload_image(self, mill_photo_name):
+		filename = filedialog.askopenfilename()
+		image = tk.PhotoImage(file = filename)
+		image.write(mill_photo_name, format='gif')
+
+	def find_and_view_image(self, image_name):
+		popupBonus(image_name)
 
 # Begin process -- call classes
 if __name__ == "__main__":
