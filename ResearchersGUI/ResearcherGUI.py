@@ -337,11 +337,17 @@ class PageOne(tk.Frame):
 
 
 	def find_and_upload_image(self, mill_photo_name):
+		"""
+			Allows a user to access their file system for an image to upload to the GUI
+		"""
 		filename = filedialog.askopenfilename()
 		image = tk.PhotoImage(file = filename)
 		image.write(mill_photo_name, format='gif')
 
 	def find_and_view_image(self, image_name):
+		"""
+			Allows user to see image that is currently uploaded for a given mill.
+		"""
 		popupBonus(image_name)
 
 # Begin process -- call classes
