@@ -308,6 +308,9 @@ class PageOne(tk.Frame):
 		[x.grid_forget() for x in self.sub_label_list]
 		[x.grid_forget() for x in self.frame_list]
 		[x.grid_forget() for x in self.button_list]
+		self.image_view.grid_forget()
+		self.image_upload.grid_forget()
+		self.image_frame.grid_forget()
 		self.main_label.pack_forget()
 		self.button_frame.grid_forget()
 		self.grid_forget()
