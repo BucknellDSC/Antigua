@@ -10,6 +10,7 @@ from tkinter import filedialog
 from tkinter import *
 from subprocess import call
 
+from PIL import Image, ImageTk
 
 # DATA SECTION
 # SECTIONS is editable based on what data sections are wanted, but Fix_Names must then also be edited and run befor
@@ -62,19 +63,28 @@ MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisl
 "Yorke' (Musketo Cove & Bear Gardens)", 'Christia Valley / Biffins']
 
 def popupBonus(image_name):
+	"""
+		General seperate method that procures a popup
+	"""
 	toplevel = Toplevel()
-	image = tk.PhotoImage(file = image_name)
-	label = tk.Label(toplevel,image=image)
-	label.image = image
-	image.write('some_name.gif', format='gif')
+	image = Image.open(image_name)
+	image_copy = image.copy()
+	image = image_copy.resize((650, 500))
+
+	background_image = ImageTk.PhotoImage(image)
+
+	label = tk.Label(toplevel,image=background_image)
+	label.pack(fill=BOTH, expand=YES)
+
+	label.image = background_image
+
 	label.place(x=0, y=0, relwidth=1.0, relheight=1.0, anchor="nw")
 	toplevel.geometry('650x500')
-	# label1 = Label(toplevel, text="Data has been Updated!", height=5, width=50)
-	# label1.pack()
-	# label2 = Label(toplevel, text="YAY!", height=5, width=50)
-	# label2.pack()
 
-class SampleApp(tk.Tk):
+
+# Basic structure found on StackOverflow.  Citation:
+# https://stackoverflow.com/questions/7546050/switch-between-two-frames-in-tkinter
+class ResearcherGUI(tk.Tk):
 	"""
 		Class to create and implement the root frame of the GUI.
 	"""
@@ -132,6 +142,9 @@ class StartPage(tk.Frame):
 		"""
 			Initialize all frames for displaying for the Start Page.
 		"""
+
+		# To allow for ease of coloring and placement, each grouping of items is given its own frame, and each frame
+		# is placed on our main controller.
 		tk.Frame.__init__(self, parent)
 		self.controller = controller
 		self.controller.config(bg='steelblue')
@@ -355,5 +368,5 @@ class PageOne(tk.Frame):
 
 # Begin process -- call classes
 if __name__ == "__main__":
-	app = SampleApp()
+	app = ResearcherGUI()
 	app.mainloop()
