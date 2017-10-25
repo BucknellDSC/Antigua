@@ -1,4 +1,6 @@
 import json
+import os
+
 OLD_MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisles', 'Date Hill', \
 "Donovan's (Vaughans)", 'Fitches Creek', 'Giles Blizzard', "Gravenor's", 'Gunthorpes (ASF)', 'Hight Point', \
 "Judge Blizzard's", "Lightfoot's/The Grove", 'Long Island', 'Millars', "Nibb's", \
@@ -42,7 +44,7 @@ OLD_MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Car
 'Young / Nantons', 'Brook (Old Road)', "Morris' (Old Mill / Brambles)", "Douglas' Estate (Ravenscroft)", \
 "Yorke' (Musketo Cove & Bear Gardens)", 'Christia Valley / Biffins']
 
-MILL_DATA['Barnacle Point.txt', 'Barnes Hill.txt', 'BlackmansMount Lucie.txt', 'Carlisles.txt', 'Date Hill.txt', 'Donovans (Vaughans).txt',\
+MILL_DATA = ['Barnacle Point.txt', 'Barnes Hill.txt', 'BlackmansMount Lucie.txt', 'Carlisles.txt', 'Date Hill.txt', 'Donovans (Vaughans).txt',\
  'Fitches Creek.txt', 'Giles Blizzard.txt', 'Gravenors.txt', 'Gunthorpes (ASF).txt', 'Hight Point.txt', 'Judge Blizzards.txt', \
  'LightfootsThe Grove.txt', 'Long Island.txt', 'Millars.txt', 'Nibbs.txt', 'North Sound (Thomass HillCol. Thomas North Sound Plantation.txt',\
  'Paynters.txt', 'SherwoodsLebanon.txt', 'Weirs (WaresGlanvillesLittle Zoar).txt', 'Will Blizzards.txt', 'Winthorpes.txt',\
@@ -88,46 +90,49 @@ except NameError:
     to_unicode = str
 data = []
 
-for name in MILL_DATA:
-    print (name)
 
-# Define data
+for name in MILL_DATA:
+
+    mill_name = name[:-4]
+
+    # Define data
     a_data = {
-  "name": name,
-  "parish": "St. John's",
-  "founding_date": "1670",
-  "type": "Extant",
-  "long": "17.229085",
-  "lat": "-61.833746",
-  "chronology": {
-    "1670": "William Boone, planter.  On Antigua 1665, still living in 1710.",
-    "1672": "William Boone, still living in 1685; leased 10 acres from Ralph Haskins, also a planter.",
-    "1676": "William Boone, a Quaker, was imprisoned by Major Thomas Mallet",
-    "1678": "On May 20, Walter Burke, a planter, sold 20 acres to William Boone, a planter and Quaker.  In the census of Antigua taken in",
-    "1700": "William Boone married Mary Ronan.",
-    "1715": "Samuel Boone.  Will dated 1716.",
-    "1717": "The Tortola census, taken in November, shows William Boone as born in Antigua, with \"one woman and fifteen negroes.\"",
-    "1733": "Joseph Boone married Rachell Soanes.  He died 1750.",
-    "1740": "Colonel William Dunbar.  d. 1749.",
-    "1760": "John Delap-Halliday.  Owned 85 acres.  b. 1749; d. 1779/80.",
-    "1788": "Admiral John Halliday Tollemache.   (1777/78 map by cartographer John Luffman.)",
-    "1790": "John Delap-Halliday.  b. 1749; d. 1780.  85 acres.",
-    "1852": "John Tollemache.  b. 1805; d. 1890.",
-    "1872": "Charles Crosbie.",
-    "1878": "G. John Crosbie.",
-    "1891": "The heirs of Colonel Crosbie.",
-    "1900": "John J. Camacho.  (d. 1929).",
-    "1940": "Lee H. Westcott Sr.",
-    "1960": "Blue Waters Hotel, built by O. (Keltic) Kelsick, the only Antiguan squadron leader in the Royal Air Force during World War II.",
-    "2000": "The heirs of Lee Westcott.  d. 2012.",
-    "2003": "The mill site is sold to Blue Waters Hotel"
-  },
-  "info": "The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.\A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas. The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas. The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas. The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas."
+    "name": mill_name,
+    "parish": "Some Parish",
+    "founding_date": "1670",
+    "type": "Extant / Ruined",
+    "long": "17.229085",
+    "lat": "-61.833746",
+    "chronology": {
+        "1670": "William Boone, planter.  On Antigua 1665, still living in 1710.",
+        "1672": "William Boone, still living in 1685; leased 10 acres from Ralph Haskins, also a planter.",
+        "1676": "William Boone, a Quaker, was imprisoned by Major Thomas Mallet",
+        "1678": "On May 20, Walter Burke, a planter, sold 20 acres to William Boone, a planter and Quaker.  In the census of Antigua taken in",
+        "1700": "William Boone married Mary Ronan.",
+        "1715": "Samuel Boone.  Will dated 1716.",
+        "1717": "The Tortola census, taken in November, shows William Boone as born in Antigua, with \"one woman and fifteen negroes.\"",
+        "1733": "Joseph Boone married Rachell Soanes.  He died 1750.",
+        "1740": "Colonel William Dunbar.  d. 1749.",
+        "1760": "John Delap-Halliday.  Owned 85 acres.  b. 1749; d. 1779/80.",
+        "1788": "Admiral John Halliday Tollemache.   (1777/78 map by cartographer John Luffman.)",
+        "1790": "John Delap-Halliday.  b. 1749; d. 1780.  85 acres.",
+        "1852": "John Tollemache.  b. 1805; d. 1890.",
+        "1872": "Charles Crosbie.",
+        "1878": "G. John Crosbie.",
+        "1891": "The heirs of Colonel Crosbie.",
+        "1900": "John J. Camacho.  (d. 1929).",
+        "1940": "Lee H. Westcott Sr.",
+        "1960": "Blue Waters Hotel, built by O. (Keltic) Kelsick, the only Antiguan squadron leader in the Royal Air Force during World War II.",
+        "2000": "The heirs of Lee Westcott.  d. 2012.",
+        "2003": "The mill site is sold to Blue Waters Hotel"
+        },
+    "additional_info": "Placeholder Data."
     }
     data.append(a_data)
 
+
 # Write JSON file
-with io.open('data.json', 'a', encoding='utf8') as outfile:
+with io.open('mill_data.json', 'w', encoding='utf8') as outfile:
     str_ = json.dumps(data,
                     indent=4, sort_keys=True,
                     separators=(',', ': '), ensure_ascii=False)
