@@ -55,7 +55,7 @@ MILL_DATA = ['Barnacle Point.txt', 'Barnes Hill.txt', 'BlackmansMount Lucie.txt'
  'Five Islands Plantation (Upper and Lower Pelican).txt', 'Friars Hill.txt', 'Galley Bay Plantation.txt', 'Gambles.txt', 'George Byams Plantation.txt',\
  'Golden Grove (Pauls).txt', 'GraysTurnbils.txt', 'Hallidays Mountation (a.k.a. Gilleads, Gilliats, or Providence).txt', 'Harts and Royals.txt',\
  'Hawkebills Plantation (a.k.a. Hansons).txt', 'Herberts.txt', 'Hill HouseDry Hill.txt', 'Hodges.txt', 'Langfords.txt', 'Marble Hill.txt', 'McKinnon.txt',\
- 'Mount Pleasant.txt', 'Olivers (Stock Estate).txt', 'Ottos.txt', 'Potters Plantation.txt', 'Renfrews.txt', 'Rose Hill and Hammersfield.txt'\
+ 'Mount Pleasant.txt', 'Olivers (Stock Estate).txt', 'Ottos.txt', 'Potters Plantation.txt', 'Renfrews.txt', 'Rose Hill and Hammersfield.txt',\
  'St. ClareWilliams Plantation (Originally known as The Body).txt', 'The Folly (Bath Lodge) Plantation (a.k.a. Duncombs Folly).txt',\
  'The Union Plantation (HaddonHatton or Weekes).txt', 'The Wood Plantation.txt', 'ThibouJarvis Plantation (a.k.a. Mt. Joshua).txt',\
  'Tomlinson.txt', 'Villa.txt', 'Weatherills.txt', 'Williams.txt', 'YeptonsYapton Farm Plantation.txt', 'Barbuda.txt', 'Bettys Hope.txt',\
@@ -95,11 +95,15 @@ for name in MILL_DATA:
 
     mill_name = name[:-4]
 
+    #print('FoundingDate/' + mill_name + '.txt')
+    founding_date_file = open('FoundingDate/' + mill_name + '.txt','r')
+    founding_date = founding_date_file.read()
+
     # Define data
     a_data = {
     "name": mill_name,
     "parish": "Some Parish",
-    "founding_date": "1670",
+    "founding_date": founding_date,
     "type": "Extant / Ruined",
     "long": "17.229085",
     "lat": "-61.833746",
