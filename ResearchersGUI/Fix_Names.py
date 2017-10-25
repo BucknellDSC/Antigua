@@ -15,8 +15,17 @@ def touch(path):
 	sections_nospace = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInformation", "EnslavedPeoples"]
 	orig_filename = path.strip()
 	for index in range(len(sections)):
-		filename = sections[index] + "_" + orig_filename + ".txt"
+		filename = orig_filename + ".txt"
 		filename = filename.replace("/", "")
+		filename = filename.replace("\\", "")
+		filename = filename.replace(":", "")
+		filename = filename.replace("*", "")
+		filename = filename.replace("?", "")
+		filename = filename.replace("<", "")
+		filename = filename.replace(">", "")
+		filename = filename.replace("|", "")
+		filename = filename.replace('"', "")
+		filename = filename.replace("'", "")
 
 		newpath = 'Mill_Files\\'
 		newpath = os.path.join('Mill_Files', sections_nospace[index])

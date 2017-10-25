@@ -10,6 +10,7 @@ from tkinter import filedialog
 from tkinter import *
 from subprocess import call
 
+from PIL import Image, ImageTk
 
 # DATA SECTION
 # SECTIONS is editable based on what data sections are wanted, but Fix_Names must then also be edited and run befor
@@ -62,19 +63,44 @@ MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisl
 "Yorke' (Musketo Cove & Bear Gardens)", 'Christia Valley / Biffins']
 
 def popupBonus(image_name):
+	"""
+		General seperate method that procures a popup
+	"""
 	toplevel = Toplevel()
-	image = tk.PhotoImage(file = image_name)
-	label = tk.Label(toplevel,image=image)
-	label.image = image
-	image.write('some_name.gif', format='gif')
+	image = Image.open(image_name)
+	image_copy = image.copy()
+	image = image_copy.resize((650, 500))
+
+	background_image = ImageTk.PhotoImage(image)
+
+	label = tk.Label(toplevel,image=background_image)
+	label.pack(fill=BOTH, expand=YES)
+
+	label.image = background_image
+
 	label.place(x=0, y=0, relwidth=1.0, relheight=1.0, anchor="nw")
 	toplevel.geometry('650x500')
-	# label1 = Label(toplevel, text="Data has been Updated!", height=5, width=50)
-	# label1.pack()
-	# label2 = Label(toplevel, text="YAY!", height=5, width=50)
-	# label2.pack()
 
-class SampleApp(tk.Tk):
+def edit_file_name(filename):
+	"""
+		General method for the many times I have to play with filenames (oh so many).
+	"""
+	filename = filename + ".txt"
+	filename = filename.replace("/", "")
+	filename = filename.replace("\\", "")
+	filename = filename.replace(":", "")
+	filename = filename.replace("*", "")
+	filename = filename.replace("?", "")
+	filename = filename.replace("<", "")
+	filename = filename.replace(">", "")
+	filename = filename.replace("|", "")
+	filename = filename.replace('"', "")
+	filename = filename.replace("'", "")
+	return filename
+
+# Basic structure found on StackOverflow.  Citation:
+# https://stackoverflow.com/questions/7546050/switch-between-two-frames-in-tkinter
+class ResearcherGUI(tk.Tk):
 	"""
 		Class to create and implement the root frame of the GUI.
 	"""
@@ -132,6 +158,9 @@ class StartPage(tk.Frame):
 		"""
 			Initialize all frames for displaying for the Start Page.
 		"""
+
+		# To allow for ease of coloring and placement, each grouping of items is given its own frame, and each frame
+		# is placed on our main controller.
 		tk.Frame.__init__(self, parent)
 		self.controller = controller
 		self.controller.config(bg='steelblue')
@@ -254,13 +283,12 @@ class PageOne(tk.Frame):
 		self.image_frame.grid(row=1)
 
 		# Prepare to find the file name for the specific information
-		orig_filename = mill_name.strip()
+		orig_filename = mill_name
 
 		# For each section, find the relevant file and create a textbox with a label.  
 		for index in range(len(SECTIONS)):
 			new_frame = tk.Frame(self.controller, bg = 'steelblue')
-			filename = SECTIONS[index] + "_" + orig_filename + ".txt"
-			filename = filename.replace("/", "")
+			filename = edit_file_name(mill_name)
 			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 
 			temp_box = tk.Text(new_frame, height=5, width=130, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
@@ -324,8 +352,7 @@ class PageOne(tk.Frame):
 		my_input_list = [x.get("1.0",END) for x in self.entry_list]
 
 		for index in range(len(SECTIONS)):
-			filename = SECTIONS[index] + "_" + orig_filename + ".txt"
-			filename = filename.replace("/", "")
+			filename = edit_file_name(orig_filename)
 			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 			print(filename)
 			with open(filename, 'w') as text_file:
@@ -355,5 +382,5 @@ class PageOne(tk.Frame):
 
 # Begin process -- call classes
 if __name__ == "__main__":
-	app = SampleApp()
+	app = ResearcherGUI()
 	app.mainloop()
