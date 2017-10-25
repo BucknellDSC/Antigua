@@ -81,6 +81,22 @@ def popupBonus(image_name):
 	label.place(x=0, y=0, relwidth=1.0, relheight=1.0, anchor="nw")
 	toplevel.geometry('650x500')
 
+def edit_file_name(filename):
+	"""
+		General method for the many times I have to play with filenames (oh so many).
+	"""
+	filename = filename + ".txt"
+	filename = filename.replace("/", "")
+	filename = filename.replace("\\", "")
+	filename = filename.replace(":", "")
+	filename = filename.replace("*", "")
+	filename = filename.replace("?", "")
+	filename = filename.replace("<", "")
+	filename = filename.replace(">", "")
+	filename = filename.replace("|", "")
+	filename = filename.replace('"', "")
+	filename = filename.replace("'", "")
+	return filename
 
 # Basic structure found on StackOverflow.  Citation:
 # https://stackoverflow.com/questions/7546050/switch-between-two-frames-in-tkinter
@@ -267,13 +283,12 @@ class PageOne(tk.Frame):
 		self.image_frame.grid(row=1)
 
 		# Prepare to find the file name for the specific information
-		orig_filename = mill_name.strip()
+		orig_filename = mill_name
 
 		# For each section, find the relevant file and create a textbox with a label.  
 		for index in range(len(SECTIONS)):
 			new_frame = tk.Frame(self.controller, bg = 'steelblue')
-			filename = SECTIONS[index] + "_" + orig_filename + ".txt"
-			filename = filename.replace("/", "")
+			filename = edit_file_name(mill_name)
 			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 
 			temp_box = tk.Text(new_frame, height=5, width=130, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
@@ -337,8 +352,7 @@ class PageOne(tk.Frame):
 		my_input_list = [x.get("1.0",END) for x in self.entry_list]
 
 		for index in range(len(SECTIONS)):
-			filename = SECTIONS[index] + "_" + orig_filename + ".txt"
-			filename = filename.replace("/", "")
+			filename = edit_file_name(orig_filename)
 			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 			print(filename)
 			with open(filename, 'w') as text_file:
