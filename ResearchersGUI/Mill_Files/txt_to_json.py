@@ -1,6 +1,7 @@
 import json
 import os
 
+"""
 OLD_MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisles', 'Date Hill', \
 "Donovan's (Vaughans)", 'Fitches Creek', 'Giles Blizzard', "Gravenor's", 'Gunthorpes (ASF)', 'Hight Point', \
 "Judge Blizzard's", "Lightfoot's/The Grove", 'Long Island', 'Millars', "Nibb's", \
@@ -43,6 +44,7 @@ OLD_MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Car
 "Sag Hill (Tom Moore's Mill / Upper)", 'Mil Hill', 'Claremon (see #178)', 'Tremontain / The Mountain', "Young's", \
 'Young / Nantons', 'Brook (Old Road)', "Morris' (Old Mill / Brambles)", "Douglas' Estate (Ravenscroft)", \
 "Yorke' (Musketo Cove & Bear Gardens)", 'Christia Valley / Biffins']
+"""
 
 MILL_DATA = ['Barnacle Point.txt', 'Barnes Hill.txt', 'BlackmansMount Lucie.txt', 'Carlisles.txt', 'Date Hill.txt', 'Donovans (Vaughans).txt',\
  'Fitches Creek.txt', 'Giles Blizzard.txt', 'Gravenors.txt', 'Gunthorpes (ASF).txt', 'Hight Point.txt', 'Judge Blizzards.txt', \
@@ -95,16 +97,25 @@ for name in MILL_DATA:
 
     mill_name = name[:-4]
 
-    #print('FoundingDate/' + mill_name + '.txt')
+    #Read each specific file
     founding_date_file = open('FoundingDate/' + mill_name + '.txt','r')
     founding_date = founding_date_file.read()
+
+    additional_info_file = open('AdditionalInformation/' + mill_name + '.txt','r')
+    additional_info = additional_info_file.read()
+
+    extant_or_ruin_file = open('ExtantOrRuin/' + mill_name + '.txt','r')
+    extant_or_ruin = extant_or_ruin_file.read()
+
+    enslaved_peoples_file = open('EnslavedPeoples/' + mill_name + '.txt','r')
+    enslaved_peoples = enslaved_peoples_file.read()
 
     # Define data
     a_data = {
     "name": mill_name,
     "parish": "Some Parish",
     "founding_date": founding_date,
-    "type": "Extant / Ruined",
+    "extant_or_ruin": extant_or_ruin,
     "long": "17.229085",
     "lat": "-61.833746",
     "chronology": {
@@ -130,7 +141,8 @@ for name in MILL_DATA:
         "2000": "The heirs of Lee Westcott.  d. 2012.",
         "2003": "The mill site is sold to Blue Waters Hotel"
         },
-    "additional_info": "Placeholder Data."
+    "additional_info": additional_info,
+    "enslaved_peoples": enslaved_peoples
     }
     data.append(a_data)
 
