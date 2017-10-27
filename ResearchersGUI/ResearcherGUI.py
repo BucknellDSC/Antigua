@@ -365,7 +365,6 @@ class PageOne(tk.Frame):
 
 		popupBonus("GriotTreeData.gif")
 
-
 	def find_and_upload_image(self, mill_photo_name):
 		"""
 			Allows a user to access their file system for an image to upload to the GUI
@@ -373,6 +372,7 @@ class PageOne(tk.Frame):
 		filename = filedialog.askopenfilename()
 		image = tk.PhotoImage(file = filename)
 		image.write(mill_photo_name, format='gif')
+
 
 	def find_and_view_image(self, image_name):
 		"""
