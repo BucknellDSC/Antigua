@@ -115,11 +115,14 @@ for name in MILL_DATA:
 
     split_chronology = chronology.split("\n")
     double_split_chronology = [i.split(":") for i in split_chronology]
-
+    """
     final_chronology = ''
     for date in double_split_chronology:
-        final_chronology += '"' + date[0] + '"' + ':' + '"' + date[1] + '"' + '\n'
+        if len(date) > 1:
+            a_data.chronology[date[0]] = date[1]
 
+            #final_chronology += '"' + date[0] + '"' + ':' + '"' + date[1] + '"' + '\n'
+            """
 
     # Define data
     a_data = {
@@ -129,13 +132,17 @@ for name in MILL_DATA:
     "extant_or_ruin": extant_or_ruin,
     "long": "17.229085", #TXT FILE
     "lat": "-61.833746", #TXT FILE
-    "chronology": { #TXT FILE FORMATTING
-        final_chronology
-        },
+    "chronology": {
+        "1998": "INFO",
+        "1999": "TEST",
+    },
     "additional_info": additional_info,
     "enslaved_peoples": enslaved_peoples
     }
+
     data.append(a_data)
+
+
 
 
 # Write JSON file
