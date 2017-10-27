@@ -300,6 +300,22 @@ class PageOne(tk.Frame):
 				except AttributeError:
 					pass
 			temp_label = tk.Label(new_frame, text=SECTIONS[index], font=12, bg = 'dark turquoise')
+
+			# We want the chronology section to have a special label, so we check:
+			if SECTIONS[index] == 'Chronology':
+				temp_label_1 = tk.Label(new_frame, text=SECTIONS[index], font=12, bg = 'dark turquoise')
+				temp_label_2 = tk.Label(new_frame, text="Please Input using Format =>\nYEAR:INFORMATION ABOUT YEAR\nETC...", 
+					font=12, bg = 'dark turquoise')
+				temp_label_1.grid(row=0)
+				temp_label_2.grid(row=1)
+				temp_box.grid(row=2)
+				new_frame.grid(row = (index + 2))
+				new_frame.grid_rowconfigure((index+2), weight=1)
+				self.sub_label_list += [temp_label_1]
+				self.sub_label_list += [temp_label_2]
+				self.entry_list += [temp_box]
+				self.frame_list += [new_frame]
+				continue
 			temp_label.pack()
 			temp_box.pack()
 
