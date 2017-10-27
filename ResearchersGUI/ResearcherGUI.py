@@ -10,7 +10,7 @@ from tkinter import filedialog
 from tkinter import *
 from subprocess import call
 
-from PIL import Image, ImageTk
+#from PIL import Image, ImageTk
 
 # DATA SECTION
 # SECTIONS is editable based on what data sections are wanted, but Fix_Names must then also be edited and run befor
@@ -177,7 +177,7 @@ class StartPage(tk.Frame):
 
 		for i in MILL_DATA:
 			self.listbox.insert(END, str(i))
-		
+
 		# Initialize the style for buttons (so that it will function for Macs)
 		ttk.Style().configure('green/black.TButton', foreground='goldenrod', background='steelblue')
 
@@ -234,7 +234,7 @@ class StartPage(tk.Frame):
 class PageOne(tk.Frame):
 	"""
 		Frame that allows user to edit information for a specific Mill.  Loads that Mill's current information,
-		allows a user to edit it and save it to the Mill's relevant files.  
+		allows a user to edit it and save it to the Mill's relevant files.
 	"""
 
 	def __init__(self, parent, controller):
@@ -285,7 +285,7 @@ class PageOne(tk.Frame):
 		# Prepare to find the file name for the specific information
 		orig_filename = mill_name
 
-		# For each section, find the relevant file and create a textbox with a label.  
+		# For each section, find the relevant file and create a textbox with a label.
 		for index in range(len(SECTIONS)):
 			new_frame = tk.Frame(self.controller, bg = 'steelblue')
 			filename = edit_file_name(mill_name)
@@ -328,7 +328,7 @@ class PageOne(tk.Frame):
 
 	def clear_and_return(self):
 		"""
-			If we wish to return to the main page, we need to delete everything we put on the frame.  Since we 
+			If we wish to return to the main page, we need to delete everything we put on the frame.  Since we
 			held onto everything as instance variables, this happens quickly.
 		"""
 		self.main_label_frame.grid_forget()
@@ -347,7 +347,7 @@ class PageOne(tk.Frame):
 	def update(self, orig_filename):
 		"""
 			If the user wishes to update the information, this method grabs what is currently in the textboxes
-			and writes it to the files where the information belongs.  
+			and writes it to the files where the information belongs.
 		"""
 		my_input_list = [x.get("1.0",END) for x in self.entry_list]
 

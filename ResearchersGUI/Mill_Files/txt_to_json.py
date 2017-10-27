@@ -113,12 +113,12 @@ for name in MILL_DATA:
     # Define data
     a_data = {
     "name": mill_name,
-    "parish": "Some Parish",
+    "parish": "Some Parish", #TXT FILE
     "founding_date": founding_date,
     "extant_or_ruin": extant_or_ruin,
-    "long": "17.229085",
-    "lat": "-61.833746",
-    "chronology": {
+    "long": "17.229085", #TXT FILE
+    "lat": "-61.833746", #TXT FILE
+    "chronology": { #TXT FILE FORMATTING
         "1670": "William Boone, planter.  On Antigua 1665, still living in 1710.",
         "1672": "William Boone, still living in 1685; leased 10 acres from Ralph Haskins, also a planter.",
         "1676": "William Boone, a Quaker, was imprisoned by Major Thomas Mallet",
