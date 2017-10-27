@@ -110,6 +110,17 @@ for name in MILL_DATA:
     enslaved_peoples_file = open('EnslavedPeoples/' + mill_name + '.txt','r')
     enslaved_peoples = enslaved_peoples_file.read()
 
+    chronology_file = open('Chronology/' + mill_name + '.txt','r')
+    chronology = chronology_file.read()
+
+    split_chronology = chronology.split("\n")
+    double_split_chronology = [i.split(":") for i in split_chronology]
+
+    final_chronology = ''
+    for date in double_split_chronology:
+        final_chronology += '"' + date[0] + '"' + ':' + '"' + date[1] + '"' + '\n'
+
+
     # Define data
     a_data = {
     "name": mill_name,
@@ -119,27 +130,7 @@ for name in MILL_DATA:
     "long": "17.229085", #TXT FILE
     "lat": "-61.833746", #TXT FILE
     "chronology": { #TXT FILE FORMATTING
-        "1670": "William Boone, planter.  On Antigua 1665, still living in 1710.",
-        "1672": "William Boone, still living in 1685; leased 10 acres from Ralph Haskins, also a planter.",
-        "1676": "William Boone, a Quaker, was imprisoned by Major Thomas Mallet",
-        "1678": "On May 20, Walter Burke, a planter, sold 20 acres to William Boone, a planter and Quaker.  In the census of Antigua taken in",
-        "1700": "William Boone married Mary Ronan.",
-        "1715": "Samuel Boone.  Will dated 1716.",
-        "1717": "The Tortola census, taken in November, shows William Boone as born in Antigua, with \"one woman and fifteen negroes.\"",
-        "1733": "Joseph Boone married Rachell Soanes.  He died 1750.",
-        "1740": "Colonel William Dunbar.  d. 1749.",
-        "1760": "John Delap-Halliday.  Owned 85 acres.  b. 1749; d. 1779/80.",
-        "1788": "Admiral John Halliday Tollemache.   (1777/78 map by cartographer John Luffman.)",
-        "1790": "John Delap-Halliday.  b. 1749; d. 1780.  85 acres.",
-        "1852": "John Tollemache.  b. 1805; d. 1890.",
-        "1872": "Charles Crosbie.",
-        "1878": "G. John Crosbie.",
-        "1891": "The heirs of Colonel Crosbie.",
-        "1900": "John J. Camacho.  (d. 1929).",
-        "1940": "Lee H. Westcott Sr.",
-        "1960": "Blue Waters Hotel, built by O. (Keltic) Kelsick, the only Antiguan squadron leader in the Royal Air Force during World War II.",
-        "2000": "The heirs of Lee Westcott.  d. 2012.",
-        "2003": "The mill site is sold to Blue Waters Hotel"
+        final_chronology
         },
     "additional_info": additional_info,
     "enslaved_peoples": enslaved_peoples
