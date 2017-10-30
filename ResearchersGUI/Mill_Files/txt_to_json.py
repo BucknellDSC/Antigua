@@ -125,16 +125,16 @@ for name in MILL_DATA:
     display_name_file = open('DisplayName/' + mill_name + '.txt','r')
     display_name = display_name_file.read()
 
-    """
     split_chronology = chronology.split("\n")
     double_split_chronology = [i.split(":") for i in split_chronology]
     final_chronology = ''
+
     for date in double_split_chronology:
         if len(date) > 1:
-            a_data.chronology[date[0]] = date[1]
-
+            #a_data.chronology[date[0]] = date[1]
+            print(date[0])
+            print(date[1])
             #final_chronology += '"' + date[0] + '"' + ':' + '"' + date[1] + '"' + '\n'
-            """
 
     # Define data
     a_data = {
