@@ -98,8 +98,8 @@ for name in MILL_DATA:
     mill_name = name[:-4]
 
     #Read each specific file
-    founding_date_file = open('FoundingDate/' + mill_name + '.txt','r')
-    founding_date = founding_date_file.read()
+    date_of_establishment_file = open('DateOfEstablishment/' + mill_name + '.txt','r')
+    date_of_establishment = date_of_establishment_file.read()
 
     additional_info_file = open('AdditionalInformation/' + mill_name + '.txt','r')
     additional_info = additional_info_file.read()
@@ -112,6 +112,18 @@ for name in MILL_DATA:
 
     chronology_file = open('Chronology/' + mill_name + '.txt','r')
     chronology = chronology_file.read()
+
+    name_of_parish_file = open('NameOfParish/' + mill_name + '.txt','r')
+    name_of_parish = name_of_parish_file.read()
+
+    long_file = open('Longitude/' + mill_name + '.txt','r')
+    longitude = long_file.read()
+
+    lat_file = open('Latitude/' + mill_name + '.txt','r')
+    latitude = lat_file.read()
+
+    display_name_file = open('DisplayName/' + mill_name + '.txt','r')
+    display_name = display_name_file.read()
 
     """
     split_chronology = chronology.split("\n")
@@ -127,11 +139,12 @@ for name in MILL_DATA:
     # Define data
     a_data = {
     "name": mill_name,
-    "parish": "Some Parish", #TXT FILE
-    "founding_date": founding_date,
+    "display_name": display_name,
+    "parish": name_of_parish,
+    "date_of_establishment": date_of_establishment,
     "extant_or_ruin": extant_or_ruin,
-    "long": "17.229085", #TXT FILE
-    "lat": "-61.833746", #TXT FILE
+    "long": longitude,
+    "lat": latitude,
     "chronology": {
         "1998": "INFO",
         "1999": "TEST",
