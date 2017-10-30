@@ -113,9 +113,9 @@ for name in MILL_DATA:
     chronology_file = open('Chronology/' + mill_name + '.txt','r')
     chronology = chronology_file.read()
 
+    """
     split_chronology = chronology.split("\n")
     double_split_chronology = [i.split(":") for i in split_chronology]
-    """
     final_chronology = ''
     for date in double_split_chronology:
         if len(date) > 1:
