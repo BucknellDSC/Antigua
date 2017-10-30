@@ -18,8 +18,10 @@ from PIL import Image, ImageTk
 # SECTIONS is editable based on what data sections are wanted, but Fix_Names must then also be edited and run befor
 # GUI will work.
 # MILL_DATA is assumed to remain constant.
-SECTIONS = ["Extant or Ruin", "Founding Date", "Chronology", "Additional Information", "Enslaved Peoples"]
-SECTIONS_NOSPACE = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInformation", "EnslavedPeoples"]
+SECTIONS = ["Chronology", "Additional Information", "Enslaved Peoples"]
+SECTIONS_NOSPACE = ["Chronology", "AdditionalInformation", "EnslavedPeoples"]
+SUB_SECTIONS = ["Display Name", "Name of Parish", "Date of Establishment", "Longitude", "Latitude", "Extant or Ruin"]
+SUB_SECTIONS_NOSPACE = ["DisplayName", "NameOfParish", "DateOfEstablishment", "Longitude", "Latitude", "ExtantOrRuin"]
 
 MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisles', 'Date Hill', \
 "Donovan's (Vaughans)", 'Fitches Creek', 'Giles Blizzard', "Gravenor's", 'Gunthorpes (ASF)', 'Hight Point', \
@@ -199,6 +201,7 @@ class StartPage(tk.Frame):
 		self.bottom_button_frame.grid(row=3)
 		self.bottom_button_frame.grid_rowconfigure(3, weight=1)
 		self.bottom_button_frame.config(bg = 'steelblue')
+		self.controller.geometry("537x280")
 
 	def swap_and_forget(self, page_info, box_input):
 		"""
@@ -209,6 +212,7 @@ class StartPage(tk.Frame):
 		if box_input:
 			self.listbox.grid_forget()
 			self.controller.show_frame(page_info, MILL_DATA[box_input[0]])
+			self.controller.geometry("920x706")
 		else:
 			return
 
@@ -220,6 +224,7 @@ class StartPage(tk.Frame):
 		self.button_frame.grid(row=1)
 		self.listbox.grid(row=2)
 		self.bottom_button_frame.grid(row=3)
+		self.controller.geometry("537x280")
 
 	def push_changes(self):
 		"""
@@ -287,6 +292,55 @@ class PageOne(tk.Frame):
 		# Prepare to find the file name for the specific information
 		orig_filename = mill_name
 
+		new_frame = tk.Frame(self.controller, bg = 'steelblue')
+		
+
+		for index in range(3):
+			filename = edit_file_name(mill_name)
+			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
+			temp_box = tk.Text(new_frame, height=5, width=40, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
+			with open(filename, 'r') as text_file:
+				try:
+					temp_box.insert(END, text_file.read())
+				except AttributeError:
+					pass
+			temp_label = tk.Label(new_frame, text=SUB_SECTIONS[index], font=12, bg = 'dark turquoise')
+
+			temp_label.grid(row = 0, column = index)
+			temp_box.grid(row = 1, column = index)
+
+			# Place the text box and label into a frame, then place that frame in the next available location.
+			self.sub_label_list += [temp_label]
+			self.entry_list += [temp_box]
+			
+		new_frame.grid(row = 2)
+		new_frame.grid_rowconfigure(2, weight=1)
+		self.frame_list += [new_frame]
+
+		new_frame = tk.Frame(self.controller, bg = 'steelblue')
+
+		for index in range(3,6):
+			filename = edit_file_name(mill_name)
+			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
+			temp_box = tk.Text(new_frame, height=5, width=40, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
+			with open(filename, 'r') as text_file:
+				try:
+					temp_box.insert(END, text_file.read())
+				except AttributeError:
+					pass
+			temp_label = tk.Label(new_frame, text=SUB_SECTIONS[index], font=12, bg = 'dark turquoise')
+
+			temp_label.grid(row = 0, column = index)
+			temp_box.grid(row = 1, column = index)
+
+			# Place the text box and label into a frame, then place that frame in the next available location.
+			self.sub_label_list += [temp_label]
+			self.entry_list += [temp_box]
+			
+		new_frame.grid(row = 3)
+		new_frame.grid_rowconfigure(3, weight=1)
+		self.frame_list += [new_frame]
+
 		# For each section, find the relevant file and create a textbox with a label.
 		for index in range(len(SECTIONS)):
 			new_frame = tk.Frame(self.controller, bg = 'steelblue')
@@ -303,25 +357,14 @@ class PageOne(tk.Frame):
 
 			# We want the chronology section to have a special label, so we check:
 			if SECTIONS[index] == 'Chronology':
-				temp_label_1 = tk.Label(new_frame, text=SECTIONS[index], font=12, bg = 'dark turquoise')
-				temp_label_2 = tk.Label(new_frame, text="Please Input using Format =>\nYEAR:INFORMATION ABOUT YEAR\nETC...", 
-					font=12, bg = 'dark turquoise')
-				temp_label_1.grid(row=0)
-				temp_label_2.grid(row=1)
-				temp_box.grid(row=2)
-				new_frame.grid(row = (index + 2))
-				new_frame.grid_rowconfigure((index+2), weight=1)
-				self.sub_label_list += [temp_label_1]
-				self.sub_label_list += [temp_label_2]
-				self.entry_list += [temp_box]
-				self.frame_list += [new_frame]
+				self.add_in_chronology(new_frame, index, temp_box)
 				continue
 			temp_label.pack()
 			temp_box.pack()
 
 			# Place the text box and label into a frame, then place that frame in the next available location.
-			new_frame.grid(row = (index + 2))
-			new_frame.grid_rowconfigure((index+2), weight=1)
+			new_frame.grid(row = (index + 4))
+			new_frame.grid_rowconfigure((index+4), weight=1)
 			self.sub_label_list += [temp_label]
 			self.entry_list += [temp_box]
 			self.frame_list += [new_frame]
@@ -341,8 +384,26 @@ class PageOne(tk.Frame):
 		reset_button.grid_rowconfigure(0, weight=1)
 		button.grid(row=1)
 		button.grid_rowconfigure(0, weight=1)
-		self.button_frame.grid(row = len(SECTIONS)+3)
+		self.button_frame.grid(row = len(SECTIONS)+5)
 		self.button_frame.grid_rowconfigure(0, weight=1)
+
+	def add_in_chronology(self, new_frame, index, temp_box):
+		"""
+			We want our chronology to be special.  So here we are.
+		"""
+		temp_label_1 = tk.Label(new_frame, text=SECTIONS[index], font=12, bg = 'dark turquoise')
+		temp_label_2 = tk.Label(new_frame, text="Please Input using Format =>\nYEAR:INFORMATION ABOUT YEAR\nETC...", 
+			font=12, bg = 'dark turquoise')
+		temp_label_1.grid(row=0)
+		temp_label_2.grid(row=1)
+		temp_box.grid(row=2)
+		new_frame.grid(row = (index + 4))
+		new_frame.grid_rowconfigure((index+4), weight=1)
+		self.sub_label_list += [temp_label_1]
+		self.sub_label_list += [temp_label_2]
+		self.entry_list += [temp_box]
+		self.frame_list += [new_frame]
+
 
 	def clear_and_return(self):
 		"""
@@ -369,6 +430,13 @@ class PageOne(tk.Frame):
 		"""
 		my_input_list = [x.get("1.0",END) for x in self.entry_list]
 
+		for index in range(len(SUB_SECTIONS)):
+			filename = edit_file_name(orig_filename)
+			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
+			print(filename)
+			with open(filename, 'w') as text_file:
+				text_file.write(my_input_list[index])
+
 		for index in range(len(SECTIONS)):
 			filename = edit_file_name(orig_filename)
 			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
@@ -377,9 +445,9 @@ class PageOne(tk.Frame):
 				text_file.write(my_input_list[index])
 
 
-		for my_input in my_input_list:
-			with open(filename, 'w') as text_file:
-				text_file.write(my_input)
+		# for my_input in my_input_list:
+		# 	with open(filename, 'w') as text_file:
+		# 		text_file.write(my_input)
 
 		popupBonus("GriotTreeData.jpeg")
 
