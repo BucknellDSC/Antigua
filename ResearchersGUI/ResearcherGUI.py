@@ -10,7 +10,7 @@ from tkinter import filedialog
 from tkinter import *
 from subprocess import call
 
-#from PIL import Image, ImageTk
+from PIL import Image, ImageTk
 
 #changes
 
@@ -230,7 +230,7 @@ class StartPage(tk.Frame):
 		call(["git", "commit", "-m", '"Mill files updated"'])
 		call(["git", "pull"])
 		call(["git", "push"])
-		popupBonus("GriotTree.gif")
+		popupBonus("GriotTree.jpeg")
 
 
 class PageOne(tk.Frame):
@@ -273,7 +273,7 @@ class PageOne(tk.Frame):
 		self.image_label = tk.Label(self.image_frame, text = "Mill's Image:", \
 			font=12, bg = 'dark turquoise')
 
-		updated_mill_name = "Mill_Files/Photos/" + mill_name.replace("/", "") + ".gif"
+		updated_mill_name = "Mill_Files/Photos/" + mill_name.replace("/", "") + ".jpeg"
 		self.image_view = ttk.Button(self.image_frame, text="View Current Image", style='green/black.TButton',\
 			command=lambda: self.find_and_view_image(updated_mill_name))
 		self.image_upload = ttk.Button(self.image_frame, text="Upload New Image", style='green/black.TButton',\
@@ -381,15 +381,16 @@ class PageOne(tk.Frame):
 			with open(filename, 'w') as text_file:
 				text_file.write(my_input)
 
-		popupBonus("GriotTreeData.gif")
+		popupBonus("GriotTreeData.jpeg")
 
 	def find_and_upload_image(self, mill_photo_name):
 		"""
 			Allows a user to access their file system for an image to upload to the GUI
 		"""
+		
 		filename = filedialog.askopenfilename()
-		image = tk.PhotoImage(file = filename)
-		image.write(mill_photo_name, format='gif')
+		image = Image.open(filename).convert('RGB')
+		image.save(mill_photo_name, format='JPEG')
 
 
 	def find_and_view_image(self, image_name):
