@@ -270,7 +270,7 @@ class PageOne(tk.Frame):
 
 		# Prepare and implement all things for the image processing
 		self.image_frame = tk.Frame(self.controller, bg = 'steelblue')
-		self.image_label = tk.Label(self.image_frame, text = "Mill's Image:", \
+		self.image_label = tk.Label(self.image_frame, text = "Mill's Image (JPEGs Only):", \
 			font=12, bg = 'dark turquoise')
 
 		updated_mill_name = "Mill_Files/Photos/" + mill_name.replace("/", "") + ".jpeg"
@@ -387,8 +387,10 @@ class PageOne(tk.Frame):
 		"""
 			Allows a user to access their file system for an image to upload to the GUI
 		"""
-		
+
 		filename = filedialog.askopenfilename()
+		if filename == '':
+			return
 		image = Image.open(filename).convert('RGB')
 		image.save(mill_photo_name, format='JPEG')
 
