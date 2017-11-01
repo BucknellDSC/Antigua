@@ -98,31 +98,31 @@ for name in MILL_DATA:
     mill_name = name[:-4]
 
     #Read each specific file
-    date_of_establishment_file = open('DateOfEstablishment/' + mill_name + '.txt','r')
+    date_of_establishment_file = open('Mill_Files/DateOfEstablishment/' + mill_name + '.txt','r')
     date_of_establishment = date_of_establishment_file.read()
 
-    additional_info_file = open('AdditionalInformation/' + mill_name + '.txt','r')
+    additional_info_file = open('Mill_Files/AdditionalInformation/' + mill_name + '.txt','r')
     additional_info = additional_info_file.read()
 
-    extant_or_ruin_file = open('ExtantOrRuin/' + mill_name + '.txt','r')
+    extant_or_ruin_file = open('Mill_Files/ExtantOrRuin/' + mill_name + '.txt','r')
     extant_or_ruin = extant_or_ruin_file.read()
 
-    enslaved_peoples_file = open('EnslavedPeoples/' + mill_name + '.txt','r')
+    enslaved_peoples_file = open('Mill_Files/EnslavedPeoples/' + mill_name + '.txt','r')
     enslaved_peoples = enslaved_peoples_file.read()
 
-    chronology_file = open('Chronology/' + mill_name + '.txt','r')
+    chronology_file = open('Mill_Files/Chronology/' + mill_name + '.txt','r')
     chronology = chronology_file.read()
 
-    name_of_parish_file = open('NameOfParish/' + mill_name + '.txt','r')
+    name_of_parish_file = open('Mill_Files/NameOfParish/' + mill_name + '.txt','r')
     name_of_parish = name_of_parish_file.read()
 
-    long_file = open('Longitude/' + mill_name + '.txt','r')
+    long_file = open('Mill_Files/Longitude/' + mill_name + '.txt','r')
     longitude = long_file.read()
 
-    lat_file = open('Latitude/' + mill_name + '.txt','r')
+    lat_file = open('Mill_Files/Latitude/' + mill_name + '.txt','r')
     latitude = lat_file.read()
 
-    display_name_file = open('DisplayName/' + mill_name + '.txt','r')
+    display_name_file = open('Mill_Files/DisplayName/' + mill_name + '.txt','r')
     display_name = display_name_file.read()
 
     split_chronology = chronology.split("\n")
