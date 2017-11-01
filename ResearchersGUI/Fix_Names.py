@@ -11,8 +11,8 @@ with open("Cleaned_Names.csv", 'r') as csvfile:
 name_list = name_list[1:]
 
 def touch(path):
-	sections = ["Extant or Ruin", "Founding Date", "Chronology", "Additional Information", "Enslaved Peoples"]
-	sections_nospace = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInformation", "EnslavedPeoples"]
+	sections = ["Name of Mill", "Name of Parish", "Date of Establishment", "Longitude", "Latitude", "Extant or Ruin"]
+	sections_nospace = ["DisplayName", "NameOfParish", "DateOfEstablishment", "Longitude", "Latitude", "ExtantOrRuin"]
 	orig_filename = path.strip()
 	for index in range(len(sections)):
 		filename = orig_filename + ".txt"
