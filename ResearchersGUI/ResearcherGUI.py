@@ -444,10 +444,7 @@ class PageOne(tk.Frame):
 			with open(filename, 'w') as text_file:
 				text_file.write(my_input_list[index])
 
-
-		# for my_input in my_input_list:
-		# 	with open(filename, 'w') as text_file:
-		# 		text_file.write(my_input)
+		import Mill_Files.txt_to_json
 
 		popupBonus("GriotTreeData.jpeg")
 
