@@ -127,14 +127,13 @@ for name in MILL_DATA:
 
     split_chronology = chronology.split("\n")
     double_split_chronology = [i.split(":") for i in split_chronology]
-    final_chronology = ''
 
+
+    chronology_dict = {}
     for date in double_split_chronology:
         if len(date) > 1:
-            #a_data.chronology[date[0]] = date[1]
-            print(date[0])
-            print(date[1])
-            #final_chronology += '"' + date[0] + '"' + ':' + '"' + date[1] + '"' + '\n'
+            chronology_dict[date[0]] = date[1]
+
 
     # Define data
     a_data = {
@@ -145,10 +144,7 @@ for name in MILL_DATA:
     "extant_or_ruin": extant_or_ruin,
     "long": longitude,
     "lat": latitude,
-    "chronology": {
-        "1998": "INFO",
-        "1999": "TEST",
-    },
+    "chronology": chronology_dict,
     "additional_info": additional_info,
     "enslaved_peoples": enslaved_peoples
     }
