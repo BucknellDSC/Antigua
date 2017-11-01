@@ -392,7 +392,7 @@ class PageOne(tk.Frame):
 			We want our chronology to be special.  So here we are.
 		"""
 		temp_label_1 = tk.Label(new_frame, text=SECTIONS[index], font=12, bg = 'dark turquoise')
-		temp_label_2 = tk.Label(new_frame, text="Please Input using Format =>\nYEAR:INFORMATION ABOUT YEAR\nETC...", 
+		temp_label_2 = tk.Label(new_frame, text="Please Input using Format =>\n[YEAR]:[INFORMATION ABOUT YEAR]\nexample -> 1994:Murph was born", 
 			font=12, bg = 'dark turquoise')
 		temp_label_1.grid(row=0)
 		temp_label_2.grid(row=1)
