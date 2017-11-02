@@ -17,7 +17,6 @@ from subprocess import call
 # MILL_DATA is assumed to remain constant.
 SECTIONS = ["Extant or Ruin", "Founding Date", "Chronology", "Additional Information", "Enslaved Peoples"]
 SECTIONS_NOSPACE = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInformation", "EnslavedPeoples"]
-
 MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisles', 'Date Hill', \
 "Donovan's (Vaughans)", 'Fitches Creek', 'Giles Blizzard', "Gravenor's", 'Gunthorpes (ASF)', 'Hight Point', \
 "Judge Blizzard's", "Lightfoot's/The Grove", 'Long Island', 'Millars', "Nibb's", \
@@ -81,9 +80,7 @@ class SampleApp(tk.Tk):
 
 	def __init__(self, *args, **kwargs):
 		tk.Tk.__init__(self, *args, **kwargs)
-
 		call(["git", "pull"])
-
 		# Set relevant styling
 		self.title_font = tkfont.Font(family='Helvetica', size=30, weight="bold", slant="italic")
 
@@ -155,7 +152,6 @@ class StartPage(tk.Frame):
 		button1 = ttk.Button(self.button_frame, text="Go to Mill's Page", style='green/black.TButton',
 							command=lambda: self.swap_and_forget("PageOne", self.listbox.curselection()))
 		button1.pack()
-
 		button2 = ttk.Button(self.bottom_button_frame, text="Update the Map!", style='green/black.TButton',
 							command=lambda: self.push_changes())
 		button2.pack()
@@ -170,7 +166,7 @@ class StartPage(tk.Frame):
 		self.bottom_button_frame.config(bg = 'steelblue')
 
 	def swap_and_forget(self, page_info, box_input):
-		"""
+		""" 
 			Change to a specific mill's page.  Remove all information for the start page and tell
 			Root to swap pages.
 		"""
@@ -221,7 +217,6 @@ class PageOne(tk.Frame):
 		self.sub_label_list = []
 		self.entry_list = []
 		self.frame_list = []
-
 
 	def add_mill_specific(self, mill_name):
 		"""
