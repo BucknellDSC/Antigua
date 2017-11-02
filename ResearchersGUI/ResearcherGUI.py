@@ -9,14 +9,25 @@ from tkinter import ttk
 from tkinter import filedialog
 from tkinter import *
 from subprocess import call
+from txt_to_json.py import txt_to_json
+from PIL import Image, ImageTk
 
+#changes
 
 # DATA SECTION
 # SECTIONS is editable based on what data sections are wanted, but Fix_Names must then also be edited and run befor
 # GUI will work.
 # MILL_DATA is assumed to remain constant.
+<<<<<<< HEAD
 SECTIONS = ["Extant or Ruin", "Founding Date", "Chronology", "Additional Information", "Enslaved Peoples"]
 SECTIONS_NOSPACE = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInformation", "EnslavedPeoples"]
+=======
+SECTIONS = ["Chronology", "Additional Information", "Enslaved Peoples"]
+SECTIONS_NOSPACE = ["Chronology", "AdditionalInformation", "EnslavedPeoples"]
+SUB_SECTIONS = ["Display Name", "Name of Parish", "Date of Establishment", "Longitude", "Latitude", "Extant or Ruin"]
+SUB_SECTIONS_NOSPACE = ["DisplayName", "NameOfParish", "DateOfEstablishment", "Longitude", "Latitude", "ExtantOrRuin"]
+
+>>>>>>> fadfc41bd9c32687bb5e0e87c540eb3dc35394c8
 MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisles', 'Date Hill', \
 "Donovan's (Vaughans)", 'Fitches Creek', 'Giles Blizzard', "Gravenor's", 'Gunthorpes (ASF)', 'Hight Point', \
 "Judge Blizzard's", "Lightfoot's/The Grove", 'Long Island', 'Millars', "Nibb's", \
@@ -61,19 +72,44 @@ MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisl
 "Yorke' (Musketo Cove & Bear Gardens)", 'Christia Valley / Biffins']
 
 def popupBonus(image_name):
+	"""
+		General seperate method that procures a popup
+	"""
 	toplevel = Toplevel()
-	image = tk.PhotoImage(file = image_name)
-	label = tk.Label(toplevel,image=image)
-	label.image = image
-	image.write('some_name.gif', format='gif')
+	image = Image.open(image_name)
+	image_copy = image.copy()
+	image = image_copy.resize((650, 500))
+
+	background_image = ImageTk.PhotoImage(image)
+
+	label = tk.Label(toplevel,image=background_image)
+	label.pack(fill=BOTH, expand=YES)
+
+	label.image = background_image
+
 	label.place(x=0, y=0, relwidth=1.0, relheight=1.0, anchor="nw")
 	toplevel.geometry('650x500')
-	# label1 = Label(toplevel, text="Data has been Updated!", height=5, width=50)
-	# label1.pack()
-	# label2 = Label(toplevel, text="YAY!", height=5, width=50)
-	# label2.pack()
 
-class SampleApp(tk.Tk):
+def edit_file_name(filename):
+	"""
+		General method for the many times I have to play with filenames (oh so many).
+	"""
+	filename = filename + ".txt"
+	filename = filename.replace("/", "")
+	filename = filename.replace("\\", "")
+	filename = filename.replace(":", "")
+	filename = filename.replace("*", "")
+	filename = filename.replace("?", "")
+	filename = filename.replace("<", "")
+	filename = filename.replace(">", "")
+	filename = filename.replace("|", "")
+	filename = filename.replace('"', "")
+	filename = filename.replace("'", "")
+	return filename
+
+# Basic structure found on StackOverflow.  Citation:
+# https://stackoverflow.com/questions/7546050/switch-between-two-frames-in-tkinter
+class ResearcherGUI(tk.Tk):
 	"""
 		Class to create and implement the root frame of the GUI.
 	"""
@@ -129,6 +165,9 @@ class StartPage(tk.Frame):
 		"""
 			Initialize all frames for displaying for the Start Page.
 		"""
+
+		# To allow for ease of coloring and placement, each grouping of items is given its own frame, and each frame
+		# is placed on our main controller.
 		tk.Frame.__init__(self, parent)
 		self.controller = controller
 		self.controller.config(bg='steelblue')
@@ -145,7 +184,7 @@ class StartPage(tk.Frame):
 
 		for i in MILL_DATA:
 			self.listbox.insert(END, str(i))
-		
+
 		# Initialize the style for buttons (so that it will function for Macs)
 		ttk.Style().configure('green/black.TButton', foreground='goldenrod', background='steelblue')
 
@@ -164,6 +203,7 @@ class StartPage(tk.Frame):
 		self.bottom_button_frame.grid(row=3)
 		self.bottom_button_frame.grid_rowconfigure(3, weight=1)
 		self.bottom_button_frame.config(bg = 'steelblue')
+		self.controller.geometry("537x280")
 
 	def swap_and_forget(self, page_info, box_input):
 		""" 
@@ -174,6 +214,7 @@ class StartPage(tk.Frame):
 		if box_input:
 			self.listbox.grid_forget()
 			self.controller.show_frame(page_info, MILL_DATA[box_input[0]])
+			self.controller.geometry("920x706")
 		else:
 			return
 
@@ -185,6 +226,7 @@ class StartPage(tk.Frame):
 		self.button_frame.grid(row=1)
 		self.listbox.grid(row=2)
 		self.bottom_button_frame.grid(row=3)
+		self.controller.geometry("537x280")
 
 	def push_changes(self):
 		"""
@@ -195,13 +237,13 @@ class StartPage(tk.Frame):
 		call(["git", "commit", "-m", '"Mill files updated"'])
 		call(["git", "pull"])
 		call(["git", "push"])
-		popupBonus("GriotTree.gif")
+		popupBonus("GriotTree.jpeg")
 
 
 class PageOne(tk.Frame):
 	"""
 		Frame that allows user to edit information for a specific Mill.  Loads that Mill's current information,
-		allows a user to edit it and save it to the Mill's relevant files.  
+		allows a user to edit it and save it to the Mill's relevant files.
 	"""
 
 	def __init__(self, parent, controller):
@@ -234,10 +276,10 @@ class PageOne(tk.Frame):
 
 		# Prepare and implement all things for the image processing
 		self.image_frame = tk.Frame(self.controller, bg = 'steelblue')
-		self.image_label = tk.Label(self.image_frame, text = "Mill's Image:", \
+		self.image_label = tk.Label(self.image_frame, text = "Mill's Image (JPEGs Only):", \
 			font=12, bg = 'dark turquoise')
 
-		updated_mill_name = "Mill_Files/Photos/" + mill_name.replace("/", "") + ".gif"
+		updated_mill_name = "Mill_Files/Photos/" + mill_name.replace("/", "") + ".jpeg"
 		self.image_view = ttk.Button(self.image_frame, text="View Current Image", style='green/black.TButton',\
 			command=lambda: self.find_and_view_image(updated_mill_name))
 		self.image_upload = ttk.Button(self.image_frame, text="Upload New Image", style='green/black.TButton',\
@@ -249,13 +291,61 @@ class PageOne(tk.Frame):
 		self.image_frame.grid(row=1)
 
 		# Prepare to find the file name for the specific information
-		orig_filename = mill_name.strip()
+		orig_filename = mill_name
 
-		# For each section, find the relevant file and create a textbox with a label.  
+		new_frame = tk.Frame(self.controller, bg = 'steelblue')
+		
+
+		for index in range(3):
+			filename = edit_file_name(mill_name)
+			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
+			temp_box = tk.Text(new_frame, height=5, width=40, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
+			with open(filename, 'r') as text_file:
+				try:
+					temp_box.insert(END, text_file.read())
+				except AttributeError:
+					pass
+			temp_label = tk.Label(new_frame, text=SUB_SECTIONS[index], font=12, bg = 'dark turquoise')
+
+			temp_label.grid(row = 0, column = index)
+			temp_box.grid(row = 1, column = index)
+
+			# Place the text box and label into a frame, then place that frame in the next available location.
+			self.sub_label_list += [temp_label]
+			self.entry_list += [temp_box]
+			
+		new_frame.grid(row = 2)
+		new_frame.grid_rowconfigure(2, weight=1)
+		self.frame_list += [new_frame]
+
+		new_frame = tk.Frame(self.controller, bg = 'steelblue')
+
+		for index in range(3,6):
+			filename = edit_file_name(mill_name)
+			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
+			temp_box = tk.Text(new_frame, height=5, width=40, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
+			with open(filename, 'r') as text_file:
+				try:
+					temp_box.insert(END, text_file.read())
+				except AttributeError:
+					pass
+			temp_label = tk.Label(new_frame, text=SUB_SECTIONS[index], font=12, bg = 'dark turquoise')
+
+			temp_label.grid(row = 0, column = index)
+			temp_box.grid(row = 1, column = index)
+
+			# Place the text box and label into a frame, then place that frame in the next available location.
+			self.sub_label_list += [temp_label]
+			self.entry_list += [temp_box]
+			
+		new_frame.grid(row = 3)
+		new_frame.grid_rowconfigure(3, weight=1)
+		self.frame_list += [new_frame]
+
+		# For each section, find the relevant file and create a textbox with a label.
 		for index in range(len(SECTIONS)):
 			new_frame = tk.Frame(self.controller, bg = 'steelblue')
-			filename = SECTIONS[index] + "_" + orig_filename + ".txt"
-			filename = filename.replace("/", "")
+			filename = edit_file_name(mill_name)
 			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 
 			temp_box = tk.Text(new_frame, height=5, width=130, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
@@ -265,12 +355,17 @@ class PageOne(tk.Frame):
 				except AttributeError:
 					pass
 			temp_label = tk.Label(new_frame, text=SECTIONS[index], font=12, bg = 'dark turquoise')
+
+			# We want the chronology section to have a special label, so we check:
+			if SECTIONS[index] == 'Chronology':
+				self.add_in_chronology(new_frame, index, temp_box)
+				continue
 			temp_label.pack()
 			temp_box.pack()
 
 			# Place the text box and label into a frame, then place that frame in the next available location.
-			new_frame.grid(row = (index + 2))
-			new_frame.grid_rowconfigure((index+2), weight=1)
+			new_frame.grid(row = (index + 4))
+			new_frame.grid_rowconfigure((index+4), weight=1)
 			self.sub_label_list += [temp_label]
 			self.entry_list += [temp_box]
 			self.frame_list += [new_frame]
@@ -290,12 +385,30 @@ class PageOne(tk.Frame):
 		reset_button.grid_rowconfigure(0, weight=1)
 		button.grid(row=1)
 		button.grid_rowconfigure(0, weight=1)
-		self.button_frame.grid(row = len(SECTIONS)+3)
+		self.button_frame.grid(row = len(SECTIONS)+5)
 		self.button_frame.grid_rowconfigure(0, weight=1)
+
+	def add_in_chronology(self, new_frame, index, temp_box):
+		"""
+			We want our chronology to be special.  So here we are.
+		"""
+		temp_label_1 = tk.Label(new_frame, text=SECTIONS[index], font=12, bg = 'dark turquoise')
+		temp_label_2 = tk.Label(new_frame, text="Please Input using Format =>\n[YEAR]:[INFORMATION ABOUT YEAR]\nexample -> 1994:Murph was born", 
+			font=12, bg = 'dark turquoise')
+		temp_label_1.grid(row=0)
+		temp_label_2.grid(row=1)
+		temp_box.grid(row=2)
+		new_frame.grid(row = (index + 4))
+		new_frame.grid_rowconfigure((index+4), weight=1)
+		self.sub_label_list += [temp_label_1]
+		self.sub_label_list += [temp_label_2]
+		self.entry_list += [temp_box]
+		self.frame_list += [new_frame]
+
 
 	def clear_and_return(self):
 		"""
-			If we wish to return to the main page, we need to delete everything we put on the frame.  Since we 
+			If we wish to return to the main page, we need to delete everything we put on the frame.  Since we
 			held onto everything as instance variables, this happens quickly.
 		"""
 		self.main_label_frame.grid_forget()
@@ -303,6 +416,9 @@ class PageOne(tk.Frame):
 		[x.grid_forget() for x in self.sub_label_list]
 		[x.grid_forget() for x in self.frame_list]
 		[x.grid_forget() for x in self.button_list]
+		self.image_view.grid_forget()
+		self.image_upload.grid_forget()
+		self.image_frame.grid_forget()
 		self.main_label.pack_forget()
 		self.button_frame.grid_forget()
 		self.grid_forget()
@@ -311,35 +427,48 @@ class PageOne(tk.Frame):
 	def update(self, orig_filename):
 		"""
 			If the user wishes to update the information, this method grabs what is currently in the textboxes
-			and writes it to the files where the information belongs.  
+			and writes it to the files where the information belongs.
 		"""
 		my_input_list = [x.get("1.0",END) for x in self.entry_list]
 
+		for index in range(len(SUB_SECTIONS)):
+			filename = edit_file_name(orig_filename)
+			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
+			print(filename)
+			with open(filename, 'w') as text_file:
+				text_file.write(my_input_list[index])
+
 		for index in range(len(SECTIONS)):
-			filename = SECTIONS[index] + "_" + orig_filename + ".txt"
-			filename = filename.replace("/", "")
+			filename = edit_file_name(orig_filename)
 			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 			print(filename)
 			with open(filename, 'w') as text_file:
 				text_file.write(my_input_list[index])
 
+		To_Json = txt_to_json()
+		# import txt_to_json
 
-		for my_input in my_input_list:
-			with open(filename, 'w') as text_file:
-				text_file.write(my_input)
-
-		popupBonus("GriotTreeData.gif")
-
+		popupBonus("GriotTreeData.jpeg")
 
 	def find_and_upload_image(self, mill_photo_name):
+		"""
+			Allows a user to access their file system for an image to upload to the GUI
+		"""
+
 		filename = filedialog.askopenfilename()
-		image = tk.PhotoImage(file = filename)
-		image.write(mill_photo_name, format='gif')
+		if filename == '':
+			return
+		image = Image.open(filename).convert('RGB')
+		image.save(mill_photo_name, format='JPEG')
+
 
 	def find_and_view_image(self, image_name):
+		"""
+			Allows user to see image that is currently uploaded for a given mill.
+		"""
 		popupBonus(image_name)
 
 # Begin process -- call classes
 if __name__ == "__main__":
-	app = SampleApp()
+	app = ResearcherGUI()
 	app.mainloop()
