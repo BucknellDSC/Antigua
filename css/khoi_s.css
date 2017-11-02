@@ -1,10 +1,18 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Oswald|Slabo+27px';
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Playfair+Display');
+
+:root {
+    --text-color: #ffecce;
+    --bg-color: #191923;
+}
 body,
 html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #ffecce;
+    background-image: url("../res/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     transition: all 0.5s ease;
 }
@@ -34,21 +42,27 @@ html {
     min-height: 830px;
     vertical-align: middle;
     text-align: left;
-    font-family: "Open Sans", sans-serif;
-    color: #eeeff7;
+    font-family: "Playfair Display Black", serif;
+    color: var(--text-color);
+}
+
+.sidepanel-title {
+    font-family: "Playfair Display Black", serif;
+    font-style: normal;
+    font-size: 34px;
 }
 
 #description {
     text-align: center;
     font-style: italic;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-size: 16px;
 }
 
 #panel {
     text-align: center;
     font-style: italic;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-size: 16px;
 }
 
@@ -73,7 +87,7 @@ html {
     height: 0vh;
     text-align: center;
     font-style: italic;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-size: 16px;
     overflow-y: auto;
     transition: all 0.5s ease-out 0.15s;
@@ -131,7 +145,7 @@ html {
     background-color: transparent;
     outline: 0;
     transition: all 0.3s;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Libre Baskerville', serif;
 }
 
 #aSearch:focus,
