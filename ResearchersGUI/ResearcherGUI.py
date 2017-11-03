@@ -9,7 +9,7 @@ from tkinter import ttk
 from tkinter import filedialog
 from tkinter import *
 from subprocess import call
-from txt_to_json.py import txt_to_json
+from txt_to_json import txt_to_json
 from PIL import Image, ImageTk
 
 #changes
@@ -446,6 +446,7 @@ class PageOne(tk.Frame):
 				text_file.write(my_input_list[index])
 
 		To_Json = txt_to_json()
+		To_Json.convert_to_json()
 		# import txt_to_json
 
 		popupBonus("GriotTreeData.jpeg")
