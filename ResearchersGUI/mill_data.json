@@ -1,11 +1,14 @@
 [
     {
         "additional_info": "test\n\n\n\n\n\n\n",
-        "chronology": {},
+        "chronology": {
+            "1996": "Patrick was born",
+            "1997": "Murph wasnt born"
+        },
         "date_of_establishment": "test\n\n\n\n\n\n\n",
         "display_name": "to see if things changed\n\n\n\n\n\n\n",
         "enslaved_peoples": "test\n\n\n\n\n\n\n",
-        "extant_or_ruin": "test\n\n\n\n\n\n\n",
+        "extant_or_ruin": "Extant\n",
         "lat": "test\n\n\n\n\n\n\n",
         "long": "lalala\n\n",
         "name": "Barnacle Point",
