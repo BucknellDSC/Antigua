@@ -163,8 +163,6 @@ class txt_to_json:
             data.append(a_data)
 
 
-
-
         # Write JSON file
         with io.open('mill_data.json', 'w', encoding='utf8') as outfile:
             str_ = json.dumps(data,
