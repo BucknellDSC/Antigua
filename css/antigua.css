@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Oswald|Slabo+27px');
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Playfair+Display');
 @import url('https://fonts.googleapis.com/css?family=Tangerine');
-
 :root {
-    --text-color: #ffecce;
-    --bg-color: #191923;
+    --text-color: #F2CF8D;
+    --bg-color: #1D2026;
     --bg-color-2: #000000;
     --main-color: #000000;
     --secondary-color: #000000;
-    --title-font: 'Tangerine', cursive;    
+    --title-font: 'Tangerine', cursive;
     /* --title-font: 'Playfair Display Black', serif; */
     --text-font: 'Libre Baskerville', serif;
 }
+
 body,
 html {
-    height: 100%;
+    width:100vw;
+    height:100vh;    
     margin: 0;
     padding: 0;
     background-image: url("../res/background.png");
@@ -25,25 +26,42 @@ html {
 }
 
 .parish-map {
-    height: 100%;
     display: block;
     margin: auto;
 }
+#stjohn-path{
+    fill: rgba(29,32,38,0.5);    
+}
 
+#stphilip-path{
+    fill: rgba(88,115,90,0.5);
+}
+#stpaul-path{
+    fill: rgba(164,166,124,0.5);    
+}
+#stgeorge-path{
+    fill: rgba(88,115,90,0.5);        
+}
+
+#stmary-path{
+    fill: rgba(88,115,90,0.5);            
+}
+#stpeter-path{
+    fill: rgba(88,115,90,0.5);                
+}
 .parish-path {
     cursor: pointer;
     fill: transparent;
-    stroke: red;
-    stroke-width: 7px;
+    stroke: rgba(34,57,58,1);
+    stroke-width: 5px;
     fill-rule: evenodd;
-    transition: all ease 1s;
+    transition: all ease 0.5s;
 }
 
 .parish-path:hover {
-    fill: rgba(0, 40, 255, 0.75);
+    fill: rgba(164, 166,124, 0.75);
     stroke: transparent;
-
-  }
+}
 
 .sidepanel {
     float: left;
@@ -52,7 +70,7 @@ html {
     padding: 2em;
     background-color: var(--bg-color);
     height: calc(100vh - 4em);
-    width: calc(23vw - 4em);
+    width: calc(25vw - 4em);
     min-height: 60vh;
     vertical-align: middle;
     text-align: left;
@@ -62,7 +80,7 @@ html {
 
 .sidepanel-title {
     margin: 0;
-    padding: 0;    
+    padding: 0;
     margin-top: 2vh;
     margin-bottom: 5vh;
     font-family: var(--title-font);
@@ -84,65 +102,74 @@ html {
     font-size: 1em;
 }
 
-.menu_title{
+.menu_title {
     padding: 0;
     margin: 0;
     font-family: var(--text-font);
     font-size: 1.5em;
+}
+
+hr {
+    padding: 0;
+    margin: auto;
+    margin-bottom: 4em;
+    width: 75%;
     
 }
 
-hr{
-    width: 75%;
-}
-.menu_item{
-    padding: 0;
-    margin: 0;
-    margin-top:0.5em;
-}
-.expandable_list::-webkit-scrollbar-track
-{
-	border: 1px solid var(--text-color);
-	background-color: none;
-}
-
-.expandable_list::-webkit-scrollbar
-{
-	width: 0.5em;
-	background-color:none;
-}
-
-.expandable_list::-webkit-scrollbar-thumb
-{
-	background-color:var(--text-color);	
+.menu_item {
+    padding: auto;
+    width: 100%;
+    font-size: 1.1em;
+    display: flex;
+    margin:0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    justify-content: center;
+    align-items: center;       
 }
 
 
+.menu_item:hover {
+    background-color: rgba(34, 57, 58, 1);
+}
+
+.expandable_list::-webkit-scrollbar-track {
+    border: 1px solid var(--text-color);
+    background-color: none;
+}
+
+.expandable_list::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: none;
+}
+
+.expandable_list::-webkit-scrollbar-thumb {
+    background-color: var(--text-color);
+}
 
 .expandable_list {
+    margin-left: 0.75em;
     margin-top: 2em;
-    height: 65vh;
+    height: 58vh;
     text-align: center;
     font-family: var(--text-font);
     font-size: 1em;
     overflow-y: auto;
     transition: all 0.5s ease-out 0.15s;
+    
 }
 
-/* .expandable_list:hover {
-    height: 30vh;
-    transition: all 0.5s ease-out 0.15s;
-}
-
-.menu_title:hover~.expandable_list {
-    height: 30vh;
-    transition: all 0.5s ease-out 0.15s;
-} */
 
 #big_map {
-    height: 98vh;
-    width: 80vw;
+    margin: auto;
+    height: 95%;
+    width: 75vw;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;       
+    
 }
 
 #map {
@@ -187,6 +214,7 @@ footer {
     transition: all 0.3s;
 }
 
+
 /*experimental part*/
 
 .marker {
@@ -202,6 +230,7 @@ footer {
     -webkit-transition: all .5s ease .4s;
     transition: all .5s ease .4s;
 }
+
 .marker.inactive {
     -webkit-transform: perspective(600px) rotateY(-90deg);
     transform: perspective(600px) rotateY(-90deg);
@@ -209,11 +238,13 @@ footer {
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }
+
 .marker svg {
     fill: red;
     -webkit-animation: hovering 1s ease-in-out infinite alternate;
     animation: hovering 1s ease-in-out infinite alternate;
 }
+
 .marker .shadow {
     width: 18px;
     height: 4px;
@@ -244,6 +275,7 @@ footer {
     color: #1C1D21;
     word-wrap: break-word;
 }
+
 .card.active {
     -webkit-transform: perspective(600px) rotateY(0deg);
     transform: perspective(600px) rotateY(0deg);
@@ -256,7 +288,6 @@ footer {
 .card .content {
     padding: 10px;
 }
-
 
 .card .image {
     width: 100%;
@@ -281,7 +312,7 @@ footer {
     padding-top: 10px;
 }
 
-.card .button{
+.card .button {
     text-align: center;
     background-color: transparent;
     padding-top: 2px;
@@ -298,8 +329,7 @@ footer {
     border-color: #1C1D21;
 }
 
-
-.card .button:hover{
+.card .button:hover {
     background-color: #FF5E17;
     transition: all 0.3s;
     border-color: #FF5E17;
@@ -327,6 +357,7 @@ footer {
         transform: translate3d(0, -5px, 0);
     }
 }
+
 @-webkit-keyframes shadow {
     from {
         -webkit-transform: scale(1) translate3d(0, 0, 0);
@@ -337,6 +368,7 @@ footer {
         transform: scale(1.25) translate3d(0, 0, 0);
     }
 }
+
 @keyframes shadow {
     from {
         -webkit-transform: scale(1) translate3d(0, 0, 0);
@@ -353,26 +385,39 @@ footer {
 Modal testing
  */
 
+
 /* The Modal (background) */
+
 .modal {
     font-family: "Open Sans", sans-serif;
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    -webkit-animation-name: fadeIn; /* Fade in the background */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    -webkit-animation-name: fadeIn;
+    /* Fade in the background */
     -webkit-animation-duration: 0.4s;
     animation-name: fadeIn;
     animation-duration: 0.4s;
 }
 
+
 /* Modal Content */
+
 .modal-content {
     position: fixed;
     background-color: #fefefe;
@@ -384,7 +429,9 @@ Modal testing
     animation-duration: 0.4s
 }
 
+
 /* The Close Button */
+
 .close {
     color: black;
     float: right;
@@ -402,45 +449,78 @@ Modal testing
     padding: 2px 16px;
     color: #FF5E17;
     text-transform: uppercase;
-
 }
 
-.modal-body {padding: 2px 16px; width: 50%; float: left}
+.modal-body {
+    padding: 2px 16px;
+    width: 50%;
+    float: left
+}
 
-.modal-image {padding: 24px 16px; width: calc(50% - 64px); float: right; height: 100%}
+.modal-image {
+    padding: 24px 16px;
+    width: calc(50% - 64px);
+    float: right;
+    height: 100%
+}
 
 
 /* Add Animation */
+
 @-webkit-keyframes slideIn {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
 }
 
 @keyframes slideIn {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
 }
 
 @-webkit-keyframes fadeIn {
-    from {opacity: 0}
-    to {opacity: 1}
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
 }
 
 @keyframes fadeIn {
-    from {opacity: 0}
-    to {opacity: 1}
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
 }
+
 
 /*Tab nav*/
 
+
 /* Style the tab */
+
 div.tab {
     overflow: hidden;
     width: 100%;
-
 }
 
+
 /* Style the buttons inside the tab */
+
 div.tab button {
     background-color: inherit;
     float: left;
@@ -452,38 +532,45 @@ div.tab button {
     font-size: 17px;
 }
 
+
 /* Change background color of buttons on hover */
+
 div.tab button:hover {
     font-weight: bold;
     color: #FF5E17;
 }
 
+
 /* Create an active/current tablink class */
+
 div.tab button.active {
     font-weight: bold;
     color: #FF5E17;
 }
 
+
 /* Style the tab content */
+
 .tabcontent {
     display: none;
     padding: 6px 12px;
-
 }
-
 
 .timeline {
     overflow-y: auto;
     list-style: none;
     max-height: 80vh;
 }
-.timeline > li {
+
+.timeline>li {
     margin-bottom: 60px;
 }
 
+
 /* for Desktop */
-@media ( min-width : 640px ){
-    .timeline > li {
+
+@media ( min-width: 640px) {
+    .timeline>li {
         overflow: hidden;
         margin: 0;
         position: relative;
