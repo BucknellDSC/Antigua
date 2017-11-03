@@ -9,7 +9,7 @@ from tkinter import ttk
 from tkinter import filedialog
 from tkinter import *
 from subprocess import call
-
+from txt_to_json.py import txt_to_json
 from PIL import Image, ImageTk
 
 #changes
@@ -18,11 +18,16 @@ from PIL import Image, ImageTk
 # SECTIONS is editable based on what data sections are wanted, but Fix_Names must then also be edited and run befor
 # GUI will work.
 # MILL_DATA is assumed to remain constant.
+<<<<<<< HEAD
+SECTIONS = ["Extant or Ruin", "Founding Date", "Chronology", "Additional Information", "Enslaved Peoples"]
+SECTIONS_NOSPACE = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInformation", "EnslavedPeoples"]
+=======
 SECTIONS = ["Chronology", "Additional Information", "Enslaved Peoples"]
 SECTIONS_NOSPACE = ["Chronology", "AdditionalInformation", "EnslavedPeoples"]
 SUB_SECTIONS = ["Display Name", "Name of Parish", "Date of Establishment", "Longitude", "Latitude", "Extant or Ruin"]
 SUB_SECTIONS_NOSPACE = ["DisplayName", "NameOfParish", "DateOfEstablishment", "Longitude", "Latitude", "ExtantOrRuin"]
 
+>>>>>>> fadfc41bd9c32687bb5e0e87c540eb3dc35394c8
 MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisles', 'Date Hill', \
 "Donovan's (Vaughans)", 'Fitches Creek', 'Giles Blizzard', "Gravenor's", 'Gunthorpes (ASF)', 'Hight Point', \
 "Judge Blizzard's", "Lightfoot's/The Grove", 'Long Island', 'Millars', "Nibb's", \
@@ -111,9 +116,7 @@ class ResearcherGUI(tk.Tk):
 
 	def __init__(self, *args, **kwargs):
 		tk.Tk.__init__(self, *args, **kwargs)
-
 		call(["git", "pull"])
-
 		# Set relevant styling
 		self.title_font = tkfont.Font(family='Helvetica', size=30, weight="bold", slant="italic")
 
@@ -188,7 +191,6 @@ class StartPage(tk.Frame):
 		button1 = ttk.Button(self.button_frame, text="Go to Mill's Page", style='green/black.TButton',
 							command=lambda: self.swap_and_forget("PageOne", self.listbox.curselection()))
 		button1.pack()
-
 		button2 = ttk.Button(self.bottom_button_frame, text="Update the Map!", style='green/black.TButton',
 							command=lambda: self.push_changes())
 		button2.pack()
@@ -204,7 +206,7 @@ class StartPage(tk.Frame):
 		self.controller.geometry("537x280")
 
 	def swap_and_forget(self, page_info, box_input):
-		"""
+		""" 
 			Change to a specific mill's page.  Remove all information for the start page and tell
 			Root to swap pages.
 		"""
@@ -257,7 +259,6 @@ class PageOne(tk.Frame):
 		self.sub_label_list = []
 		self.entry_list = []
 		self.frame_list = []
-
 
 	def add_mill_specific(self, mill_name):
 		"""
@@ -444,7 +445,8 @@ class PageOne(tk.Frame):
 			with open(filename, 'w') as text_file:
 				text_file.write(my_input_list[index])
 
-		import Mill_Files.txt_to_json
+		To_Json = txt_to_json()
+		# import txt_to_json
 
 		popupBonus("GriotTreeData.jpeg")
 
