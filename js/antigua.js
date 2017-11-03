@@ -2,7 +2,6 @@ $(document).ready(function () {
     // the list of all mills in the side panel
     var $mill_list = $('#mill_list');
     // hidden variable all_mists: a json type variable contaning information of all mills
-
     // add all mills to the list of mills on the side panel
     for (i in all_mills) {
         jQuery('<div/>', {
@@ -11,6 +10,32 @@ $(document).ready(function () {
             text: all_mills[i].name,
         }).appendTo($mill_list);
     }
+
+    $(".menu_button").on('mouseover', function () {
+        $(this).css("border", " 1px ridge rgba(242, 207, 141, 1)")
+    });
+
+    // menu item focus
+    $(".menu_button").on('click', function () {
+        $('.expandable_list', this).css({
+            "height": "30vh",
+            "margin-top": "2em"
+        });
+        $('.menu_title', this).css({
+            "border-bottom": "1px ridge rgba(242, 207, 141, 1)"
+        });
+    });
+
+    $(".menu_button").on('mouseleave', function () {
+        $(this).css("border", " 1px ridge transparent");
+        $('.expandable_list', this).css({
+            "height": "0vh",
+            "margin-top": "0"
+        });
+        $('.menu_title', this).css({
+            "border-bottom": "none"
+        });
+    });
     // switch to st.john on click
     $("#stjohn-path").on('click', function () {
         window.location.href = "stjohn.html"
@@ -19,11 +44,11 @@ $(document).ready(function () {
         $('.card').addClass('active');
         $('.marker').addClass('inactive');
     });
-    
-$('.card').bind('click', function() {
-    $('.card').removeClass('active');
-    $('.marker').removeClass('inactive');
-});
+
+    $('.card').bind('click', function () {
+        $('.card').removeClass('active');
+        $('.marker').removeClass('inactive');
+    });
 
 });
 
