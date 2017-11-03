@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>St. John's Parish</title>
-    <link href="css/khoi_s.css" rel="stylesheet" type="text/css" />
+    <title>Antigua Map</title>
+    <link href="css/antigua.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <script src="js/antigua.js"></script>    
 </head>
 
+
 <body style="margin: 0; padding: 0">
-    <div id="sidepanel">
-        <div id="description">
-            <p style="font-family: 'Oswald', sans-serif; font-style: normal; font-size: 34px;"> Antigua Map </p>
-            <p> Blah blah blah</p>
+    <div class="sidepanel">
+        <div class="description">
+            <p class="sidepanel-title"> Antigua </p>
+            <hr>
         </div>
-        <div id="panel">
-            <div id="search">
-                <a onclick="search()" id="searchIcon">
-                    <i class="material-icons"> search </i>
-                </a>
-                <label>
-                    <input id="aSearch" type="search" onkeypress="handle(event)" placeholder="Search for titles, researchers, or tags..." required>
-                </label>
+        <div class="sidepanel-content">
+            <div>
+                <div class="menu_title"> MILLS
+                </div>
+                <div id="mill_list" class="expandable_list">
+                </div>
             </div>
-
-            <div id="mills" class="expandable_list"> Mills
-            </div>
-
-            <div id="parishes" class="expandable_list"> Parishes
-            </div>
-
         </div>
-        <a href="http://goo.gl/forms/172JYJC1KJLtQzr13" id="feedback" target="_blank">
-            <i class="material-icons"> announcement </i>
-        </a>
     </div>
+
     <div id="map">
         <div class="marker">
             <svg width="24px" height="36px" viewBox="0 0 48 72">
@@ -44,13 +40,17 @@
         </div>
 
         <div class="card">
-            <div class="image"><img style="max-width: 100%; max-height: 100%;" src="res/Placeholder.jpg"></div>
+            <div class="image">
+                <img style="max-width: 100%; max-height: 100%;" src="res/Placeholder.jpg">
+            </div>
             <div class="content">
                 <div class="title"> Some Mill </div>
                 <div class="subtitle"> Extant </div>
                 <div class="content-text">
-                    <b>Parish:</b> St. Something <br>
-                    <b>Founding date:</b> 1777 <br>
+                    <b>Parish:</b> St. Something
+                    <br>
+                    <b>Founding date:</b> 1777
+                    <br>
                     <b>Long, lat:</b> 123, 456
                 </div>
                 <div class="button" onclick="show_full_info()">Learn More</div>
@@ -74,7 +74,48 @@
             <div class="modal-body">
 
                 <div id="Description" class="tabcontent">
-                    <p>The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas. The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas. The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas. The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.  The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.  A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.</p>
+                    <p>The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua, where
+                        the Caribbean and the Atlantic shake hands. A rock formation known as \"Boone's Chair\" had been
+                        carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the intersection
+                        of the two seas. The magnificent sugar mill on this plantation stood water-side on the northwestern
+                        tip of Antigua, where the Caribbean and the Atlantic shake hands. A rock formation known as \"Boone's
+                        Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians to sit and
+                        look at the intersection of the two seas. The magnificent sugar mill on this plantation stood water-side
+                        on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands. A rock formation
+                        known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib
+                        Indians to sit and look at the intersection of the two seas. The magnificent sugar mill on this plantation
+                        stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.
+                        A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling
+                        local Carib Indians to sit and look at the intersection of the two seas. The magnificent sugar mill
+                        on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the
+                        Atlantic shake hands. A rock formation known as \"Boone's Chair\" had been carved out of the rock
+                        by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.
+                        The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua,
+                        where the Caribbean and the Atlantic shake hands. A rock formation known as \"Boone's Chair\" had
+                        been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the
+                        intersection of the two seas. The magnificent sugar mill on this plantation stood water-side on the
+                        northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands. A rock formation known
+                        as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians
+                        to sit and look at the intersection of the two seas. The magnificent sugar mill on this plantation
+                        stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.
+                        A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling
+                        local Carib Indians to sit and look at the intersection of the two seas. The magnificent sugar mill
+                        on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the
+                        Atlantic shake hands. A rock formation known as \"Boone's Chair\" had been carved out of the rock
+                        by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.
+                        The magnificent sugar mill on this plantation stood water-side on the northwestern tip of Antigua,
+                        where the Caribbean and the Atlantic shake hands. A rock formation known as \"Boone's Chair\" had
+                        been carved out of the rock by early settlers, enabling local Carib Indians to sit and look at the
+                        intersection of the two seas. The magnificent sugar mill on this plantation stood water-side on the
+                        northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands. A rock formation known
+                        as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling local Carib Indians
+                        to sit and look at the intersection of the two seas. The magnificent sugar mill on this plantation
+                        stood water-side on the northwestern tip of Antigua, where the Caribbean and the Atlantic shake hands.
+                        A rock formation known as \"Boone's Chair\" had been carved out of the rock by early settlers, enabling
+                        local Carib Indians to sit and look at the intersection of the two seas. The magnificent sugar mill
+                        on this plantation stood water-side on the northwestern tip of Antigua, where the Caribbean and the
+                        Atlantic shake hands. A rock formation known as \"Boone's Chair\" had been carved out of the rock
+                        by early settlers, enabling local Carib Indians to sit and look at the intersection of the two seas.</p>
                 </div>
 
                 <div id="Chronology" class="tabcontent">
@@ -82,7 +123,7 @@
                         <li>
                             <p class="timeline-date">1670</p>
                             <div class="timeline-content">
-                                <p>William Boone, planter.  On Antigua 1665, still living in 1710.</p>
+                                <p>William Boone, planter. On Antigua 1665, still living in 1710.</p>
                             </div>
                         </li>
                         <li>
@@ -112,74 +153,76 @@
                         <li>
                             <p class="timeline-date">1715</p>
                             <div class="timeline-content">
-                                <p>Samuel Boone.  Will dated 1716.</p>
+                                <p>Samuel Boone. Will dated 1716.</p>
                             </div>
                         </li>
                         <li>
                             <p class="timeline-date">1715</p>
                             <div class="timeline-content">
-                                <p>Samuel Boone.  Will dated 1716.</p>
+                                <p>Samuel Boone. Will dated 1716.</p>
                             </div>
                         </li>
                         <li>
                             <p class="timeline-date">1715</p>
                             <div class="timeline-content">
-                                <p>Samuel Boone.  Will dated 1716.</p>
+                                <p>Samuel Boone. Will dated 1716.</p>
                             </div>
                         </li>
                         <li>
                             <p class="timeline-date">1715</p>
                             <div class="timeline-content">
-                                <p>Samuel Boone.  Will dated 1716.</p>
+                                <p>Samuel Boone. Will dated 1716.</p>
                             </div>
                         </li>
                         <li>
                             <p class="timeline-date">1715</p>
                             <div class="timeline-content">
-                                <p>Samuel Boone.  Will dated 1716.</p>
+                                <p>Samuel Boone. Will dated 1716.</p>
                             </div>
                         </li>
                         <li>
                             <p class="timeline-date">1715</p>
                             <div class="timeline-content">
-                                <p>Samuel Boone.  Will dated 1716.</p>
+                                <p>Samuel Boone. Will dated 1716.</p>
                             </div>
                         </li>
                         <li>
                             <p class="timeline-date">1715</p>
                             <div class="timeline-content">
-                                <p>Samuel Boone.  Will dated 1716.</p>
+                                <p>Samuel Boone. Will dated 1716.</p>
                             </div>
                         </li>
                         <li>
                             <p class="timeline-date">1715</p>
                             <div class="timeline-content">
-                                <p>Samuel Boone.  Will dated 1716.</p>
+                                <p>Samuel Boone. Will dated 1716.</p>
                             </div>
                         </li>
                         <li>
                             <p class="timeline-date">1715</p>
                             <div class="timeline-content">
-                                <p>Samuel Boone.  Will dated 1716.</p>
+                                <p>Samuel Boone. Will dated 1716.</p>
                             </div>
                         </li>
                         <li>
                             <p class="timeline-date">1715</p>
                             <div class="timeline-content">
-                                <p>Samuel Boone.  Will dated 1716.</p>
+                                <p>Samuel Boone. Will dated 1716.</p>
                             </div>
                         </li>
                         <li>
                             <p class="timeline-date">1715</p>
                             <div class="timeline-content">
-                                <p>Samuel Boone.  Will dated 1716.</p>
+                                <p>Samuel Boone. Will dated 1716.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div id="General Info" class="tabcontent">
-                    <b>Parish:</b> St. Something <br>
-                    <b>Founding date:</b> 1777 <br>
+                    <b>Parish:</b> St. Something
+                    <br>
+                    <b>Founding date:</b> 1777
+                    <br>
                     <b>Long, lat:</b> 123, 456
                 </div>
             </div>
@@ -191,11 +234,4 @@
     </div>
 
 </body>
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
-<script src="js/script.js "></script>
-
 </html>
