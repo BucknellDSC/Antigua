@@ -1,24 +1,22 @@
 
-
 $(document).ready(function () {
-    $("#searchIcon").on('click', function () {
-        search();
-    });
-    $("#sidepanel-toggle").on('click', function () {
-        toggleSidePanel();
-    });
+    // the list of all mills in the side panel
+    var $mill_list = $('#mill_list');
+    // hidden variable all_mists: a json type variable contaning information of all mills
+    
+    // add all mills to the list of mills on the side panel
+    for (i in all_mills) {
+        jQuery('<div/>', {
+            id: all_mills[i].name,
+            class: "menu_item",
+            text: all_mills[i].name,
+        }).appendTo($mill_list);
+    }
+    // switch to st.john on click
     $("#stjohn-path").on('click', function() {
         window.location.href = "stjohn.html"
     });
 });
-
-function toggleSidePanel () {
-    if($("#sidepanel").hasClass('active')) {
-        $("#sidepanel").removeClass('active');
-    } else {
-        $("#sidepanel").addClass('active');
-    }
-}
 
 $('.marker').bind('click', function() {
     $('.card').addClass('active');
@@ -31,9 +29,7 @@ $('.card').bind('click', function() {
 });
 
 function show_full_info() {
-    console.log("eyyy");
     var modal = document.getElementsByClassName("modal")[0];
-
 
 // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -60,6 +56,3 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 }
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();

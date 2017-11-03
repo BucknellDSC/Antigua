@@ -1,44 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Antigua Map</title>
-    <link href="css/khoi_s.css" rel="stylesheet" type="text/css" />
+    <link href="css/antigua.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <script src="js/antigua.js"></script>
 </head>
 
 <body style="margin: 0; padding: 0">
-    <div id="sidepanel">
-        <script type="text/javascript" src="data.json"></script>
-        <script src="sidepanel.js"></script>
-        <div id="description">
-            <p class="sidepanel-title"> Antigua Map </p>
-            <p> Blah blah blah</p>
+    <div class="sidepanel">
+        <div class="description">
+            <p class="sidepanel-title"> Antigua </p>
         </div>
-        <div id="panel">
-            <div id="search">
-                <a onclick="search()" id="searchIcon">
-                    <i class="material-icons"> search </i>
-                </a>
-                <label>
-                    <input id="aSearch" type="search" onkeypress="handle(event)" placeholder="Search for titles, researchers, or tags..." required>
-                </label>
-            </div>
-
+        <div class="sidepanel-content">
             <div>
-                <div class="menu_title" onmouseover="add_mills()"> Mills
+                <div class="menu_title"> MILLS
                 </div>
                 <div id="mill_list" class="expandable_list">
                 </div>
             </div>
-
-
         </div>
-        <a href="http://goo.gl/forms/172JYJC1KJLtQzr13" id="feedback" target="_blank">
-            <i class="material-icons"> announcement </i>
-        </a>
     </div>
 
     <svg id="big_map" xmlns="http://www.w3.org/2000/svg" width="1800" height="1942" viewBox="0 0 1800 1942">
@@ -73,7 +57,5 @@
 
     </svg>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/script.js"></script>
 
 </html>
