@@ -442,7 +442,7 @@ class PageOne(tk.Frame):
 			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 			print(filename)
 			with open(filename, 'w') as text_file:
-				text_file.write(my_input_list[index])
+				text_file.write(my_input_list[index+6])
 
 		To_Json = txt_to_json()
 		To_Json.convert_to_json()
