@@ -1,15 +1,17 @@
 [
     {
-        "additional_info": "test\n\n\n\n\n",
-        "chronology": {},
-        "date_of_establishment": "test\n\n\n\n\n",
-        "display_name": "test\n\n\n\n\n",
-        "enslaved_peoples": "test\n\n\n\n\n",
-        "extant_or_ruin": "test\n\n\n\n\n",
-        "lat": "test\n\n\n\n\n",
-        "long": "test\n\n\n\n\n",
+        "additional_info": "test\n\n\n\n\n\n\n\n\n",
+        "chronology": {
+            "1996": "Patrick Was here"
+        },
+        "date_of_establishment": "1996\n",
+        "display_name": "Barnacle Point\n\n\n\n\n\n\n\n\n",
+        "enslaved_peoples": "1996\n",
+        "extant_or_ruin": "Extant\n\n\n",
+        "lat": "test\n\n\n\n\n\n\n\n\n",
+        "long": "lalala\n\n\n\n",
         "name": "Barnacle Point",
-        "parish": "test\n\n\n\n\n"
+        "parish": "test\n\n\n\n\n\n\n\n\n"
     },
     {
         "additional_info": "",
@@ -26,14 +28,14 @@
     {
         "additional_info": "\n",
         "chronology": {},
-        "date_of_establishment": "",
-        "display_name": "",
+        "date_of_establishment": "\n",
+        "display_name": "\n",
         "enslaved_peoples": "\n",
-        "extant_or_ruin": "",
-        "lat": "",
-        "long": "",
+        "extant_or_ruin": "\n",
+        "lat": "356.68\n",
+        "long": "\n",
         "name": "BlackmansMount Lucie",
-        "parish": ""
+        "parish": "\n"
     },
     {
         "additional_info": "",

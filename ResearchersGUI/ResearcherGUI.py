@@ -9,7 +9,7 @@ from tkinter import ttk
 from tkinter import filedialog
 from tkinter import *
 from subprocess import call
-from txt_to_json.py import txt_to_json
+from txt_to_json import txt_to_json
 from PIL import Image, ImageTk
 
 #changes
@@ -18,16 +18,15 @@ from PIL import Image, ImageTk
 # SECTIONS is editable based on what data sections are wanted, but Fix_Names must then also be edited and run befor
 # GUI will work.
 # MILL_DATA is assumed to remain constant.
-<<<<<<< HEAD
 SECTIONS = ["Extant or Ruin", "Founding Date", "Chronology", "Additional Information", "Enslaved Peoples"]
 SECTIONS_NOSPACE = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInformation", "EnslavedPeoples"]
-=======
+
 SECTIONS = ["Chronology", "Additional Information", "Enslaved Peoples"]
 SECTIONS_NOSPACE = ["Chronology", "AdditionalInformation", "EnslavedPeoples"]
 SUB_SECTIONS = ["Display Name", "Name of Parish", "Date of Establishment", "Longitude", "Latitude", "Extant or Ruin"]
 SUB_SECTIONS_NOSPACE = ["DisplayName", "NameOfParish", "DateOfEstablishment", "Longitude", "Latitude", "ExtantOrRuin"]
 
->>>>>>> fadfc41bd9c32687bb5e0e87c540eb3dc35394c8
+
 MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisles', 'Date Hill', \
 "Donovan's (Vaughans)", 'Fitches Creek', 'Giles Blizzard', "Gravenor's", 'Gunthorpes (ASF)', 'Hight Point', \
 "Judge Blizzard's", "Lightfoot's/The Grove", 'Long Island', 'Millars', "Nibb's", \
@@ -206,7 +205,7 @@ class StartPage(tk.Frame):
 		self.controller.geometry("537x280")
 
 	def swap_and_forget(self, page_info, box_input):
-		""" 
+		"""
 			Change to a specific mill's page.  Remove all information for the start page and tell
 			Root to swap pages.
 		"""
@@ -294,7 +293,7 @@ class PageOne(tk.Frame):
 		orig_filename = mill_name
 
 		new_frame = tk.Frame(self.controller, bg = 'steelblue')
-		
+
 
 		for index in range(3):
 			filename = edit_file_name(mill_name)
@@ -313,7 +312,7 @@ class PageOne(tk.Frame):
 			# Place the text box and label into a frame, then place that frame in the next available location.
 			self.sub_label_list += [temp_label]
 			self.entry_list += [temp_box]
-			
+
 		new_frame.grid(row = 2)
 		new_frame.grid_rowconfigure(2, weight=1)
 		self.frame_list += [new_frame]
@@ -337,7 +336,7 @@ class PageOne(tk.Frame):
 			# Place the text box and label into a frame, then place that frame in the next available location.
 			self.sub_label_list += [temp_label]
 			self.entry_list += [temp_box]
-			
+
 		new_frame.grid(row = 3)
 		new_frame.grid_rowconfigure(3, weight=1)
 		self.frame_list += [new_frame]
@@ -393,7 +392,7 @@ class PageOne(tk.Frame):
 			We want our chronology to be special.  So here we are.
 		"""
 		temp_label_1 = tk.Label(new_frame, text=SECTIONS[index], font=12, bg = 'dark turquoise')
-		temp_label_2 = tk.Label(new_frame, text="Please Input using Format =>\n[YEAR]:[INFORMATION ABOUT YEAR]\nexample -> 1994:Murph was born", 
+		temp_label_2 = tk.Label(new_frame, text="Please Input using Format =>\n[YEAR]:[INFORMATION ABOUT YEAR]\nexample -> 1994:Murph was born",
 			font=12, bg = 'dark turquoise')
 		temp_label_1.grid(row=0)
 		temp_label_2.grid(row=1)
@@ -446,6 +445,7 @@ class PageOne(tk.Frame):
 				text_file.write(my_input_list[index])
 
 		To_Json = txt_to_json()
+		To_Json.convert_to_json()
 		# import txt_to_json
 
 		popupBonus("GriotTreeData.jpeg")

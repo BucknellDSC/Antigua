@@ -96,7 +96,6 @@ class txt_to_json:
             to_unicode = str
         data = []
 
-
         for name in MILL_DATA:
 
             mill_name = name[:-4]
@@ -164,3 +163,6 @@ class txt_to_json:
                             indent=4, sort_keys=True,
                             separators=(',', ': '), ensure_ascii=False)
             outfile.write(to_unicode(str_))
+
+Instance = txt_to_json()
+Instance.convert_to_json()
