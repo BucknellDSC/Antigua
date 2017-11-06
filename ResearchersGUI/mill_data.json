@@ -1,15 +1,18 @@
 [
     {
-        "additional_info": "test\n\n\n\n\n",
-        "chronology": {},
-        "date_of_establishment": "test\n\n\n\n\n",
-        "display_name": "test\n\n\n\n\n",
-        "enslaved_peoples": "test\n\n\n\n\n",
-        "extant_or_ruin": "test\n\n\n\n\n",
-        "lat": "test\n\n\n\n\n",
-        "long": "test\n\n\n\n\n",
+        "additional_info": "test",
+        "chronology": {
+            "1994": "Murph was born",
+            "1996": "Patrick was born."
+        },
+        "date_of_establishment": "1996",
+        "display_name": "Barnacle Point",
+        "enslaved_peoples": "1996",
+        "extant_or_ruin": "Extant",
+        "lat": "test",
+        "long": "lalala",
         "name": "Barnacle Point",
-        "parish": "test\n\n\n\n\n"
+        "parish": "test"
     },
     {
         "additional_info": "",
@@ -24,13 +27,13 @@
         "parish": ""
     },
     {
-        "additional_info": "\n",
+        "additional_info": "",
         "chronology": {},
         "date_of_establishment": "",
         "display_name": "",
-        "enslaved_peoples": "\n",
+        "enslaved_peoples": "",
         "extant_or_ruin": "",
-        "lat": "",
+        "lat": "356.68",
         "long": "",
         "name": "BlackmansMount Lucie",
         "parish": ""
@@ -84,11 +87,11 @@
         "parish": ""
     },
     {
-        "additional_info": "\n",
+        "additional_info": "",
         "chronology": {},
         "date_of_establishment": "",
         "display_name": "",
-        "enslaved_peoples": "\n",
+        "enslaved_peoples": "",
         "extant_or_ruin": "",
         "lat": "",
         "long": "",

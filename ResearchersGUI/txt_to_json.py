@@ -87,7 +87,7 @@ import io
 
 class txt_to_json:
     def __init__(self):
-        print("Made things work")
+        print()
     # Make it work for Python 2+3 and with Unicode
     def convert_to_json(self):
         try:
@@ -96,7 +96,6 @@ class txt_to_json:
             to_unicode = str
         data = []
 
-
         for name in MILL_DATA:
 
             mill_name = name[:-4]
@@ -104,30 +103,38 @@ class txt_to_json:
             #Read each specific file
             date_of_establishment_file = open('Mill_Files/DateOfEstablishment/' + mill_name + '.txt','r')
             date_of_establishment = date_of_establishment_file.read()
+            date_of_establishment = date_of_establishment.rstrip("\r\n")
 
             additional_info_file = open('Mill_Files/AdditionalInformation/' + mill_name + '.txt','r')
             additional_info = additional_info_file.read()
+            additional_info = additional_info.rstrip("\r\n")
 
             extant_or_ruin_file = open('Mill_Files/ExtantOrRuin/' + mill_name + '.txt','r')
             extant_or_ruin = extant_or_ruin_file.read()
+            extant_or_ruin = extant_or_ruin.rstrip("\r\n")
 
             enslaved_peoples_file = open('Mill_Files/EnslavedPeoples/' + mill_name + '.txt','r')
             enslaved_peoples = enslaved_peoples_file.read()
+            enslaved_peoples = enslaved_peoples.rstrip("\r\n")
 
             chronology_file = open('Mill_Files/Chronology/' + mill_name + '.txt','r')
             chronology = chronology_file.read()
 
             name_of_parish_file = open('Mill_Files/NameOfParish/' + mill_name + '.txt','r')
             name_of_parish = name_of_parish_file.read()
+            name_of_parish = name_of_parish.rstrip("\r\n")
 
             long_file = open('Mill_Files/Longitude/' + mill_name + '.txt','r')
             longitude = long_file.read()
+            longitude = longitude.rstrip("\r\n")
 
             lat_file = open('Mill_Files/Latitude/' + mill_name + '.txt','r')
             latitude = lat_file.read()
+            latitude = latitude.rstrip("\r\n")
 
             display_name_file = open('Mill_Files/DisplayName/' + mill_name + '.txt','r')
             display_name = display_name_file.read()
+            display_name = display_name.rstrip("\r\n")
 
             split_chronology = chronology.split("\n")
             double_split_chronology = [i.split(":") for i in split_chronology]
@@ -156,11 +163,12 @@ class txt_to_json:
             data.append(a_data)
 
 
-
-
         # Write JSON file
         with io.open('mill_data.json', 'w', encoding='utf8') as outfile:
             str_ = json.dumps(data,
                             indent=4, sort_keys=True,
                             separators=(',', ': '), ensure_ascii=False)
             outfile.write(to_unicode(str_))
+
+Instance = txt_to_json()
+Instance.convert_to_json()

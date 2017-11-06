@@ -14,21 +14,24 @@
 
 body,
 html {
-    width:100vw;
-    height:100vh;    
+    width: 100vw;
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-image: url("../res/background.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
 }
 
 .parish-map {
     display: block;
     margin: auto;
 }
+
+
+/* 
 #stjohn-path{
     fill: rgba(29,32,38,0.5);    
 }
@@ -48,19 +51,20 @@ html {
 }
 #stpeter-path{
     fill: rgba(88,115,90,0.5);                
-}
+} */
+
 .parish-path {
     cursor: pointer;
     fill: transparent;
-    stroke: rgba(34,57,58,1);
-    stroke-width: 5px;
+    stroke: rgba(34, 57, 58, 1);
+    stroke-width: 10px;
     fill-rule: evenodd;
     transition: all ease 0.5s;
 }
 
 .parish-path:hover {
-    fill: rgba(164, 166,124, 0.75);
-    stroke: transparent;
+    fill: rgba(0, 0, 0, 0.5);
+    /* stroke: transparent; */
 }
 
 .sidepanel {
@@ -70,7 +74,7 @@ html {
     padding: 2em;
     background-color: var(--bg-color);
     height: calc(100vh - 4em);
-    width: calc(25vw - 4em);
+    width: calc(23vw - 4em);
     min-height: 60vh;
     vertical-align: middle;
     text-align: left;
@@ -94,27 +98,53 @@ html {
 }
 
 .sidepanel-content {
-    margin: 0;
     padding: 0;
+    width: 90%;
+    margin: auto;
     margin-top: 2em;
     text-align: center;
     font-family: var(--title-font);
     font-size: 1em;
+    display: block;
+    justify-content: center;
+    justify-items: center;
+}
+
+.menu_button {
+    margin: auto;
+    font-family: var(--text-font);
+    cursor: pointer;
+    display: block;
+    justify-content: center;
+    justify-items: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    /* -webkit-transition: all .1s ease .1s; */
+    /* transition: all .1s ease .1s ; */
+    /* border-bottom: 1px solid rgba(242, 207, 141, 1); */
 }
 
 .menu_title {
-    padding: 0;
-    margin: 0;
+    margin: auto;
+    padding: 0.7em;
     font-family: var(--text-font);
-    font-size: 1.5em;
+    font-size: 1.3em;
+    cursor: pointer;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    justify-items: center;
+    background-color: transparent;
+    /* -webkit-transition: all .1s ease .1s; */
+    /* transition: all .1s ease .1s ; */
 }
+
 
 hr {
     padding: 0;
     margin: auto;
     margin-bottom: 4em;
     width: 75%;
-    
 }
 
 .menu_item {
@@ -122,13 +152,12 @@ hr {
     width: 100%;
     font-size: 1.1em;
     display: flex;
-    margin:0;
+    margin: 1px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     justify-content: center;
-    align-items: center;       
+    align-items: center;
 }
-
 
 .menu_item:hover {
     background-color: rgba(34, 57, 58, 1);
@@ -149,31 +178,28 @@ hr {
 }
 
 .expandable_list {
-    margin-left: 0.75em;
-    margin-top: 2em;
-    height: 58vh;
-    text-align: center;
+    margin: 0;
+    height: 0vh;
     font-family: var(--text-font);
     font-size: 1em;
+    overflow-x: hidden;
     overflow-y: auto;
-    transition: all 0.5s ease-out 0.15s;
-    
+    margin-bottom: 0;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    /* background-color: rgba(34, 57, 58, 0.25); */
+    /* border: 1px ridge #F2CF8D; */
 }
 
-
-#big_map {
+#big_map,
+map {
     margin: auto;
     height: 95%;
-    width: 75vw;
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;       
-    
-}
-
-#map {
-    overflow: hidden;
+    align-items: center;
+    width: 75vw;
 }
 
 .material-icons {
@@ -240,7 +266,7 @@ footer {
 }
 
 .marker svg {
-    fill: red;
+    fill: rgba(88, 115, 90, 1);
     -webkit-animation: hovering 1s ease-in-out infinite alternate;
     animation: hovering 1s ease-in-out infinite alternate;
 }
@@ -258,9 +284,9 @@ footer {
 .card {
     position: absolute;
     z-index: 10;
-    width: 320px;
+    width: 18em;
     top: calc(50% - 120px);
-    left: calc(50% - 160px);
+    left: calc(50% - 8em);
     border-radius: 3px;
     overflow: hidden;
     background: #fff;
@@ -290,7 +316,9 @@ footer {
 }
 
 .card .image {
-    width: 100%;
+    width: 95%;
+    margin: auto;
+    margin-top: 0.5em;
 }
 
 .card .title {
