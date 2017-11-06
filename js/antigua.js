@@ -36,6 +36,7 @@ $(document).ready(function () {
             "border-bottom": "none"
         });
     });
+
     // switch to st.john on click
     $("#stjohn-path").on('click', function () {
         window.location.href = "stjohn.html"

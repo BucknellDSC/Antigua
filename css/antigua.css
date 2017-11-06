@@ -139,7 +139,6 @@ html {
     /* transition: all .1s ease .1s ; */
 }
 
-
 hr {
     padding: 0;
     margin: auto;
@@ -178,13 +177,14 @@ hr {
 }
 
 .expandable_list {
+    padding:0;
     margin: 0;
-    height: 0vh;
+    height: 0;
+    max-height: 40vh;
     font-family: var(--text-font);
     font-size: 1em;
     overflow-x: hidden;
     overflow-y: auto;
-    margin-bottom: 0;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
     /* background-color: rgba(34, 57, 58, 0.25); */
