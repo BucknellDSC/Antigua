@@ -136,12 +136,12 @@ hr {
 
 .expandable_list::-webkit-scrollbar-track {
     border: 1px solid var(--text-color);
-    background-color: none;
+    background-color: transparent;
 }
 
 .expandable_list::-webkit-scrollbar {
     width: 0.5em;
-    background-color: none;
+    background-color: transparent;
 }
 
 .expandable_list::-webkit-scrollbar-thumb {
