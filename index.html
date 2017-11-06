@@ -12,14 +12,33 @@
 </head>
 
 <body style="margin: 0; padding: 0">
-    <div class="sidepanel">
+    <div id="middle-slide" class="active">
+        <div id="middle-slide-header">
+            <p id="middle-slide-title"> Sugar Mill Project</p>
+            <!--<hr style="visibility: hidden">-->
+            <hr align="left">
+        </div>
+        <div id="middle-slide-content" class="active">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi enim nunc faucibus a pellentesque sit amet porttitor eget. Enim nunc faucibus a pellentesque sit amet. Mattis nunc sed blandit libero. Vitae tortor condimentum lacinia quis vel eros donec ac. Cursus in hac habitasse platea dictumst. Scelerisque purus semper eget duis at tellus. Quam lacus suspendisse faucibus interdum posuere lorem ipsum. Eget arcu dictum varius duis at consectetur lorem donec. Leo urna molestie at elementum eu facilisis sed odio. Sit amet consectetur adipiscing elit. Mi proin sed libero enim sed faucibus turpis in eu. Ac odio tempor orci dapibus ultrices in. Morbi tristique senectus et netus et malesuada fames ac. Mi tempus imperdiet nulla malesuada. Suscipit adipiscing bibendum est ultricies integer. Cursus eget nunc scelerisque viverra.</p>
+
+            <p>Sed odio morbi quis commodo odio aenean sed. Arcu vitae elementum curabitur vitae nunc sed. At tellus at urna condimentum. Maecenas pharetra convallis posuere morbi leo urna. Augue mauris augue neque gravida in fermentum et. Tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum. Erat velit scelerisque in dictum non consectetur. Mauris in aliquam sem fringilla ut. Tortor at auctor urna nunc id cursus. Enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Dolor sit amet consectetur adipiscing elit ut aliquam.</p>
+
+            <p>A diam sollicitudin tempor id. Cras tincidunt lobortis feugiat vivamus at. Aliquet eget sit amet tellus cras. Risus pretium quam vulputate dignissim suspendisse in. Turpis in eu mi bibendum neque. Amet dictum sit amet justo donec enim diam vulputate. Nunc consequat interdum varius sit amet. Euismod elementum nisi quis eleifend quam adipiscing vitae. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Lectus vestibulum mattis ullamcorper velit sed. Ultricies mi eget mauris pharetra et ultrices neque. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget. Vulputate enim nulla aliquet porttitor lacus luctus. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Sem integer vitae justo eget magna fermentum iaculis. Enim neque volutpat ac tincidunt vitae semper. Nibh ipsum consequat nisl vel pretium lectus quam. Sit amet mattis vulputate enim nulla aliquet porttitor. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Bibendum neque egestas congue quisque.</p>
+        </div>
+    </div>
+
+    <div class="sidepanel" id="main_panel">
         <div class="description">
             <p class="sidepanel-title"> Antigua </p>
             <hr>
         </div>
         <div class="sidepanel-content">
             <div class="menu_button">
-                <div class="menu_title"> HOME
+                <div class="menu_title" id="home_button"> HOME
+                </div>
+            </div>
+            <div class="menu_button">
+                <div class="menu_title"> MAP
                 </div>
             </div>
             <div class="menu_button">
@@ -39,6 +58,10 @@
                 <div class="menu_title"> MILLS +
                 </div>
                 <div id="mill_list" class="expandable_list">
+                </div>
+            </div>
+            <div class="menu_button">
+                <div class="menu_title"> CREDITS
                 </div>
             </div>
         </div>

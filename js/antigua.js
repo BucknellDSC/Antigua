@@ -1,15 +1,15 @@
 $(document).ready(function () {
     // the list of all mills in the side panel
-    var $mill_list = $('#mill_list');
-    // hidden variable all_mists: a json type variable contaning information of all mills
-    // add all mills to the list of mills on the side panel
-    for (i in all_mills) {
-        jQuery('<div/>', {
-            id: all_mills[i].name,
-            class: "menu_item",
-            text: all_mills[i].name,
-        }).appendTo($mill_list);
-    }
+    // var $mill_list = $('#mill_list');
+    // // hidden variable all_mists: a json type variable contaning information of all mills
+    // // add all mills to the list of mills on the side panel
+    // for (i in all_mills) {
+    //     jQuery('<div/>', {
+    //         id: all_mills[i].name,
+    //         class: "menu_item",
+    //         text: all_mills[i].name,
+    //     }).appendTo($mill_list);
+    // }
 
     $(".menu_button").on('mouseover', function () {
         $(this).css("border", " 1px ridge rgba(242, 207, 141, 1)")
@@ -50,6 +50,21 @@ $(document).ready(function () {
         $('.card').removeClass('active');
         $('.marker').removeClass('inactive');
     });
+
+    $('#home_button').on('click', function () {;
+        console.log($("#middle-slide").hasClass('active'));
+        if($("#middle-slide").hasClass('active')) {
+            $("#middle-slide").removeClass('active');
+        } else {
+            $("#middle-slide").addClass('active');
+        }
+        if($("#middle-slide-content").hasClass('active')) {
+            console.log("yayy");
+            $("#middle-slide-content").removeClass('active');
+        } else {
+            $("#middle-slide-content").addClass('active');
+        }
+    })
 
 });
 
