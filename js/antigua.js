@@ -41,6 +41,28 @@ $(document).ready(function () {
     $("#stjohn-path").on('click', function () {
         window.location.href = "stjohn.html"
     });
+
+    $("#stpaul-path").on('click', function () {
+        window.location.href = "stpaul.html"
+    });
+
+    $("#stpeter-path").on('click', function () {
+        window.location.href = "stpeter.html"
+    });
+
+    $("#stphilip-path").on('click', function () {
+        window.location.href = "stphilip.html"
+    });
+
+    $("#stmary-path").on('click', function () {
+        window.location.href = "stmary.html"
+    });
+
+    $("#stgeorge-path").on('click', function () {
+        window.location.href = "stgeorge.html"
+    });
+
+
     $('.marker').bind('click', function () {
         $('.card').addClass('active');
         $('.marker').addClass('inactive');
