@@ -33,26 +33,26 @@ html {
 }
 
 
-/* 
+/*
 #stjohn-path{
-    fill: rgba(29,32,38,0.5);    
+    fill: rgba(29,32,38,0.5);
 }
 
 #stphilip-path{
     fill: rgba(88,115,90,0.5);
 }
 #stpaul-path{
-    fill: rgba(164,166,124,0.5);    
+    fill: rgba(164,166,124,0.5);
 }
 #stgeorge-path{
-    fill: rgba(88,115,90,0.5);        
+    fill: rgba(88,115,90,0.5);
 }
 
 #stmary-path{
-    fill: rgba(88,115,90,0.5);            
+    fill: rgba(88,115,90,0.5);
 }
 #stpeter-path{
-    fill: rgba(88,115,90,0.5);                
+    fill: rgba(88,115,90,0.5);
 } */
 
 .parish-path {
@@ -293,7 +293,7 @@ footer {
 .marker {
     position: absolute;
     z-index: 5;
-    top: 50%;
+    top: 30%;
     left: 50%;
     font-size: 0;
     cursor: pointer;
