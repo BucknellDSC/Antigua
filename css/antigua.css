@@ -123,10 +123,23 @@ html {
 #middle-slide-content {
     line-height: 150%;
     font-size: 1.15em;
-
+    max-height: 55vh;
+    overflow: auto;
 }
 
+#middle-slide-content::-webkit-scrollbar-track {
+    border: 1px solid var(--text-color);
+    background-color: transparent;
+}
 
+#middle-slide-content::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: transparent;
+}
+
+#middle-slide-content::-webkit-scrollbar-thumb {
+    background-color: var(--text-color);
+}
 .sidepanel-title {
     height: 20vh;
     margin: auto;
