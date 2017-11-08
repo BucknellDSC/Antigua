@@ -293,8 +293,8 @@ footer {
 .marker {
     position: absolute;
     z-index: 5;
-    top: 5%;
-    left: 57%;
+    top: 55%;
+    left: 69%;
     font-size: 0;
     cursor: pointer;
     -webkit-transform: perspective(600px) rotateY(0deg);
