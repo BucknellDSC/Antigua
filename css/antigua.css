@@ -293,7 +293,7 @@ footer {
 .marker {
     position: absolute;
     z-index: 5;
-    top: 6%;
+    top: 5%;
     left: 57%;
     font-size: 0;
     cursor: pointer;
