@@ -91,7 +91,6 @@ $(document).ready(function () {
 });
 
 
-
 function show_full_info() {
     var modal = document.getElementsByClassName("modal")[0];
 
