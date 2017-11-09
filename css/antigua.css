@@ -250,8 +250,7 @@ hr {
     /* border: 1px ridge #F2CF8D; */
 }
 
-#big_map,
-#map {
+.maps {
     margin: auto;
     height: 95%;
     overflow: hidden;

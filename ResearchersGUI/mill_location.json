@@ -1,4 +1,4 @@
-[
+var mill_locations = [
     {
         "left": 0,
         "name": "Barnacle Point",
