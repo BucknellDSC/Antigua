@@ -12,25 +12,36 @@ $(document).ready(function() {
   //   }
 
   // hide the parishes map
-  $("#stjohn_map").hide();
+  // $("#stjohn_map").hide();
   $("#stgeorge_map").hide();
   $("#stmary_map").hide();
   $("#stpaul_map").hide();
   $("#stpeter_map").hide();
   $("#stphilip_map").hide();
-  var current_map = $("#antigua_map");
-    
-  console.log(mill_locations);  
-    
+  $("#antigua_map").hide();
+  var $current_map = $("#stjohn_map");
+
   //   hide the dummy elements of html file. They are used as blueprint
   $(".blueprint").hide();
+
+    //   var mill_locaitons which contains all location data of mill_locaitons. declared in mill_location.json file
 
   /**
    * Create mill markers on a parish from a location json file
    * @param {*} location_array: the json object holding the location data
    */
   function create_mill_marker(location_array) {
-    var $marker = $(".blueprint .marker");
+    var $marker = $(".marker.blueprint");
+    var new_marker;
+    for (i in location_array) {
+      new_marker = $marker.clone();
+      new_marker.removeClass("blueprint");
+      var left = location_array[i].left.toString()+"%";
+      var top = location_array[i].top.toString() + "%";
+      new_marker.css("left", left);
+      new_marker.css("top", top);
+      $current_map.append(new_marker);
+    }
   }
 
   var $card = $(".blueprint .card");
