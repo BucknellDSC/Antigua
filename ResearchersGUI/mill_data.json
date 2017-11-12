@@ -1,13 +1,10 @@
 [
     {
-        "additional_info": "test",
-        "chronology": {
-            "1994": "Murph was born",
-            "1996": "Patrick was born."
-        },
+        "additional_info": "1996",
+        "chronology": {},
         "date_of_establishment": "1996",
         "display_name": "Barnacle Point",
-        "enslaved_peoples": "1996",
+        "enslaved_peoples": "",
         "extant_or_ruin": "Extant",
         "lat": "test",
         "long": "lalala",
