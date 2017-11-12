@@ -24,7 +24,7 @@ SECTIONS_NOSPACE = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInf
 
 SECTIONS = ["Chronology", "Additional Information", "Enslaved Peoples"]
 SECTIONS_NOSPACE = ["Chronology", "AdditionalInformation", "EnslavedPeoples"]
-SUB_SECTIONS = ["Display Name", "Name of Parish", "Date of Establishment", "Longitude", "Latitude", "Extant or Ruin"]
+SUB_SECTIONS = ["Display Name", "Date of Establishment", "Longitude", "Latitude", "Extant or Ruin"]
 SUB_SECTIONS_NOSPACE = ["DisplayName", "NameOfParish", "DateOfEstablishment", "Longitude", "Latitude", "ExtantOrRuin"]
 
 
@@ -297,7 +297,7 @@ class PageOne(tk.Frame):
 		new_frame = tk.Frame(self.controller, bg = 'steelblue')
 
 
-		for index in range(3):
+		for index in range(2):
 			filename = edit_file_name(mill_name)
 			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
 			temp_box = tk.Text(new_frame, height=5, width=40, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
@@ -321,7 +321,7 @@ class PageOne(tk.Frame):
 
 		new_frame = tk.Frame(self.controller, bg = 'steelblue')
 
-		for index in range(3,6):
+		for index in range(2,5):
 			filename = edit_file_name(mill_name)
 			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
 			temp_box = tk.Text(new_frame, height=5, width=40, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
@@ -444,7 +444,7 @@ class PageOne(tk.Frame):
 			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 			print(filename)
 			with open(filename, 'w') as text_file:
-				text_file.write(my_input_list[index+6])
+				text_file.write(my_input_list[index+5])
 
 		To_Json = txt_to_json()
 		To_Json.convert_to_json()
