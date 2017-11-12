@@ -1,10 +1,12 @@
 [
     {
-        "additional_info": "1996",
-        "chronology": {},
-        "date_of_establishment": "1996",
+        "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
+        "chronology": {
+            "1994": "Murph was born"
+        },
+        "date_of_establishment": "1996.33",
         "display_name": "Barnacle Point",
-        "enslaved_peoples": "",
+        "enslaved_peoples": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
         "extant_or_ruin": "Extant",
         "lat": "test",
         "long": "lalala",
@@ -12,28 +14,32 @@
         "parish": "test"
     },
     {
-        "additional_info": "",
-        "chronology": {},
-        "date_of_establishment": "",
-        "display_name": "",
-        "enslaved_peoples": "",
+        "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
+        "chronology": {
+            "1994": "Murph was born"
+        },
+        "date_of_establishment": "1996.33",
+        "display_name": "Barnacle Point",
+        "enslaved_peoples": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
         "extant_or_ruin": "",
-        "lat": "",
-        "long": "",
+        "lat": "test",
+        "long": "lalala",
         "name": "Barnes Hill",
-        "parish": ""
+        "parish": "test"
     },
     {
-        "additional_info": "",
-        "chronology": {},
-        "date_of_establishment": "",
-        "display_name": "Blackman's",
-        "enslaved_peoples": "",
+        "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
+        "chronology": {
+            "1994": "Murph was born"
+        },
+        "date_of_establishment": "1996.33",
+        "display_name": "Barnacle Point",
+        "enslaved_peoples": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
         "extant_or_ruin": "",
-        "lat": "356.68",
-        "long": "",
+        "lat": "test",
+        "long": "lalala",
         "name": "BlackmansMount Lucie",
-        "parish": ""
+        "parish": "test"
     },
     {
         "additional_info": "",
