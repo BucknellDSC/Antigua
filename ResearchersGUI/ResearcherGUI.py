@@ -280,7 +280,7 @@ class PageOne(tk.Frame):
 		self.image_label = tk.Label(self.image_frame, text = "Mill's Image (JPEGs Only):", \
 			font=12, bg = 'dark turquoise')
 
-		updated_mill_name = "Mill_Files/Photos/" + mill_name.replace("/", "") + ".jpeg"
+		updated_mill_name = "Mill_Files/Photos/" + edit_file_name(mill_name)[:-4] + ".jpeg"
 		self.image_view = ttk.Button(self.image_frame, text="View Current Image", style='green/black.TButton',\
 			command=lambda: self.find_and_view_image(updated_mill_name))
 		self.image_upload = ttk.Button(self.image_frame, text="Upload New Image", style='green/black.TButton',\
