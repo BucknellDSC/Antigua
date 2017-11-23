@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <title>Antigua Map</title>
     <link href="css/antigua.css" rel="stylesheet" type="text/css" />
-    <script src="ResearchersGUI/mill_location.json"></script>
-    <script src="data.json"></script>
+    <script src="ResearchersGUI/stjohn_mill_location.js"></script>
+    <script src="data.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/antigua.js"></script>
 </head>
 
 <body style="margin: 0; padding: 0">
@@ -95,7 +94,8 @@
 
     <!-- stjohn map  -->
     <div class="maps" id="stjohn_map">
-        <img style="height: 100%; display:block; margin: auto" src="res/StJohn.jpg">
+        <img style="width: auto; height: 100%; display:block; margin: auto" src="res/StJohn.jpg">
+        <div id="stjohn-container" class="marker-container"></div>
     </div>
 
     <!-- stmary map -->
@@ -222,5 +222,5 @@
 
 
 </body>
-
+<script src="js/antigua.js"></script>
 </html>
