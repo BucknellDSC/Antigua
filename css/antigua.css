@@ -266,7 +266,6 @@ hr {
     height: 100%;
     position: relative;
     transform: translate(0%, -100%);
-    z-index: 4;
 }
 
 .material-icons {
