@@ -20,15 +20,15 @@ $(document).ready(function() {
   // -------------- INIT CALLS. RUN WHEN WEBSITE STARTS ---------------------
 
   // show main map and hide other maps. We have to do this because they live on the same page
-  $("#stjohn_map").show();
+  $("#stjohn_map").hide();
   $("#stgeorge_map").hide();
-  $("#stmary_map").hide();
+  $("#stmary_map").show();
   $("#stpaul_map").hide();
   $("#stpeter_map").hide();
   $("#stphilip_map").hide();
   $("#antigua_map").hide();
 
-  $current_map = $("#stjohn-container");
+  $current_map = $("#stmary-container");
 
   // Process mill data into different form.
   // Specifically, we need a list of mill names | a list of parishes name | a list of mill names based on parishes
@@ -89,7 +89,7 @@ $(document).ready(function() {
     }
   }
 
-  create_mill_marker(stjohn_mill_locations);
+  create_mill_marker(stmary_mill_locations);
 
   /**
    * Create mill markers on a parish from a location json file
