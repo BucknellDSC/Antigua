@@ -1,137 +1,137 @@
 var stmary_mill_locations = [
   {
-      "left": 0,
+      "left": 36.5,
       "name": "Seaforths",
-      "top": 0
+      "top": 4
   },
   {
-      "left": 0,
+      "left": 44,
       "name": "Smith (Darby)",
-      "top": 0
+      "top": 7
   },
   {
-      "left": 0,
+      "left": 48,
       "name": "Rigby (Perrys)",
-      "top": 0
+      "top": 8
   },
   {
-      "left": 0,
+      "left": 53,
       "name": "Gree Castle",
-      "top": 0
+      "top": 11
   },
   {
-      "left": 0,
+      "left": 37,
       "name": "Monteros",
-      "top": 0
+      "top": 20
   },
   {
-      "left": 0,
+      "left": 34,
       "name": "Ne Division (Tremills)",
-      "top": 0
+      "top": 11
   },
   {
-      "left": 0,
+      "left": 21,
       "name": "Hermitage",
-      "top": 0
+      "top": 15
   },
   {
-      "left": 0,
+      "left": 30,
       "name": "Joll Hill",
-      "top": 0
+      "top": 27
   },
   {
-      "left": 0,
+      "left": 40,
       "name": "Blubbe Valley (Rose Valley)",
-      "top": 0
+      "top": 36
   },
   {
-      "left": 0,
+      "left": 35,
       "name": "Tranquil Vale",
-      "top": 0
+      "top": 45
   },
   {
-      "left": 0,
+      "left": 30,
       "name": "Tottenham Park",
-      "top": 0
+      "top": 45
   },
   {
-      "left": 0,
+      "left": 27,
       "name": "Willocks",
-      "top": 0
+      "top": 50
   },
   {
-      "left": 0,
+      "left": 15,
       "name": "Ffry (Frys)",
-      "top": 0
+      "top": 47
   },
   {
-      "left": 0,
+      "left": 23,
       "name": "Orang Valley (Furlongs)",
-      "top": 0
+      "top": 53
   },
   {
-      "left": 0,
+      "left": 21,
       "name": "Picart (Herman Vale)",
-      "top": 0
+      "top": 63
   },
   {
-      "left": 0,
+      "left": 76,
       "name": "Sawcolts",
-      "top": 0
+      "top": 50
   },
   {
-      "left": 0,
+      "left": 73,
       "name": "Sag Hill (Tom Moores Mill  Upper)",
-      "top": 0
+      "top": 60
   },
   {
-      "left": 0,
+      "left": 82,
       "name": "Mil Hill",
-      "top": 0
+      "top": 63
   },
   {
-      "left": 0,
+      "left": 79,
       "name": "Claremon (see #178)",
-      "top": 0
+      "top": 77
   },
   {
-      "left": 0,
+      "left": 60,
       "name": "Tremontain  The Mountain",
-      "top": 0
+      "top": 43
   },
   {
-      "left": 0,
+      "left": 67,
       "name": "Youngs",
-      "top": 0
+      "top": 73
   },
   {
-      "left": 0,
+      "left": 70,
       "name": "Young  Nantons",
-      "top": 0
+      "top": 67
   },
   {
-      "left": 0,
+      "left": 50,
       "name": "Brook (Old Road)",
-      "top": 0
+      "top": 75
   },
   {
-      "left": 0,
+      "left": 42,
       "name": "Morris (Old Mill  Brambles)",
-      "top": 0
+      "top": 55
   },
   {
-      "left": 0,
+      "left": 47,
       "name": "Douglas Estate (Ravenscroft)",
-      "top": 0
+      "top": 55
   },
   {
-      "left": 0,
+      "left": 45,
       "name": "Yorke (Musketo Cove & Bear Gardens)",
-      "top": 0
+      "top": 65
   },
   {
-      "left": 0,
+      "left": 28,
       "name": "Christia Valley  Biffins",
-      "top": 0
+      "top": 20
   }
 ]
