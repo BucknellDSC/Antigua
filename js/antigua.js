@@ -23,12 +23,12 @@ $(document).ready(function() {
   $("#stjohn_map").hide();
   $("#stgeorge_map").hide();
   $("#stmary_map").hide();
-  $("#stpaul_map").hide();
+  $("#stpaul_map").show();
   $("#stpeter_map").hide();
-  $("#stphilip_map").show();
+  $("#stphilip_map").hide();
   $("#antigua_map").hide();
 
-  $current_map = $("#stphilip-container");
+  $current_map = $("#stpaul-container");
 
   // Process mill data into different form.
   // Specifically, we need a list of mill names | a list of parishes name | a list of mill names based on parishes
@@ -89,7 +89,7 @@ $(document).ready(function() {
     }
   }
 
-  create_mill_marker(stphilip_mill_locations);
+  create_mill_marker(stpaul_mill_locations);
 
   /**
    * Create mill markers on a parish from a location json file
