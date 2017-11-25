@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="menu_button">
-                <div class="menu_title"> MAP
+                <div class="menu_title" id="map_button"> MAP
                 </div>
             </div>
             <div class="menu_button">
@@ -162,7 +162,7 @@
 
 
     <!-- ---------------MAP ELEMENTS-------------------- -->
-    <!-- blueprint elements. This div itself won't show on the map, but it will be used 
+    <!-- blueprint elements. This div itself won't show on the map, but it will be used
     as the framework to put info in and then put in the map using javascript code -->
 
     <!-- the floating marker on the map, used to pin point mill location -->
@@ -175,23 +175,25 @@
 
     <!-- the float card on the map, which holds minimal information about each mill -->
     <div class="card blueprint">
-        <div class="image">
-            <img style="max-width: 100%; max-height: 100%;" src="res/Placeholder.jpg">
-        </div>
-        <div class="content">
-            <div class="title"> Some Mill </div>
-            <div class="subtitle"> Extant </div>
-            <div class="content-text">
-                <b>Parish:</b> St. Something
-                <br>
-                <b>Founding date:</b> 1777
-                <br>
-                <b>Long:</b> 123
-                <br>
-                <b>Lat:</b> 123
+
+            <div class="content">
+                <div class="title"> Some Mill</div>
+                <div class="subtitle"> extant</div>
+                <div class="image">
+                    <img style="max-width: 100%; max-height: 100%;" src="res/Placeholder.jpg">
+                </div>
+                <div class="content-text">
+                    <b>Parish:</b> St. Something
+                    <br>
+                    <b>Founding date:</b> 1777
+                    <br>
+                    <b>Long, lat:</b> 1234, 1234
+                </div>
+                <div class="button-container">
+                    <div class="button-primary">Learn More</div>
+                    <div class="button-secondary"> Close</div>
+                </div>
             </div>
-            <div class="button" onclick="show_full_info()">Learn More</div>
-        </div>
     </div>
 
     <!-- The modal, which holds the detailed information of each map
@@ -200,32 +202,35 @@
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
-                <h2>Some Mill</h2>
+                <div class="modal-title"> Some Mill </div>
             </div>
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'Description')" id="defaultOpen">Description</button>
-                <button class="tablinks" onclick="openCity(event, 'Chronology')">Chronology</button>
+                <button class="tablinks active" onclick="openCity(event, 'Description')" id="defaultOpen">Description</button>
                 <button class="tablinks" onclick="openCity(event, 'General Info')">General Info</button>
+                <button class="tablinks" onclick="openCity(event, 'Images')">Images</button>
             </div>
             <div class="modal-body">
-                <div id="Description" class="tabcontent">
-                    <p>seas.</p>
-                </div>
-
-                <div id="Chronology" class="tabcontent">
+                <div id="Description" class="tabcontent" style="display: block">
+                    <div class="modal-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit ut aliquam purus sit amet. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Faucibus et molestie ac feugiat sed lectus vestibulum mattis. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam. Facilisi etiam dignissim diam quis enim. Etiam tempor orci eu lobortis elementum nibh. Arcu felis bibendum ut tristique. Feugiat nisl pretium fusce id velit ut. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Odio eu feugiat pretium nibh ipsum consequat nisl vel. Scelerisque viverra mauris in aliquam sem. Convallis convallis tellus id interdum velit laoreet id donec. Felis eget nunc lobortis mattis aliquam faucibus purus.</div>
                     <ul class="timeline">
-                        <li>
-                            <p class="timeline-date">1670</p>
-                            <div class="timeline-content">
-                                <p>William Boone, planter. On Antigua 1665, still living in 1710.</p>
-                            </div>
+                        <li class="event" data-date="1777">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </li>
+                        <li class="event" data-date="1778">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </li>
+                        <li class="event" data-date="1779">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </li>
+                        <li class="event" data-date="1780">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </li>
                     </ul>
                 </div>
-            </div>
-            <div class="modal-image">
-                <img src="res/Placeholder.jpg" width="100%">
 
+                <div id="Chronology" class="tabcontent">
+
+                </div>
             </div>
         </div>
     </div>

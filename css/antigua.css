@@ -6,7 +6,7 @@
     --bg-color: #1D2026;
     --bg-color-2: #22393A;
     --main-color: #000000;
-    --secondary-color: #000000;
+    --secondary-color: #a4a67c;
     --title-font: 'Tangerine', cursive;
     /* --title-font: 'Playfair Display Black', serif; */
     --text-font: 'Libre Baskerville', serif;
@@ -344,85 +344,98 @@ footer {
 
 .card {
     position: absolute;
-    z-index: 10;
-    width: 16em;
-    top: calc(50% - 120px);
-    left: calc(50% - 8em);
+    width: 360px;
+    height: auto;
+    top: 25%;
+    left: 50%;
     overflow: hidden;
-    background: #a4a67c;
+    background: var(--secondary-color);
     -webkit-transform: perspective(600px) rotateY(90deg);
     transform: perspective(600px) rotateY(90deg);
     opacity: 0;
-    pointer-events: none;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
-    color: var(--bg-color);
+    color: var(--bg-color-2);
     word-wrap: break-word;
+    border: solid 5px var(--bg-color-2);
+    font-family: var(--text-font);
 }
 
 .card.active {
     -webkit-transform: perspective(600px) rotateY(0deg);
     transform: perspective(600px) rotateY(0deg);
     opacity: 1;
-    pointer-events: all;
     -webkit-transition: all .5s ease .4s;
     transition: all .5s ease .4s;
 }
 
 .card .content {
-    padding: 12px;
+    padding: 35px;
+    margin: 7px;
+    border: 2px solid var(--bg-color-2);
 }
 
 .card .image {
-    padding: 12px;
-    padding-bottom: 0px;
-    margin: auto;
+    padding: 2em 1em 2em 1em;
 }
 
 .card .title {
-    font-weight: bold;
-    font-family: var(--bg-color);
-    font-size: 1.3em;
+    text-align: center;
+    font-family: var(--title-font);
+    font-size: 3em;
+    padding-bottom: 0;
+    border-bottom: solid 2px var(--bg-color-2);
 }
 
 .card .subtitle {
+    text-align: center;
     font-family: var(--bg-color);
-    font-size: 1em;
-    font-style: italic;
-    margin-bottom: 0.6em;
+    font-size: 1.25em;
+    padding: 0em;
 }
 
 .card .content-text {
-    border-top: 1px solid var(--text-color);
-    font-family: var(--text-font-2);
-    font-size: 1.1em;
-    padding-bottom: 0.8em;
-    padding-top: 0.6em;
-    line-height: 1.1em;
+    font-family: var(--text-font);
+    font-size: 1em;
+    line-height: 150%;
 }
 
-.card .button {
+.card .button-container{
+    padding: 2em 0em 1em 0em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .button-primary {
+    border: solid 2px var(--bg-color-2);
+    display: inline-block;
+    width: 50%;
+    font-family: var(--text-font);
+    text-align: center;
+    background-color: var(--bg-color-2);
+    padding: 4px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.card .button-secondary {
+    cursor: pointer;
+    border: solid 2px var(--bg-color-2);
+    display: inline-block;
+    width: 30%;
     font-family: var(--text-font);
     text-align: center;
     background-color: transparent;
-    padding-top: 4px;
-    padding-left: 4px;
-    padding-bottom: 4px;
-    padding-right: 4px;
-    text-decoration: none;
-    font-size: 0.8em;
+    padding: 4px;
+    font-size: 0.9em;
     text-transform: uppercase;
-    border: solid 1px var(--text-color);
-    cursor: pointer;
-    color: var(--text-color);
+    color: var(--bg-color-2);
     transition: all 0.3s;
-}
-
-.card .button:hover {
-    background-color: #58735a;
-    transition: all 0.3s;
-    border-color: #58735a;
-    color: #eeeff7;
 }
 
 @-webkit-keyframes hovering {
@@ -493,9 +506,7 @@ Modal testing
     /* Full height */
     overflow: auto;
     /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--bg-color);
     /* Black w/ opacity */
     -webkit-animation-name: fadeIn;
     /* Fade in the background */
@@ -509,41 +520,47 @@ Modal testing
 
 .modal-content {
     position: fixed;
-    background-color: #fefefe;
-    width: 100%;
-    height: 100%;
+    background-color: var(--bg-color);
+    width: calc(100vw - 4em);
+    height: calc(100vh - 4em);
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+    padding: 2em;
+    vertical-align: middle;
+    text-align: left;
+    font-family: var(--text-font);
+    color: var(--text-color);
 }
 
 
 /* The Close Button */
 
 .close {
-    color: black;
+    color: var(--text-color);
     float: right;
-    font-size: 50px;
-}
-
-.close:hover,
-.close:focus {
-    color: #FF5E17;
-    text-decoration: none;
+    font-size: 3em;
     cursor: pointer;
 }
 
 .modal-header {
-    padding: 2px 16px;
-    color: #FF5E17;
-    text-transform: uppercase;
+    height: 15vh;
+    color: var(--text-color);
+}
+
+.modal-title {
+    width: max-content;
+    height: 100%;
+    font-size: 6em;
+    font-family: var(--title-font);
+    border-bottom: solid 2px white;
+    display: flex;
+    align-items: center
 }
 
 .modal-body {
-    padding: 2px 16px;
-    width: 50%;
-    float: left
+    width: 100%;
 }
 
 .modal-image {
@@ -553,7 +570,13 @@ Modal testing
     height: 100%
 }
 
-
+.modal-text {
+    max-width: 45%;
+    float: left;
+    display: inline-block;
+    font-size: 1em;
+    line-height: 150%;
+}
 /* Add Animation */
 
 @-webkit-keyframes slideIn {
@@ -605,6 +628,7 @@ Modal testing
 div.tab {
     overflow: hidden;
     width: 100%;
+    margin: 3em 0em 3em 0em;
 }
 
 
@@ -618,23 +642,25 @@ div.tab button {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-family: var(--text-font);
+    color: var(--text-color);
+    margin: 10px 10px 10px 0px;
 }
 
 
 /* Change background color of buttons on hover */
 
 div.tab button:hover {
-    font-weight: bold;
-    color: #FF5E17;
+    border: solid 1px var(--text-color);
 }
 
 
 /* Create an active/current tablink class */
 
 div.tab button.active {
-    font-weight: bold;
-    color: #FF5E17;
+    border: solid 1px var(--text-color);
 }
 
 
@@ -645,44 +671,60 @@ div.tab button.active {
     padding: 6px 12px;
 }
 
+
+
 .timeline {
-    overflow-y: auto;
+    float: right;
+    border-left: 4px solid white;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    color: var(--text-color);
+    font-family: var(--text-font);
+    letter-spacing: 0.5px;
+    position: relative;
+    line-height: 150%;
+    font-size: 1em;
     list-style: none;
-    max-height: 80vh;
+    text-align: left;
+    font-weight: 100;
+    max-width: 30%;
+    padding-left: 50px;
+    margin: 0;
 }
 
-.timeline>li {
-    margin-bottom: 60px;
+.timeline .event {
+    border-bottom: 1px dashed;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
 }
-
-
-/* for Desktop */
-
-@media ( min-width: 640px) {
-    .timeline>li {
-        overflow: hidden;
-        margin: 0;
-        position: relative;
-    }
-    .timeline-date {
-        width: 110px;
-        float: left;
-        margin-top: 20px;
-    }
-    .timeline-content {
-        width: 75%;
-        float: left;
-        border-left: 3px #e5e5d1 solid;
-        padding-left: 30px;
-    }
-    .timeline-content:before {
-        content: '';
-        width: 12px;
-        height: 12px;
-        background: #6fc173;
-        position: absolute;
-        left: 106px;
-        top: 24px;
-        border-radius: 100%;
-    }
+.timeline .event:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+.timeline .event:before,
+.timeline .event:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+.timeline .event:before {
+    left: -217.5px;
+    color: var(--text-font);
+    content: attr(data-date);
+    text-align: right;
+    font-weight: 100;
+    font-size: 0.9em;
+    min-width: 120px;
+}
+.timeline .event:after {
+    box-shadow: 0 0 0 4px var(--text-color);
+    left: -57.85px;
+    background: var(--bg-color);
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    content: "";
+    top: 5px;
 }

@@ -122,9 +122,12 @@ $(document).ready(function() {
       height: "30vh",
       "margin-top": "2em"
     });
-    $(".menu_title", this).css({
-      "border-bottom": "1px ridge rgba(242, 207, 141, 1)"
-    });
+    if ($(".menu_title", this).attr("id") !== "home_button" ) {
+        if ($(".menu_title", this).attr("id") !== "map_button" ) {
+        $(".menu_title", this).css({
+            "border-bottom": "1px ridge rgba(242, 207, 141, 1)"
+        });
+    }}
   });
 
   $(".menu_button").on("mouseleave", function() {
@@ -170,23 +173,32 @@ $(document).ready(function() {
     $(".marker").addClass("inactive");
   });
 
-  $(".card").bind("click", function() {
+  $(".card .button-secondary").on("click", function() {
     $(".card").removeClass("active");
     $(".marker").removeClass("inactive");
   });
 
+    $(".card .button-primary").on("click", function() {
+        show_full_info();
+    });
+
   $("#home_button").on("click", function() {
-    if ($("#middle-slide").hasClass("active")) {
-      $("#middle-slide").removeClass("active");
-    } else {
-      $("#middle-slide").addClass("active");
-    }
-    if ($("#middle-slide-content").hasClass("active")) {
-      $("#middle-slide-content").removeClass("active");
-    } else {
-      $("#middle-slide-content").addClass("active");
-    }
-  });
+        if (!$("#middle-slide").hasClass("active")) {
+            $("#middle-slide").addClass("active");
+        }
+        if (!$("#middle-slide-content").hasClass("active")) {
+            $("#middle-slide-content").addClass("active");
+        }
+    });
+
+    $("#map_button").on("click", function() {
+        if ($("#middle-slide").hasClass("active")) {
+            $("#middle-slide").removeClass("active");
+        }
+        if ($("#middle-slide-content").hasClass("active")) {
+            $("#middle-slide-content").removeClass("active");
+        }
+    });
 });
 
 function show_full_info() {
@@ -196,11 +208,11 @@ function show_full_info() {
   var span = document.getElementsByClassName("close")[0];
 
   // When the user clicks the button, open the modal
-  modal.style.display = "block";
+  modal.css("display", "block");
 
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
-    modal.style.display = "none";
+      modal.css("display", "none");
   };
 }
 
