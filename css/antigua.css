@@ -85,8 +85,7 @@ html {
 #middle-slide {
     font-family: var(--text-font);
     color: var(--text-color);
-    padding: 2em 6em 2em 2em;
-    margin-left: calc(23vw);
+    padding: 2em 6em 2em calc(23vw + 2em);
     height: calc(100vh - 4em);
     position: absolute;
     background-color: var(--bg-color);
