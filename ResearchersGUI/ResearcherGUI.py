@@ -214,7 +214,7 @@ class StartPage(tk.Frame):
 		if box_input:
 			self.listbox.grid_forget()
 			self.controller.show_frame(page_info, MILL_DATA[box_input[0]])
-			self.controller.geometry("920x706")
+			self.controller.geometry("930x716")
 		else:
 			return
 
