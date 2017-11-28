@@ -1,4 +1,4 @@
-[
+var mill_data = [
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
         "chronology": {
@@ -81,7 +81,7 @@
         "additional_info": "",
         "chronology": {},
         "date_of_establishment": "",
-        "display_name": "",
+        "display_name": "Fitche's Creek",
         "enslaved_peoples": "",
         "extant_or_ruin": "",
         "lat": "",
