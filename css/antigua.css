@@ -90,15 +90,14 @@ html {
     position: absolute;
     background-color: var(--bg-color);
     z-index: 500;
-    transform: translate3d(-3000px, 0, 0);
-    transition: all 1.25s ease;
-    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s 0s;
 }
 
 #middle-slide.active {
-    transform: translate3d(0px, 0, 0);
+    transform: translateX(0);
+    transition: transform 0.5s 0s;
     width: calc(77vw - 8em);
-    opacity: 1;
 }
 
 #middle-slide-header {
@@ -107,6 +106,8 @@ html {
 }
 
 #middle-slide-title {
+    opacity: 0;
+    transform: translateX(-100%);
     height: 20vh;
     margin: auto;
     display: flex;
@@ -114,13 +115,29 @@ html {
     font-family: var(--text-font-2);
     font-size: 2.5em;
     vertical-align: middle;
+    transition: transform 0.4s 0.3s, opacity 0.4s 0.3s
+}
+
+#middle-slide-title.active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.4s 0.3s, opacity 0.4s 0.3s
 }
 
 #middle-slide-content {
+    opacity: 0;
+    transform: translateX(-100%);
     line-height: 150%;
     font-size: 1.15em;
     max-height: 55vh;
     overflow: auto;
+    transition: transform 0.4s 0.3s, opacity 0.4s 0.3s
+}
+
+#middle-slide-content.active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.4s 0.3s, opacity 0.4s 0.3s
 }
 
 #middle-slide-content::-webkit-scrollbar-track {
@@ -343,7 +360,7 @@ footer {
 
 .card {
     position: absolute;
-    width: 360px;
+    width: 280px;
     height: auto;
     top: 25%;
     left: 50%;
@@ -369,19 +386,19 @@ footer {
 }
 
 .card .content {
-    padding: 35px;
-    margin: 7px;
+    padding: 1em;
+    margin: 3px;
     border: 2px solid var(--bg-color-2);
 }
 
 .card .image {
-    padding: 2em 1em 2em 1em;
+    padding: 1em;
 }
 
 .card .title {
     text-align: center;
     font-family: var(--title-font);
-    font-size: 3em;
+    font-size: 2.5em;
     padding-bottom: 0;
     border-bottom: solid 2px var(--bg-color-2);
 }
@@ -389,7 +406,7 @@ footer {
 .card .subtitle {
     text-align: center;
     font-family: var(--bg-color);
-    font-size: 1.25em;
+    font-size: 1.15em;
     padding: 0em;
 }
 
@@ -400,7 +417,7 @@ footer {
 }
 
 .card .button-container{
-    padding: 2em 0em 1em 0em;
+    padding: 1em 0em 1em 0em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -481,6 +498,15 @@ footer {
     }
 }
 
+@keyframes blowUp {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 /*
 Modal testing
@@ -490,8 +516,8 @@ Modal testing
 /* The Modal (background) */
 
 .modal {
-    font-family: "Open Sans", sans-serif;
-    display: none;
+    transform: translateY(100%);
+    transition: transform 0.5s 0s;
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
@@ -506,12 +532,6 @@ Modal testing
     overflow: auto;
     /* Enable scroll if needed */
     background-color: var(--bg-color);
-    /* Black w/ opacity */
-    -webkit-animation-name: fadeIn;
-    /* Fade in the background */
-    -webkit-animation-duration: 0.4s;
-    animation-name: fadeIn;
-    animation-duration: 0.4s;
 }
 
 
@@ -551,7 +571,7 @@ Modal testing
 .modal-title {
     width: max-content;
     height: 100%;
-    font-size: 6em;
+    font-size: 4em;
     font-family: var(--title-font);
     border-bottom: solid 2px white;
     display: flex;
@@ -574,12 +594,12 @@ Modal testing
     max-width: 45%;
     float: left;
     display: inline-block;
-    font-size: 1em;
+    font-size: 1.15em;
     line-height: 150%;
 }
 
 .modal-genInfo {
-    padding: 4em 0 4em 0;
+    padding: 2em 0 2em 0;
 }
 /* Add Animation */
 
@@ -632,7 +652,7 @@ Modal testing
 div.tab {
     overflow: hidden;
     width: 100%;
-    margin: 3em 0em 3em 0em;
+    margin: 2em 0em 2em 0em;
 }
 
 
@@ -647,7 +667,7 @@ div.tab button {
     cursor: pointer;
     padding: 1em;
     transition: 0.3s;
-    font-size: 1.3em;
+    font-size: 1.15em;
     text-transform: uppercase;
     font-family: var(--text-font);
     color: var(--text-color);
@@ -686,7 +706,7 @@ div.tab button.active {
     letter-spacing: 0.5px;
     position: relative;
     line-height: 150%;
-    font-size: 1em;
+    font-size: 1.15em;
     list-style: none;
     text-align: left;
     font-weight: 100;

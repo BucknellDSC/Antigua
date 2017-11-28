@@ -185,18 +185,26 @@ $(document).ready(function() {
   $("#home_button").on("click", function() {
         if (!$("#middle-slide").hasClass("active")) {
             $("#middle-slide").addClass("active");
-        }
-        if (!$("#middle-slide-content").hasClass("active")) {
+            $("#middle-slide-title").addClass("active");
             $("#middle-slide-content").addClass("active");
         }
+      else if ($("#middle-slide").hasClass("active")) {
+          $("#middle-slide").removeClass("active");
+          $("#middle-slide-title").removeClass("active");
+          $("#middle-slide-content").removeClass("active");
+      }
     });
 
     $("#map_button").on("click", function() {
         if ($("#middle-slide").hasClass("active")) {
             $("#middle-slide").removeClass("active");
-        }
-        if ($("#middle-slide-content").hasClass("active")) {
+            $("#middle-slide-title").removeClass("active");
             $("#middle-slide-content").removeClass("active");
+        }
+        else if (!$("#middle-slide").hasClass("active")) {
+            $("#middle-slide").addClass("active");
+            $("#middle-slide-title").addClass("active");
+            $("#middle-slide-content").addClass("active");
         }
     });
 });
@@ -208,11 +216,11 @@ function show_full_info() {
   var span = document.getElementsByClassName("close")[0];
 
   // When the user clicks the button, open the modal
-  modal.css("display", "block");
+  modal.css("transform", "translateY(0)");
 
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
-      modal.css("display", "none");
+      modal.css("transform", "translateY(100%)");
   };
 }
 
