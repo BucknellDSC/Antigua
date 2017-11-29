@@ -1,112 +1,112 @@
 var stgeorge_mill_locations = [
   {
-      "left": 0,
+      "left": 61,
       "name": "Barnacle Point",
-      "top": 0
+      "top": 25
   },
   {
-      "left": 0,
+      "left": 41,
       "name": "Barnes Hill",
-      "top": 0
+      "top":24
   },
   {
-      "left": 0,
+      "left": 70,
       "name": "BlackmansMount Lucie",
-      "top": 0
+      "top": 63
   },
   {
-      "left": 0,
+      "left": 38,
       "name": "Carlisles",
-      "top": 0
+      "top": 33.5
   },
   {
-      "left": 0,
+      "left": 35,
       "name": "Date Hill",
-      "top": 0
+      "top": 21
   },
   {
-      "left": 0,
+      "left": 58,
       "name": "Donovans (Vaughans)",
-      "top": 0
+      "top": 70
   },
   {
-      "left": 0,
+      "left": 50,
       "name": "Fitches Creek",
-      "top": 0
+      "top": 55
   },
   {
-      "left": 0,
+      "left": 32,
       "name": "Giles Blizzard",
-      "top": 0
+      "top": 24
   },
   {
-      "left": 0,
+      "left": 28,
       "name": "Gravenors",
-      "top": 0
+      "top": 10
   },
   {
-      "left": 0,
+      "left": 48.5,
       "name": "Gunthorpes (ASF)",
-      "top": 0
+      "top": 68
   },
   {
-      "left": 0,
+      "left": 54,
       "name": "Hight Point",
-      "top": 0
+      "top": 22
   },
   {
-      "left": 0,
+      "left": 29,
       "name": "Judge Blizzards",
-      "top": 0
+      "top": 19
   },
   {
-      "left": 0,
+      "left": 47,
       "name": "LightfootsThe Grove",
-      "top": 0
+      "top": 73
   },
   {
-      "left": 0,
+      "left": 80,
       "name": "Long Island",
-      "top": 0
+      "top": 17
   },
   {
-      "left": 0,
+      "left": 50,
       "name": "Millars",
-      "top": 0
+      "top": 27
   },
   {
-      "left": 0,
+      "left": 33,
       "name": "Nibbs",
-      "top": 0
+      "top": 12
   },
   {
-      "left": 0,
+      "left": 55,
       "name": "North Sound (Thomass HillCol. Thomas North Sound Plantation",
-      "top": 0
+      "top": 74
   },
   {
-      "left": 0,
+      "left": 42,
       "name": "Paynters",
-      "top": 0
+      "top": 54
   },
   {
-      "left": 0,
+      "left": 44,
       "name": "SherwoodsLebanon",
-      "top": 0
+      "top": 80
   },
   {
-      "left": 0,
+      "left": 50,
       "name": "Weirs (WaresGlanvillesLittle Zoar)",
-      "top": 0
+      "top": 60
   },
   {
-      "left": 0,
+      "left": 35,
       "name": "Will Blizzards",
-      "top": 0
+      "top": 42
   },
   {
-      "left": 0,
+      "left": 45,
       "name": "Winthorpes",
-      "top": 0
+      "top": 28
   }
 ]

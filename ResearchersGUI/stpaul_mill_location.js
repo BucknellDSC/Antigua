@@ -1,182 +1,182 @@
 var stpaul_mill_locations = [
   {
-      "left": 0,
+      "left": 33,
       "name": "Matthews",
-      "top": 0
+      "top": 7
   },
   {
-      "left": 0,
+      "left": 40,
       "name": "Burkes",
-      "top": 0
+      "top": 16
   },
   {
-      "left": 0,
+      "left": 80,
       "name": "Blakes",
-      "top": 0
+      "top": 40
   },
   {
-      "left": 0,
+      "left": 47,
       "name": "L Roche",
-      "top": 0
+      "top": 20
   },
   {
-      "left": 0,
+      "left": 65,
       "name": "Luca  Rock Hill",
-      "top": 0
+      "top": 25
   },
   {
-      "left": 0,
+      "left": 79,
       "name": "Delaps",
-      "top": 0
+      "top": 29
   },
   {
-      "left": 0,
+      "left": 74,
       "name": "Thomas",
-      "top": 0
+      "top": 42
   },
   {
-      "left": 0,
+      "left": 67,
       "name": "Cochran (Bethesda)",
-      "top": 0
+      "top": 43
   },
   {
-      "left": 0,
+      "left": 46,
       "name": "Gale (Table Hill Gordon)",
-      "top": 0
+      "top": 52
   },
   {
-      "left": 0,
+      "left": 69,
       "name": "Morri Loobys",
-      "top": 0
+      "top": 36
   },
   {
-      "left": 0,
+      "left": 60,
       "name": "Bodkins",
-      "top": 0
+      "top": 33
   },
   {
-      "left": 0,
+      "left": 43,
       "name": "Willi Freemans",
-      "top": 0
+      "top": 23
   },
   {
-      "left": 0,
+      "left": 31,
       "name": "Tyrrel (Formerly Tankards or Orleans)",
-      "top": 0
+      "top": 28
   },
   {
-      "left": 0,
+      "left": 18,
       "name": "Mill Byams (Folly  Byam)",
-      "top": 0
+      "top": 33
   },
   {
-      "left": 0,
+      "left": 60,
       "name": "Savannah",
-      "top": 0
+      "top": 50
   },
   {
-      "left": 0,
+      "left": 63,
       "name": "Picadilly",
-      "top": 0
+      "top": 51
   },
   {
-      "left": 0,
+      "left": 23,
       "name": "Richmonds",
-      "top": 0
+      "top": 46
   },
   {
-      "left": 0,
+      "left": 16,
       "name": "Howards",
-      "top": 0
+      "top": 48
   },
   {
-      "left": 0,
+      "left": 27,
       "name": "Horsefords",
-      "top": 0
+      "top": 50
   },
   {
-      "left": 0,
+      "left": 41,
       "name": "Pattersons",
-      "top": 0
+      "top": 60
   },
   {
-      "left": 0,
+      "left": 37,
       "name": "Swete (Sweets)",
-      "top": 0
+      "top": 60
   },
   {
-      "left": 0,
+      "left": 38,
       "name": "Buckshornes",
-      "top": 0
+      "top": 38
   },
   {
-      "left": 0,
+      "left": 20,
       "name": "Barter (Osbornes  Windward)",
-      "top": 0
+      "top": 68
   },
   {
-      "left": 0,
+      "left": 15,
       "name": "Doigs",
-      "top": 0
+      "top": 70
   },
   {
-      "left": 0,
+      "left": 23,
       "name": "Dimsdal (Michaels Mount  Langhams)",
-      "top": 0
+      "top": 58
   },
   {
-      "left": 0,
+      "left": 34,
       "name": "Dee Bay  Dieppe Bay",
-      "top": 0
+      "top": 69
   },
   {
-      "left": 0,
+      "left": 82,
       "name": "Fry Pasture",
-      "top": 0
+      "top": 50
   },
   {
-      "left": 0,
+      "left": 72,
       "name": "Isaac Hill",
-      "top": 0
+      "top": 75
   },
   {
-      "left": 0,
+      "left": 29,
       "name": "Guine Bush (Monks Hill)",
-      "top": 0
+      "top": 60
   },
   {
-      "left": 0,
+      "left": 60,
       "name": "Cherr Hill (miscellaneous)",
-      "top": 0
+      "top": 60
   },
   {
-      "left": 0,
+      "left": 63,
       "name": "Wind Hill (miscellaneous)",
-      "top": 0
+      "top": 61
   },
   {
-      "left": 0,
+      "left": 66,
       "name": "Tuck (Farley Bay miscellaneous)",
-      "top": 0
+      "top": 62
   },
   {
-      "left": 0,
+      "left": 70,
       "name": "Farley (Tucks miscellaneous)",
-      "top": 0
+      "top": 65
   },
   {
-      "left": 0,
+      "left": 73,
       "name": "Freeman Rest (Fig Tree Hill - miscellaneous)",
-      "top": 0
+      "top": 67
   },
   {
-      "left": 0,
+      "left": 75,
       "name": "Cabadg (Cabbage) Tree Plantation (miscellaneous)",
-      "top": 0
+      "top": 68
   },
   {
-      "left": 0,
+      "left": 78,
       "name": "Barre Beef Estate (miscellaneous)",
-      "top": 0
+      "top": 69
   }
 ]

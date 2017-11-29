@@ -21,14 +21,14 @@ $(document).ready(function() {
 
   // show main map and hide other maps. We have to do this because they live on the same page
   $("#stjohn_map").hide();
-  $("#stgeorge_map").hide();
+  $("#stgeorge_map").show();
   $("#stmary_map").hide();
-  $("#stpaul_map").show();
+  $("#stpaul_map").hide();
   $("#stpeter_map").hide();
   $("#stphilip_map").hide();
   $("#antigua_map").hide();
 
-  $current_map = $("#stpaul-container");
+  $current_map = $("#stgeorge-container");
 
   // Process mill data into different form.
   // Specifically, we need a list of mill names | a list of parishes name | a list of mill names based on parishes
@@ -89,7 +89,7 @@ $(document).ready(function() {
     }
   }
 
-  create_mill_marker(stpaul_mill_locations);
+  create_mill_marker(stgeorge_mill_locations);
 
   /**
    * Create mill markers on a parish from a location json file
@@ -185,18 +185,26 @@ $(document).ready(function() {
   $("#home_button").on("click", function() {
         if (!$("#middle-slide").hasClass("active")) {
             $("#middle-slide").addClass("active");
-        }
-        if (!$("#middle-slide-content").hasClass("active")) {
+            $("#middle-slide-title").addClass("active");
             $("#middle-slide-content").addClass("active");
         }
+      else if ($("#middle-slide").hasClass("active")) {
+          $("#middle-slide").removeClass("active");
+          $("#middle-slide-title").removeClass("active");
+          $("#middle-slide-content").removeClass("active");
+      }
     });
 
     $("#map_button").on("click", function() {
         if ($("#middle-slide").hasClass("active")) {
             $("#middle-slide").removeClass("active");
-        }
-        if ($("#middle-slide-content").hasClass("active")) {
+            $("#middle-slide-title").removeClass("active");
             $("#middle-slide-content").removeClass("active");
+        }
+        else if (!$("#middle-slide").hasClass("active")) {
+            $("#middle-slide").addClass("active");
+            $("#middle-slide-title").addClass("active");
+            $("#middle-slide-content").addClass("active");
         }
     });
 });
@@ -208,11 +216,11 @@ function show_full_info() {
   var span = document.getElementsByClassName("close")[0];
 
   // When the user clicks the button, open the modal
-  modal.css("display", "block");
+  modal.css("transform", "translateY(0)");
 
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
-      modal.css("display", "none");
+      modal.css("transform", "translateY(100%)");
   };
 }
 
