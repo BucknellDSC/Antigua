@@ -21,14 +21,14 @@ $(document).ready(function() {
 
   // show main map and hide other maps. We have to do this because they live on the same page
   $("#stjohn_map").hide();
-  $("#stgeorge_map").show();
+  $("#stgeorge_map").hide();
   $("#stmary_map").hide();
   $("#stpaul_map").hide();
-  $("#stpeter_map").hide();
+  $("#stpeter_map").show();
   $("#stphilip_map").hide();
   $("#antigua_map").hide();
 
-  $current_map = $("#stgeorge-container");
+  $current_map = $("#stpeter-container");
 
   // Process mill data into different form.
   // Specifically, we need a list of mill names | a list of parishes name | a list of mill names based on parishes
@@ -73,7 +73,7 @@ $(document).ready(function() {
   // ------------------ MAIN FUNCTIONS --------------------------
 
   /**
-   * Add list of mills to menu based on the current map. 
+   * Add list of mills to menu based on the current map.
    * Depends on global current_mills_array
    */
   function add_mills_to_menu() {
@@ -89,7 +89,7 @@ $(document).ready(function() {
     }
   }
 
-  create_mill_marker(stgeorge_mill_locations);
+  create_mill_marker(stpeter_mill_locations);
 
   /**
    * Create mill markers on a parish from a location json file

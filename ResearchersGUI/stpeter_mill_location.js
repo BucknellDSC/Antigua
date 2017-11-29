@@ -1,127 +1,127 @@
 var stpeter_mill_locations = [
   {
-      "left": 0,
+      "left": 60,
       "name": "Barbuda",
-      "top": 0
+      "top": 35
   },
   {
-      "left": 0,
+      "left": 59.5,
       "name": "Bettys Hope",
-      "top": 0
+      "top": 67
   },
   {
-      "left": 0,
+      "left": 31,
       "name": "Big Duers",
-      "top": 0
+      "top": 68
   },
   {
-      "left": 0,
+      "left": 021,
       "name": "Brookes",
-      "top": 0
+      "top": 60
   },
   {
-      "left": 0,
+      "left": 40,
       "name": "Cedar Hill (Hall)",
-      "top": 0
+      "top": 37
   },
   {
-      "left": 0,
+      "left": 046,
       "name": "Cochrans",
-      "top": 0
+      "top": 60
   },
   {
-      "left": 0,
+      "left": 78,
       "name": "Cocoa Nut Hall & Hawes",
-      "top": 0
+      "top": 27
   },
   {
-      "left": 0,
+      "left": 60,
       "name": "Cotton Garden",
-      "top": 0
+      "top": 30
   },
   {
-      "left": 0,
+      "left": 65,
       "name": "Cotton New Works",
-      "top": 0
+      "top": 25
   },
   {
-      "left": 0,
+      "left": 60,
       "name": "Crabbs",
-      "top": 0
+      "top": 024
   },
   {
-      "left": 0,
+      "left": 30,
       "name": "Freemans Upper",
-      "top": 0
+      "top": 48
   },
   {
-      "left": 0,
+      "left": 61,
       "name": "Gilberts",
-      "top": 0
+      "top": 60
   },
   {
-      "left": 0,
+      "left": 80,
       "name": "Guiana Island",
-      "top": 0
+      "top": 020
   },
   {
-      "left": 0,
+      "left": 22,
       "name": "Jonas",
-      "top": 0
+      "top": 68
   },
   {
-      "left": 0,
+      "left": 60,
       "name": "Little Duers",
-      "top": 0
+      "top": 77
   },
   {
-      "left": 0,
+      "left": 30,
       "name": "Lower Freemans",
-      "top": 0
+      "top": 55
   },
   {
-      "left": 0,
+      "left": 47,
       "name": "MartinsDiamond",
-      "top": 0
+      "top": 57
   },
   {
-      "left": 0,
+      "left": 68,
       "name": "Mercers Creek",
-      "top": 0
+      "top": 33
   },
   {
-      "left": 0,
+      "left": 52,
       "name": "Pares",
-      "top": 0
+      "top": 53
   },
   {
-      "left": 0,
+      "left": 51,
       "name": "Parham Hill & Parham Lodge",
-      "top": 0
+      "top": 28.5
   },
   {
-      "left": 0,
+      "left": 47,
       "name": "Parham New Works",
-      "top": 0
+      "top": 33
   },
   {
-      "left": 0,
+      "left": 40,
       "name": "Parrys",
-      "top": 0
+      "top": 69
   },
   {
-      "left": 0,
+      "left": 29,
       "name": "SandersonsOsbornes",
-      "top": 0
+      "top": 62
   },
   {
-      "left": 0,
+      "left": 45,
       "name": "Vernons (Wakering Hall)",
-      "top": 0
+      "top": 40
   },
   {
-      "left": 0,
+      "left": 45,
       "name": "Yeamons",
-      "top": 0
+      "top": 76
   }
 ]
