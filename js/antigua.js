@@ -272,7 +272,12 @@ $(document).ready(function () {
     };
   }
 
-  function openCity(evt, cityName) {
+  /**
+   * Switch to another tab with tab_name in the modal
+   * @param {*Ch} evt 
+   * @param {*} tab_name: the tab to switch to
+   */
+  function change_tab(evt, tab_name) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -282,7 +287,7 @@ $(document).ready(function () {
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(tab_name).style.display = "block";
     evt.currentTarget.className += " active";
   }
 
