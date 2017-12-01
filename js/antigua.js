@@ -28,7 +28,7 @@ $(document).ready(function () {
 
   // menu item focus
   $(".menu_button").on("click", function () {
-    var distance_to_bottom = $(window).height() - $('#credit_button')[0].getBoundingClientRect().bottom - $('#credit_button').outerHeight() ;
+    var distance_to_bottom = $(window).height() - $('#credit_button')[0].getBoundingClientRect().bottom - $('#credit_button').outerHeight();
     console.log(distance_to_bottom);
     $(".expandable_list", this).css({
       "height": distance_to_bottom.toString(),
@@ -160,14 +160,33 @@ $(document).ready(function () {
     for (var i in location_array) {
       new_marker = $marker.clone();
       new_marker.removeClass("blueprint");
-      new_marker.attr('id',location_array[i].name + "_marker");
-      new_marker.attr("onclick", "$('.card').addClass('active'); $('.marker').addClass('inactive');");
+      console.log(location_array[i].name);
+      new_marker.attr('id', location_array[i].name + "marker");
       var left = location_array[i].left.toString() + "%";
       var top = location_array[i].top.toString() + "%";
       new_marker.css("left", left);
       new_marker.css("top", top);
       $current_map.append(new_marker);
     }
+    /**
+     * Card active and inactive.
+     */
+    $(".marker").bind("click", function () {
+      var t = $(this)[0];
+      $(".card").addClass("active");
+      $(".marker").each(function () {
+        if ($(this)[0] != t) {
+          $(this).addClass("inactive");
+        }
+      });
+      var element = $(".content-text")[0];
+      var parish = 
+      var extand = 
+      var founding_date = 
+      var lat = 
+      var long = 
+      element.innerHTML = "This mill was founded in <b>2010</b>. It belongs to <b>St.John</b> parish, and it's precise GPS location is <b>43.45</b> longitude and <b>15.45</b> latitude.";
+    });
   }
 
 
@@ -238,13 +257,6 @@ $(document).ready(function () {
   var $card = $(".blueprint .card");
   var $modal = $(".blueprint .modal");
 
-  /**
-   * Card active and inactive.
-   */
-  $(".marker").bind("click", function () {
-    $(".card").addClass("active");
-    $(".marker").addClass("inactive");
-  });
 
   $(".card .button-secondary").on("click", function () {
     $(".card").removeClass("active");
@@ -275,21 +287,21 @@ $(document).ready(function () {
 
 
 });
-  /**
-   * Switch to another tab with tab_name in the modal
-   * @param {*Ch} evt 
-   * @param {*} tab_name: the tab to switch to
-   */
-  function change_tab(evt, tab_name) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tab_name).style.display = "block";
-    evt.currentTarget.className += " active";
+/**
+ * Switch to another tab with tab_name in the modal
+ * @param {*Ch} evt 
+ * @param {*} tab_name: the tab to switch to
+ */
+function change_tab(evt, tab_name) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
   }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tab_name).style.display = "block";
+  evt.currentTarget.className += " active";
+}
