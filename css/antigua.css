@@ -70,10 +70,9 @@ html {
     float: left;
     top: 0;
     left: 0;
-    padding: 2em;
     background-color: var(--bg-color);
-    height: calc(100vh - 4em);
-    width: calc(23vw - 4em);
+    height: 100vh;
+    width: 20vw;
     min-height: 60vh;
     vertical-align: middle;
     text-align: left;
@@ -201,7 +200,7 @@ html {
     margin: auto;
     padding: 0.7em;
     font-family: var(--text-font);
-    font-size: 1.3em;
+    font-size: 1.2em;
     cursor: pointer;
     display: flex;
     width: 50%;
@@ -250,6 +249,9 @@ hr {
 }
 
 .expandable_list {
+    /* position: absolute; */
+    top: -20vh;
+    left: 15vw;
     padding: 0;
     margin: 0;
     height: 0;
@@ -260,7 +262,7 @@ hr {
     overflow-y: auto;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
-    /* background-color: rgba(34, 57, 58, 0.25); */
+    /* background-color: rgba(34, 57, 58,1); */
     /* border: 1px ridge #F2CF8D; */
 }
 

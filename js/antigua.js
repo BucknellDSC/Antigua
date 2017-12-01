@@ -28,15 +28,21 @@ $(document).ready(function () {
 
   // menu item focus
   $(".menu_button").on("click", function () {
+    var distance_to_bottom = $(window).height() - $('#credit_button')[0].getBoundingClientRect().bottom - $('#credit_button').outerHeight() ;
+    console.log(distance_to_bottom);
     $(".expandable_list", this).css({
-      height: "30vh",
+      "height": distance_to_bottom.toString(),
       "margin-top": "2em"
     });
     if ($(".menu_title", this).attr("id") !== "info_button") {
       if ($(".menu_title", this).attr("id") !== "map_button") {
-        $(".menu_title", this).css({
-          "border-bottom": "1px ridge rgba(242, 207, 141, 1)"
-        });
+        if ($(".menu_title", this).attr("id") !== "biblio_button") {
+          if ($(".menu_title", this).attr("id") !== "credit_button") {
+            $(".menu_title", this).css({
+              "border-bottom": "1px ridge rgba(242, 207, 141, 1)"
+            });
+          }
+        }
       }
     }
   });
@@ -168,7 +174,7 @@ $(document).ready(function () {
 
   /**
    * switch to different parishes on click
-   */ 
+   */
   $("#stjohn-path").on("click", function () {
     $current_map.fadeOut();
     $("#stjohn_map").fadeIn();
@@ -227,8 +233,6 @@ $(document).ready(function () {
       $("#middle-slide-content").removeClass("active");
     }
   });
-
-
 
   var $card = $(".blueprint .card");
   var $modal = $(".blueprint .modal");
