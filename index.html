@@ -171,11 +171,8 @@ as the framework to put info in and then put in the map using javascript code --
             <img style="max-width: 100%; max-height: 100%;" src="res/Placeholder.jpg">
         </div>
         <div class="content-text">
-            <b>Parish:</b> St. Something
-            <br>
-            <b>Founding date:</b> 1777
-            <br>
-            <b>Long, lat:</b> 1234, 1234
+            This mill was founded in <b>1983</b>. It belongs to <b>St.John</b> parish,
+            and it's precise GPS location is <b>43.45</b> longitude and <b>15.45</b> latitude.
         </div>
         <div class="button-container">
             <div class="button-primary">Learn More</div>
@@ -204,8 +201,8 @@ Will overlay the entire screen -->
         </div>
         <div class="modal-tab">
             <div class="tab">
-                <button class="tablinks active" onclick="openCity(event, 'Chronology')" id="defaultOpen">Chronology</button>
-                <button class="tablinks" onclick="openCity(event, 'Images')">Images</button>
+                <button class="tablinks active" onclick="change_tab(event, 'Chronology')" id="defaultOpen">Chronology</button>
+                <button class="tablinks" onclick="change_tab(event, 'Images')">Images</button>
             </div>
             <div id="Chronology" class="tabcontent" style="display: block">
                 <ul class="timeline">
