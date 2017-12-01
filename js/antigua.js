@@ -16,7 +16,8 @@ $(document).ready(function () {
   var current_mills_array = [];
   //   var mill_locaitons, which contains all location data of mills. Declared in mill_location.json file
   // var mill_data, which contains all data of mills. Declared in mill_data.js file
-
+  // the new variable to content mill data. Use dictionary type for easy reference
+  var new_mill_data = {};
   // -------------- MENU BUTTONS STYLING AND FUNCTIONS ---------------------
 
   /**
@@ -29,7 +30,6 @@ $(document).ready(function () {
   // menu item focus
   $(".menu_button").on("click", function () {
     var distance_to_bottom = $(window).height() - $('#credit_button')[0].getBoundingClientRect().bottom - $('#credit_button').outerHeight();
-    console.log(distance_to_bottom);
     $(".expandable_list", this).css({
       "height": distance_to_bottom.toString(),
       "margin-top": "2em"
@@ -96,6 +96,7 @@ $(document).ready(function () {
     var parish = a_mill.parish;
     var mill_name = a_mill.name;
     mills_array.push(mill_name);
+    new_mill_data[mill_name] = a_mill;
     // if we haven't stored the parish yet, add it to parish list and mills by parishes dict
     if (parishes_array.indexOf(parish) < 0) {
       parishes_array.push(parish);
@@ -140,12 +141,11 @@ $(document).ready(function () {
     // get element which contains the list in html
     var $mill_list = $("#mill_list");
     // add list of mills to html element
-    console.log(current_mills_array);
     for (mill_name of current_mills_array) {
       jQuery("<div/>", {
         id: mill_name,
         class: "menu_list_item",
-        text: mill_name
+        text: new_mill_data[mill_name].display_name
       }).appendTo($mill_list);
     }
   }
@@ -160,8 +160,7 @@ $(document).ready(function () {
     for (var i in location_array) {
       new_marker = $marker.clone();
       new_marker.removeClass("blueprint");
-      console.log(location_array[i].name);
-      new_marker.attr('id', location_array[i].name + "marker");
+      new_marker.attr('id', location_array[i].name + "_marker");
       var left = location_array[i].left.toString() + "%";
       var top = location_array[i].top.toString() + "%";
       new_marker.css("left", left);
@@ -174,18 +173,23 @@ $(document).ready(function () {
     $(".marker").bind("click", function () {
       var t = $(this)[0];
       $(".card").addClass("active");
+      $(".card").attr("id", t.id);
       $(".marker").each(function () {
         if ($(this)[0] != t) {
           $(this).addClass("inactive");
         }
       });
       var element = $(".content-text")[0];
-      var parish = 
-      var extand = 
-      var founding_date = 
-      var lat = 
-      var long = 
-      element.innerHTML = "This mill was founded in <b>2010</b>. It belongs to <b>St.John</b> parish, and it's precise GPS location is <b>43.45</b> longitude and <b>15.45</b> latitude.";
+      var mill_name = t.id.replace("_marker", "");
+      console.log(mill_data);
+      var a_mill = new_mill_data[mill_name];
+      console.log(a_mill);
+      var parish = a_mill.parish;
+      var extant = a_mill.extand_or_ruin;
+      var founding_date = a_mill.date_of_establishment;
+      var lat = a_mill.lat;
+      var long = a_mill.long;
+      element.innerHTML = "This mill was founded in <b>" + founding_date + "</b>. It belongs to <b>" + parish + "</b> parish, and it's precise GPS location is <b>" + long + "</b> longitude and <b>" + lat + "</b> latitude.";
     });
   }
 
@@ -272,6 +276,34 @@ $(document).ready(function () {
    */
   function show_full_info() {
     var modal = $(".modal");
+    var element = $(".card")[0];
+    var mill_name = element.id.replace("_marker", "");
+    var a_mill = new_mill_data[mill_name];
+    // var parish = a_mill.parish;
+    // var extant = a_mill.extand_or_ruin;
+    // var founding_date = a_mill.date_of_establishment;
+    // var lat = a_mill.lat;
+    // var long = a_mill.long;
+    // var description = a_mill.additional_info;
+    var parish = "St.John";
+    var extant = "what";
+    var founding_date = 1974;
+    var lat = 1234;
+    var long = 5678;
+    var description = "wow";
+    // update general info
+    $(".modal-genInfo")[0].innerHTML = "<b>Parish: </b>" + parish + " <br> <b>Founding date: </b>" + founding_date + "<br> <b>Long, lat: </b>" + long + "," + lat;
+    // update description
+    $(".modal-desc")[0].innerHTML = description;
+    // update the chronology
+    $('.timeline').append(
+      $('<li>').attr({
+        "class": "event",
+        "data-date": "1777"
+      }).append(
+        $('<p>').text('what the hell')
+      )
+    );
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
