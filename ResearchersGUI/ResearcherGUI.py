@@ -235,6 +235,7 @@ class StartPage(tk.Frame):
 		call(["git", "remote", "set-url", "origin", "git@github.com:particknewhart/Antigua.git"])
 		call(["git", "add", "Mill_Files"])
 		call(["git", "add", "mill_data.json"])
+		call(["git", "add", "mill_data.js"])
 		call(["git", "commit", "-m", '"Mill files updated"'])
 		call(["git", "pull"])
 		call(["git", "push"])
