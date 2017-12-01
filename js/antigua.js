@@ -105,7 +105,6 @@ $(document).ready(function () {
       mills_by_parishes_array[parish].push(mill_name);
     }
   }
-  ``
 
   // sort the mill names inside the list
   mills_array.sort();
@@ -161,6 +160,7 @@ $(document).ready(function () {
     for (var i in location_array) {
       new_marker = $marker.clone();
       new_marker.removeClass("blueprint");
+      new_marker.attr("onclick", "$('.card').addClass('active'); $('.marker').addClass('inactive');");
       var left = location_array[i].left.toString() + "%";
       var top = location_array[i].top.toString() + "%";
       new_marker.css("left", left);
@@ -218,8 +218,8 @@ $(document).ready(function () {
   });
 
   /**
-   * What to do when map button is clicked. 
-   * 
+   * What to do when map button is clicked.
+   *
    */
   $("#map_button").on("click", function () {
     if ($current_map[0] != $("#antigua_map")[0]) {
@@ -238,7 +238,7 @@ $(document).ready(function () {
   var $modal = $(".blueprint .modal");
 
   /**
-   * Card active and inactive. 
+   * Card active and inactive.
    */
   $(".marker").bind("click", function () {
     $(".card").addClass("active");
