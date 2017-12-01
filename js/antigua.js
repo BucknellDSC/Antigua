@@ -16,6 +16,61 @@ $(document).ready(function () {
   var current_mills_array = [];
   //   var mill_locaitons, which contains all location data of mills. Declared in mill_location.json file
   // var mill_data, which contains all data of mills. Declared in mill_data.js file
+
+  // -------------- MENU BUTTONS STYLING AND FUNCTIONS ---------------------
+
+  /**
+   * Menu button styling on mouse over
+   */
+  $(".menu_button").on("mouseover", function () {
+    $(this).css("border", " 1px ridge rgba(242, 207, 141, 1)");
+  });
+
+  // menu item focus
+  $(".menu_button").on("click", function () {
+    $(".expandable_list", this).css({
+      height: "30vh",
+      "margin-top": "2em"
+    });
+    if ($(".menu_title", this).attr("id") !== "info_button") {
+      if ($(".menu_title", this).attr("id") !== "map_button") {
+        $(".menu_title", this).css({
+          "border-bottom": "1px ridge rgba(242, 207, 141, 1)"
+        });
+      }
+    }
+  });
+
+  /**
+   * Menu button styling on mouse over
+   */
+  $(".menu_button").on("mouseleave", function () {
+    $(this).css("border", " 1px ridge transparent");
+    $(".expandable_list", this).css({
+      height: "0vh",
+      "margin-top": "0"
+    });
+    $(".menu_title", this).css({
+      "border-bottom": "none"
+    });
+  });
+
+  /**
+   * What to do when info button is clicked. Doesn't require any data from .js file
+   */
+  $("#info_button").on("click", function () {
+    if (!$("#middle-slide").hasClass("active")) {
+      $("#middle-slide").addClass("active");
+      $("#middle-slide-title").addClass("active");
+      $("#middle-slide-content").addClass("active");
+    } else if ($("#middle-slide").hasClass("active")) {
+      $("#middle-slide").removeClass("active");
+      $("#middle-slide-title").removeClass("active");
+      $("#middle-slide-content").removeClass("active");
+    }
+  });
+
+
   // -------------- INIT CALLS. RUN WHEN WEBSITE STARTS ---------------------
 
   // show main map and hide other maps. We have to do this because they live on the same page
@@ -26,7 +81,6 @@ $(document).ready(function () {
   $("#stpeter_map").hide();
   $("#stphilip_map").hide();
   $("#antigua_map").show();
-
   $current_map = $("#antigua_map");
 
   // Process mill data into different form.
@@ -69,6 +123,7 @@ $(document).ready(function () {
   // add mills to menu. start with all mills
   add_mills_to_menu();
 
+
   // ------------------ MAIN FUNCTIONS --------------------------
 
   /**
@@ -89,7 +144,6 @@ $(document).ready(function () {
     }
   }
 
-
   /**
    * Create mill markers on a parish from a location json file
    * @param {*} location_array: the json object holding the location data
@@ -109,40 +163,12 @@ $(document).ready(function () {
     }
   }
 
-  var $card = $(".blueprint .card");
-  var $modal = $(".blueprint .modal");
 
-  $(".menu_button").on("mouseover", function () {
-    $(this).css("border", " 1px ridge rgba(242, 207, 141, 1)");
-  });
+  // ------------------ MAP FUNCTIONS --------------------------
 
-  // menu item focus
-  $(".menu_button").on("click", function () {
-    $(".expandable_list", this).css({
-      height: "30vh",
-      "margin-top": "2em"
-    });
-    if ($(".menu_title", this).attr("id") !== "info_button") {
-      if ($(".menu_title", this).attr("id") !== "map_button") {
-        $(".menu_title", this).css({
-          "border-bottom": "1px ridge rgba(242, 207, 141, 1)"
-        });
-      }
-    }
-  });
-
-  $(".menu_button").on("mouseleave", function () {
-    $(this).css("border", " 1px ridge transparent");
-    $(".expandable_list", this).css({
-      height: "0vh",
-      "margin-top": "0"
-    });
-    $(".menu_title", this).css({
-      "border-bottom": "none"
-    });
-  });
-
-  // switch to different parishes on click
+  /**
+   * switch to different parishes on click
+   */
   $("#stjohn-path").on("click", function () {
     $current_map.fadeOut();
     $("#stjohn_map").fadeIn();
@@ -185,7 +211,32 @@ $(document).ready(function () {
     create_mill_marker(stgeorge_mill_locations);
   });
 
-  $(".marker").on("click", function () {
+  /**
+   * What to do when map button is clicked.
+   *
+   */
+  $("#map_button").on("click", function () {
+    if ($current_map[0] != $("#antigua_map")[0]) {
+      $current_map.fadeOut();
+      $("#antigua_map").fadeIn();
+      $current_map = $("#antigua_map");
+    }
+    if ($("#middle-slide").hasClass("active")) {
+      $("#middle-slide").removeClass("active");
+      $("#middle-slide-title").removeClass("active");
+      $("#middle-slide-content").removeClass("active");
+    }
+  });
+
+
+
+  var $card = $(".blueprint .card");
+  var $modal = $(".blueprint .modal");
+
+  /**
+   * Card active and inactive.
+   */
+  $(".marker").bind("click", function () {
     $(".card").addClass("active");
     $(".marker").addClass("inactive");
   });
@@ -199,58 +250,36 @@ $(document).ready(function () {
     show_full_info();
   });
 
+  /**
+   * Show the modal with all the information
+   */
+  function show_full_info() {
+    var modal = $(".modal");
 
-  $("#info_button").on("click", function () {
-    if (!$("#middle-slide").hasClass("active")) {
-      $("#middle-slide").addClass("active");
-      $("#middle-slide-title").addClass("active");
-      $("#middle-slide-content").addClass("active");
-    } else if ($("#middle-slide").hasClass("active")) {
-      $("#middle-slide").removeClass("active");
-      $("#middle-slide-title").removeClass("active");
-      $("#middle-slide-content").removeClass("active");
-    }
-  });
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
 
-  $("#map_button").on("click", function () {
-    if ($current_map[0] != $("#antigua_map")[0]) {
-      $current_map.fadeOut();
-      $("#antigua_map").fadeIn();
-      $current_map = $("#antigua_map");
+    // When the user clicks the button, open the modal
+    modal.css("transform", "translateY(0)");
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.css("transform", "translateY(100%)");
+    };
+  }
+
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
     }
-    if ($("#middle-slide").hasClass("active")) {
-      $("#middle-slide").removeClass("active");
-      $("#middle-slide-title").removeClass("active");
-      $("#middle-slide-content").removeClass("active");
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-  });
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
 });
-
-function show_full_info() {
-  var modal = $(".modal");
-
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks the button, open the modal
-  modal.css("transform", "translateY(0)");
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function () {
-    modal.css("transform", "translateY(100%)");
-  };
-}
-
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
