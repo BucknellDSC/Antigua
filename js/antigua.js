@@ -145,6 +145,7 @@ $(document).ready(function() {
     // get element which contains the list in html
     var $mill_list = $("#mill_list");
     // add list of mills to html element
+    $mill_list.empty();
     for (mill_name of current_mills_array) {
       jQuery("<div/>", {
         id: mill_name,
@@ -228,6 +229,7 @@ $(document).ready(function() {
     $("#stpaul_map").fadeIn();
     $current_map = $("#stpaul_map");
     create_mill_marker(stpaul_mill_locations);
+    current_mills_array = mills_by_parishes_array["St.Paul"];    
     add_mills_to_menu();
   });
 
@@ -236,6 +238,8 @@ $(document).ready(function() {
     $("#stpeter_map").fadeIn();
     $current_map = $("#stpeter_map");
     create_mill_marker(stpeter_mill_locations);
+    current_mills_array = mills_by_parishes_array["St.Peter"];    
+    
     add_mills_to_menu();
   });
 
@@ -244,6 +248,7 @@ $(document).ready(function() {
     $("#stphilip_map").fadeIn();
     $current_map = $("#stphilip_map");
     create_mill_marker(stphilip_mill_locations);
+    current_mills_array = mills_by_parishes_array["St.Philip"];        
     add_mills_to_menu();
   });
 
@@ -252,6 +257,7 @@ $(document).ready(function() {
     $("#stmary_map").fadeIn();
     $current_map = $("#stmary_map");
     create_mill_marker(stmary_mill_locations);
+    current_mills_array = mills_by_parishes_array["St.Mary"];        
     add_mills_to_menu();
   });
 

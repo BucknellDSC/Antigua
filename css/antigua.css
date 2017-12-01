@@ -234,17 +234,17 @@ hr {
     background-color: rgba(34, 57, 58, 1);
 }
 
-.expandable_list,#Chronology::-webkit-scrollbar-track {
+.expandable_list::-webkit-scrollbar-track {
     border: 1px solid var(--text-color);
     background-color: transparent;
 }
 
-.expandable_list,#Chronology::-webkit-scrollbar {
+.expandable_list::-webkit-scrollbar {
     width: 0.5em;
     background-color: transparent;
 }
 
-.expandable_list,#Chronology::-webkit-scrollbar-thumb {
+.expandable_list::-webkit-scrollbar-thumb {
     background-color: var(--text-color);
 }
 
