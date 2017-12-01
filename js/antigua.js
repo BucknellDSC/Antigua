@@ -45,7 +45,7 @@ $(document).ready(function() {
       // else, add the mill to the dictionary of parishes
       mills_by_parishes_array[parish].push(mill_name);
     }
-  }
+  }``
 
   // sort the mill names inside the list
   mills_array.sort();
