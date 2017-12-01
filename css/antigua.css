@@ -248,6 +248,21 @@ hr {
     background-color: var(--text-color);
 }
 
+#Chronology::-webkit-scrollbar-track {
+    border: 1px solid var(--text-color);
+    background-color: transparent;
+}
+
+#Chronology::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: transparent;
+}
+
+#Chronology::-webkit-scrollbar-thumb {
+    background-color: var(--text-color);
+}
+
+
 .expandable_list {
     /* position: absolute; */
     top: -20vh;
