@@ -160,6 +160,7 @@ $(document).ready(function () {
     for (var i in location_array) {
       new_marker = $marker.clone();
       new_marker.removeClass("blueprint");
+      new_marker.attr('id',location_array[i].name + "_marker");
       new_marker.attr("onclick", "$('.card').addClass('active'); $('.marker').addClass('inactive');");
       var left = location_array[i].left.toString() + "%";
       var top = location_array[i].top.toString() + "%";
@@ -272,6 +273,8 @@ $(document).ready(function () {
     };
   }
 
+
+});
   /**
    * Switch to another tab with tab_name in the modal
    * @param {*Ch} evt 
@@ -290,5 +293,3 @@ $(document).ready(function () {
     document.getElementById(tab_name).style.display = "block";
     evt.currentTarget.className += " active";
   }
-
-});

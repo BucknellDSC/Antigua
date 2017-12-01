@@ -685,6 +685,7 @@ div.tab button {
     text-transform: uppercase;
     font-family: var(--text-font);
     color: var(--text-color);
+    border: 1px solid transparent;
 }
 
 
