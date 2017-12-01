@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // -------------- VARIABLE DECLARATION --------------------
 
   // the map which is currently active and show on the screen. jquery object
@@ -15,8 +15,7 @@ $(document).ready(function() {
   // the array of all mills we are currently working with
   var current_mills_array = [];
   //   var mill_locaitons, which contains all location data of mills. Declared in mill_location.json file
-  // var mill_data, which contains all data of mills. Declared in mill_data.json file
-  var mill_data = all_mills;
+  // var mill_data, which contains all data of mills. Declared in mill_data.js file
   // -------------- INIT CALLS. RUN WHEN WEBSITE STARTS ---------------------
 
   // show main map and hide other maps. We have to do this because they live on the same page
@@ -24,11 +23,11 @@ $(document).ready(function() {
   $("#stgeorge_map").hide();
   $("#stmary_map").hide();
   $("#stpaul_map").hide();
-  $("#stpeter_map").show();
+  $("#stpeter_map").hide();
   $("#stphilip_map").hide();
-  $("#antigua_map").hide();
+  $("#antigua_map").show();
 
-  $current_map = $("#stpeter-container");
+  $current_map = $("#antigua_map");
 
   // Process mill data into different form.
   // Specifically, we need a list of mill names | a list of parishes name | a list of mill names based on parishes
@@ -45,7 +44,8 @@ $(document).ready(function() {
       // else, add the mill to the dictionary of parishes
       mills_by_parishes_array[parish].push(mill_name);
     }
-  }``
+  }
+  ``
 
   // sort the mill names inside the list
   mills_array.sort();
@@ -80,16 +80,16 @@ $(document).ready(function() {
     // get element which contains the list in html
     var $mill_list = $("#mill_list");
     // add list of mills to html element
+    console.log(current_mills_array);
     for (mill_name of current_mills_array) {
       jQuery("<div/>", {
-        id: name,
+        id: mill_name,
         class: "menu_list_item",
-        text: name
+        text: mill_name
       }).appendTo($mill_list);
     }
   }
 
-  create_mill_marker(stpeter_mill_locations);
 
   /**
    * Create mill markers on a parish from a location json file
@@ -112,25 +112,26 @@ $(document).ready(function() {
   var $card = $(".blueprint .card");
   var $modal = $(".blueprint .modal");
 
-  $(".menu_button").on("mouseover", function() {
+  $(".menu_button").on("mouseover", function () {
     $(this).css("border", " 1px ridge rgba(242, 207, 141, 1)");
   });
 
   // menu item focus
-  $(".menu_button").on("click", function() {
+  $(".menu_button").on("click", function () {
     $(".expandable_list", this).css({
       height: "30vh",
       "margin-top": "2em"
     });
-    if ($(".menu_title", this).attr("id") !== "home_button" ) {
-        if ($(".menu_title", this).attr("id") !== "map_button" ) {
+    if ($(".menu_title", this).attr("id") !== "info_button") {
+      if ($(".menu_title", this).attr("id") !== "map_button") {
         $(".menu_title", this).css({
-            "border-bottom": "1px ridge rgba(242, 207, 141, 1)"
+          "border-bottom": "1px ridge rgba(242, 207, 141, 1)"
         });
-    }}
+      }
+    }
   });
 
-  $(".menu_button").on("mouseleave", function() {
+  $(".menu_button").on("mouseleave", function () {
     $(this).css("border", " 1px ridge transparent");
     $(".expandable_list", this).css({
       height: "0vh",
@@ -141,72 +142,88 @@ $(document).ready(function() {
     });
   });
 
-  // switch to st.john on click
-  $("#stjohn-path").on("click", function() {
-    // window.location.href = "stjohn.html"
+  // switch to different parishes on click
+  $("#stjohn-path").on("click", function () {
+    $current_map.fadeOut();
     $("#stjohn_map").fadeIn();
-    $("#antigua_map").fadeOut();
+    $current_map = $("#stjohn_map");
+    create_mill_marker(stjohn_mill_locations);
   });
 
-  $("#stpaul-path").on("click", function() {
-    window.location.href = "stpaul.html";
+  $("#stpaul-path").on("click", function () {
+    $current_map.fadeOut();
+    $("#stpaul_map").fadeIn();
+    $current_map = $("#stpaul_map");
+    create_mill_marker(stpaul_mill_locations);
   });
 
-  $("#stpeter-path").on("click", function() {
-    window.location.href = "stpeter.html";
+  $("#stpeter-path").on("click", function () {
+    $current_map.fadeOut();
+    $("#stpeter_map").fadeIn();
+    $current_map = $("#stpeter_map");
+    create_mill_marker(stpeter_mill_locations);
   });
 
-  $("#stphilip-path").on("click", function() {
-    window.location.href = "stphilip.html";
+  $("#stphilip-path").on("click", function () {
+    $current_map.fadeOut();
+    $("#stphilip_map").fadeIn();
+    $current_map = $("#stphilip_map");
+    create_mill_marker(stphilip_mill_locations);
   });
 
-  $("#stmary-path").on("click", function() {
-    window.location.href = "stmary.html";
+  $("#stmary-path").on("click", function () {
+    $current_map.fadeOut();
+    $("#stmary_map").fadeIn();
+    $current_map = $("#stmary_map");
+    create_mill_marker(stmary_mill_locations);
   });
 
-  $("#stgeorge-path").on("click", function() {
-    window.location.href = "stgeorge.html";
+  $("#stgeorge-path").on("click", function () {
+    $current_map.fadeOut();
+    $("#stgeorge_map").fadeIn();
+    $current_map = $("#stgeorge_map");
+    create_mill_marker(stgeorge_mill_locations);
   });
 
-  $(".marker").bind("click", function() {
+  $(".marker").bind("click", function () {
     $(".card").addClass("active");
     $(".marker").addClass("inactive");
   });
 
-  $(".card .button-secondary").on("click", function() {
+  $(".card .button-secondary").on("click", function () {
     $(".card").removeClass("active");
     $(".marker").removeClass("inactive");
   });
 
-    $(".card .button-primary").on("click", function() {
-        show_full_info();
-    });
+  $(".card .button-primary").on("click", function () {
+    show_full_info();
+  });
 
-  $("#home_button").on("click", function() {
-        if (!$("#middle-slide").hasClass("active")) {
-            $("#middle-slide").addClass("active");
-            $("#middle-slide-title").addClass("active");
-            $("#middle-slide-content").addClass("active");
-        }
-      else if ($("#middle-slide").hasClass("active")) {
-          $("#middle-slide").removeClass("active");
-          $("#middle-slide-title").removeClass("active");
-          $("#middle-slide-content").removeClass("active");
-      }
-    });
 
-    $("#map_button").on("click", function() {
-        if ($("#middle-slide").hasClass("active")) {
-            $("#middle-slide").removeClass("active");
-            $("#middle-slide-title").removeClass("active");
-            $("#middle-slide-content").removeClass("active");
-        }
-        else if (!$("#middle-slide").hasClass("active")) {
-            $("#middle-slide").addClass("active");
-            $("#middle-slide-title").addClass("active");
-            $("#middle-slide-content").addClass("active");
-        }
-    });
+  $("#info_button").on("click", function () {
+    if (!$("#middle-slide").hasClass("active")) {
+      $("#middle-slide").addClass("active");
+      $("#middle-slide-title").addClass("active");
+      $("#middle-slide-content").addClass("active");
+    } else if ($("#middle-slide").hasClass("active")) {
+      $("#middle-slide").removeClass("active");
+      $("#middle-slide-title").removeClass("active");
+      $("#middle-slide-content").removeClass("active");
+    }
+  });
+
+  $("#map_button").on("click", function () {
+    if ($current_map[0] != $("#antigua_map")[0]) {
+      $current_map.fadeOut();
+      $("#antigua_map").fadeIn();
+      $current_map = $("#antigua_map");
+    }
+    if ($("#middle-slide").hasClass("active")) {
+      $("#middle-slide").removeClass("active");
+      $("#middle-slide-title").removeClass("active");
+      $("#middle-slide-content").removeClass("active");
+    }
+  });
 });
 
 function show_full_info() {
@@ -219,21 +236,7 @@ function show_full_info() {
   modal.css("transform", "translateY(0)");
 
   // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-      modal.css("transform", "translateY(100%)");
+  span.onclick = function () {
+    modal.css("transform", "translateY(100%)");
   };
-}
-
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
 }

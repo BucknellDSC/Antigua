@@ -164,10 +164,10 @@ class txt_to_json:
 
 
         # Write JSON file
-        with io.open('mill_data.json', 'w', encoding='utf8') as outfile:
+        with io.open('mill_data.js', 'w', encoding='utf8') as outfile:
             outfile.write("var mill_data = ")
 
-        with io.open('mill_data.json', 'a', encoding='utf8') as outfile:
+        with io.open('mill_data.js', 'a', encoding='utf8') as outfile:
             str_ = json.dumps(data,
                             indent=4, sort_keys=True,
                             separators=(',', ': '), ensure_ascii=False)
