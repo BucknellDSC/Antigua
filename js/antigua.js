@@ -45,7 +45,6 @@ $(document).ready(function () {
       mills_by_parishes_array[parish].push(mill_name);
     }
   }
-  ``
 
   // sort the mill names inside the list
   mills_array.sort();
@@ -101,6 +100,7 @@ $(document).ready(function () {
     for (var i in location_array) {
       new_marker = $marker.clone();
       new_marker.removeClass("blueprint");
+      new_marker.attr("onclick", "$('.card').addClass('active'); $('.marker').addClass('inactive');");
       var left = location_array[i].left.toString() + "%";
       var top = location_array[i].top.toString() + "%";
       new_marker.css("left", left);
@@ -185,7 +185,7 @@ $(document).ready(function () {
     create_mill_marker(stgeorge_mill_locations);
   });
 
-  $(".marker").bind("click", function () {
+  $(".marker").on("click", function () {
     $(".card").addClass("active");
     $(".marker").addClass("inactive");
   });
