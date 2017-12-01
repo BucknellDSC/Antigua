@@ -345,7 +345,7 @@ footer {
 }
 
 .marker svg {
-    fill: rgba(88, 115, 90, 1);
+    fill:rgba(34, 57, 58, 0.8);
 }
 
 .marker svg:hover {
@@ -356,7 +356,7 @@ footer {
 .marker .shadow {
     width: 18px;
     height: 4px;
-    background: gray;
+    background: rgba(34, 57, 58, 1);
     border-radius: 50%;
     margin: 5px auto 0 auto;
 }
