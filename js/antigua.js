@@ -327,7 +327,8 @@ $(document).ready(function() {
     // update description
     $(".modal-desc")[0].innerHTML = description;
     // update the chronology
-    console.log(chronology);
+    // clear the ul content
+    $(".timeline").empty();
     for (var year in chronology) {
       $(".timeline").append(
         $("<li>")

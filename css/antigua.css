@@ -234,17 +234,17 @@ hr {
     background-color: rgba(34, 57, 58, 1);
 }
 
-.expandable_list::-webkit-scrollbar-track {
+.expandable_list,#Chronology::-webkit-scrollbar-track {
     border: 1px solid var(--text-color);
     background-color: transparent;
 }
 
-.expandable_list::-webkit-scrollbar {
+.expandable_list,#Chronology::-webkit-scrollbar {
     width: 0.5em;
     background-color: transparent;
 }
 
-.expandable_list::-webkit-scrollbar-thumb {
+.expandable_list,#Chronology::-webkit-scrollbar-thumb {
     background-color: var(--text-color);
 }
 
@@ -599,12 +599,19 @@ Modal testing
 }
 
 .modal-tab {
+    min-width: 35%;
     max-width: 45%;
     float: right;
 }
+
+#Chronology{
+    height: auto;
+    overflow-x: hidden;    
+    overflow-y: scroll;
+    max-height: 60vh;
+}
 .modal-text {
     max-width: 45%;
-    float: left;
     display: inline-block;
     font-size: 1.15em;
     line-height: 150%;
