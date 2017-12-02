@@ -334,14 +334,14 @@ $(document).ready(function() {
     $(".modal-desc")[0].innerHTML = description;
     // update the chronology
     // clear the ul content
-    $(".timeline").empty();
-    for (var year in chronology) {
-      $(".timeline").append(
-        $("<li>")
-          .attr({ class: "event", "data-date": year })
-          .append($("<p>").text(chronology[year]))
-      );
-    }
+    // $(".timeline").empty();
+    // for (var year in chronology) {
+    //   $(".timeline").append(
+    //     $("<li>")
+    //       .attr({ class: "event", "data-date": year.toString() })
+    //       .append($("<p>").text(chronology[year]))
+    //   );
+    // }
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
