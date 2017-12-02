@@ -6,7 +6,7 @@ var mill_data = [
       "1994": "Murph was born"
     },
     date_of_establishment: "1996.33",
-    display_name: "Barnacle Point",
+    display_name: "",
     enslaved_peoples:
       "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
     extant_or_ruin: "Extant",
@@ -22,7 +22,7 @@ var mill_data = [
       "1994": "Murph was born"
     },
     date_of_establishment: "1996.33",
-    display_name: "Barnacle Point",
+    display_name: "",
     enslaved_peoples:
       "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
     extant_or_ruin: "",
@@ -38,7 +38,7 @@ var mill_data = [
       "1994": "Murph was born"
     },
     date_of_establishment: "1996.33",
-    display_name: "Barnacle Point",
+    display_name: "",
     enslaved_peoples:
       "The sun was shining on the sea, \nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
     extant_or_ruin: "",
@@ -87,7 +87,7 @@ var mill_data = [
     additional_info: "",
     chronology: {},
     date_of_establishment: "",
-    display_name: "Fitche's Creek",
+    display_name: "",
     enslaved_peoples: "",
     extant_or_ruin: "",
     lat: "",

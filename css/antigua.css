@@ -24,6 +24,7 @@ html {
     background-size: cover;
     display: flex;
     transition: all 0.4s ease;
+    font-size: 1vw;
 }
 
 .parish-map {
@@ -36,6 +37,7 @@ html {
 #stjohn-path{
     fill: rgba(29,32,38,0.5);
 }
+/*
 #stphilip-path{
     fill: rgba(88,115,90,0.5);
 }
@@ -61,11 +63,6 @@ html {
     transition: all ease 0.5s;
 }
 
-.parish-path:hover {
-    fill: rgba(0, 0, 0, 0.5);
-    /* stroke: transparent; */
-}
-
 .sidepanel {
     float: left;
     top: 0;
@@ -73,7 +70,7 @@ html {
     background-color: var(--bg-color);
     height: 100vh;
     width: 20vw;
-    min-width: 20em;
+    min-width: 10em;
     vertical-align: middle;
     text-align: left;
     font-family: var(--text-font);
@@ -379,7 +376,7 @@ footer {
 }
 .card {
     position: absolute;
-    width: 280px;
+    width: 15%;
     height: auto;
     top: 25%;
     left: 50%;
@@ -396,7 +393,7 @@ footer {
     font-family: var(--text-font);
 }
 
-.card.active {
+.card.active{
     -webkit-transform: perspective(600px) rotateY(0deg);
     transform: perspective(600px) rotateY(0deg);
     opacity: 1;
@@ -411,7 +408,7 @@ footer {
 }
 
 .card .image {
-    padding: 0.75em;
+    padding: auto;
     margin: auto;
     width: 90%;
 }
@@ -419,7 +416,7 @@ footer {
 .card .title {
     text-align: center;
     font-family: var(--title-font);
-    font-size: 2.5em;
+    font-size: 2.5em; 
     font-weight: bolder;
     padding-bottom: 0;
     border-bottom: solid 2px var(--bg-color-2);
@@ -428,18 +425,18 @@ footer {
 .card .subtitle {
     text-align: center;
     font-family: var(--bg-color);
-    font-size: 1em;
-    padding: 0.2em;
+    font-size: 0.9em;
+    padding: 0.5vh;
 }
 
 .card .content-text {
-    padding: 0.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding: 0.5vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     margin: auto;
     font-family: var(--text-font);
-    font-size: 0.9em;
-    line-height: 150%;
+    font-size: 0.8em;
+    line-height: 125%;
 }
 
 .card .button-container{
@@ -566,8 +563,8 @@ Modal testing
 .modal-content {
     position: fixed;
     background-color: var(--bg-color);
-    width: calc(100% - 4em);
-    height: calc(100% - 4em);
+    width: calc(100vw - 4em);
+    height: calc(100vh - 4em);
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
@@ -618,21 +615,16 @@ Modal testing
     float: right;
 }
 
-#Chronology{
-    height: auto;
-    overflow-x: hidden;    
-    overflow-y: scroll;
-    max-height: 60vh;
-}
 .modal-text {
     max-width: 45%;
     display: inline-block;
-    font-size: 1.15em;
+    font-size: 1em;
     line-height: 150%;
 }
 
 .modal-genInfo {
     padding: 2em 0 2em 0;
+    font-size: 0.9em;
 }
 /* Add Animation */
 
@@ -698,9 +690,9 @@ div.tab button {
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 1em;
+    padding: 0.5em;
     transition: 0.3s;
-    font-size: 1.14em;
+    font-size: 1em;
     text-transform: uppercase;
     font-family: var(--text-font);
     color: var(--text-color);
@@ -730,6 +722,12 @@ div.tab button.active {
 }
 
 
+#Chronology{
+    height: auto;
+    overflow-x: hidden;    
+    overflow-y: auto;
+    max-height: 60vh;
+}
 
 .timeline {
     border-left: 4px solid white;
@@ -740,13 +738,14 @@ div.tab button.active {
     letter-spacing: 0.5px;
     position: relative;
     line-height: 150%;
-    font-size: 1.15em;
+    font-size: 1em;
     list-style: none;
     text-align: left;
     font-weight: 100;
     max-width: 100%;
     padding-left: 50px;
     margin: 0;
+    margin-left: 120px;
 }
 
 .timeline .event {
@@ -772,8 +771,8 @@ div.tab button.active {
     content: attr(data-date);
     text-align: right;
     font-weight: 100;
-    font-size: 0.9em;
-    min-width: 120px;
+    font-size: 1em;
+    width: 120px;
 }
 .timeline .event:after {
     box-shadow: 0 0 0 4px var(--text-color);
