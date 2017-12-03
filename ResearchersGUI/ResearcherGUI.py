@@ -280,8 +280,17 @@ class PageOne(tk.Frame):
 			must be displayed.
 		"""
 
+		# To put the parish name on the title, we first read it from our text files....
+		parish_name_path = "Mill_Files/NameOfParish/" + edit_file_name(mill_name)
+
+		with open(parish_name_path, 'r') as text_file:
+				try:
+					parish_name = text_file.read()
+				except AttributeError:
+					pass
+
 		# Display relevant mill's name
-		self.main_label = tk.Label(self.main_label_frame, text=mill_name, \
+		self.main_label = tk.Label(self.main_label_frame, text=mill_name + " - " + parish_name, \
 			font=self.controller.title_font, bg='steelblue')
 		self.main_label.pack()
 		self.main_label_frame.grid(row=0, sticky=E+W+N+S)
