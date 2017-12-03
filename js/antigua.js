@@ -36,7 +36,6 @@ $(document).ready(function() {
     //   $("#middle-slide-content").removeClass("active");
     // }
     if (!$(this).has("#info_button").length) {
-      console.log("what");
       $("#middle-slide").removeClass("active");
       $("#middle-slide-title").removeClass("active");
       $("#middle-slide-content").removeClass("active");
@@ -305,6 +304,7 @@ $(document).ready(function() {
    * switch to different parishes on click
    */
   $("#stjohn-path").on("click", function() {
+    $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stjohn_map").fadeIn();
     $current_map = $("#stjohn_map");
@@ -314,6 +314,7 @@ $(document).ready(function() {
   });
 
   $("#stpaul-path").on("click", function() {
+    $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stpaul_map").fadeIn();
     $current_map = $("#stpaul_map");
@@ -323,6 +324,7 @@ $(document).ready(function() {
   });
 
   $("#stpeter-path").on("click", function() {
+    $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stpeter_map").fadeIn();
     $current_map = $("#stpeter_map");
@@ -333,6 +335,7 @@ $(document).ready(function() {
   });
 
   $("#stphilip-path").on("click", function() {
+    $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stphilip_map").fadeIn();
     $current_map = $("#stphilip_map");
@@ -342,6 +345,7 @@ $(document).ready(function() {
   });
 
   $("#stmary-path").on("click", function() {
+    $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stmary_map").fadeIn();
     $current_map = $("#stmary_map");
@@ -351,6 +355,7 @@ $(document).ready(function() {
   });
 
   $("#stgeorge-path").on("click", function() {
+    $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stgeorge_map").fadeIn();
     $current_map = $("#stgeorge_map");
@@ -365,11 +370,9 @@ $(document).ready(function() {
    */
   $("#map_button").on("click", function() {
     $(".card").removeClass("active");
-    if ($current_map[0] != $("#antigua_map")[0]) {
-      $current_map.fadeOut();
-      $("#antigua_map").fadeIn();
-      $current_map = $("#antigua_map");
-    }
+    $current_map.fadeOut();
+    $("#antigua_map").fadeIn();
+    $current_map = $("#antigua_map");
     if ($("#middle-slide").hasClass("active")) {
       $("#middle-slide").removeClass("active");
       $("#middle-slide-title").removeClass("active");
