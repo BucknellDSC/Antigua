@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // -------------- VARIABLE DECLARATION --------------------
 
   // the map which is currently active and show on the screen. jquery object
@@ -24,12 +24,23 @@ $(document).ready(function () {
   /**
    * Menu button styling on mouse over
    */
-  $(".menu_button").on("mouseover", function () {
+  $(".menu_button").on("mouseover", function() {
     $(this).css("border", " 1px ridge rgba(242, 207, 141, 1)");
   });
 
-  // menu item focus
-  $(".menu_button").on("click", function () {
+  // menu item click
+  $(".menu_button").on("click", function() {
+    // if ($(".menu_button")[0] != $("#info_button")[0] && $("#middle-slide").hasClass("active")) {
+    //   $("#middle-slide").removeClass("active");
+    //   $("#middle-slide-title").removeClass("active");
+    //   $("#middle-slide-content").removeClass("active");
+    // }
+    if (!$(this).has("#info_button").length) {
+      console.log("what");
+      $("#middle-slide").removeClass("active");
+      $("#middle-slide-title").removeClass("active");
+      $("#middle-slide-content").removeClass("active");
+    }
     var distance_to_bottom =
       $(window).height() -
       $("#credit_button")[0].getBoundingClientRect().bottom -
@@ -52,9 +63,9 @@ $(document).ready(function () {
   });
 
   /**
-   * Menu button styling on mouse over
+   * Menu button styling on mouse leave
    */
-  $(".menu_button").on("mouseleave", function () {
+  $(".menu_button").on("mouseleave", function() {
     $(this).css("border", " 1px ridge transparent");
     $(".expandable_list", this).css({
       height: "0vh",
@@ -68,12 +79,12 @@ $(document).ready(function () {
   /**
    * What to do when info button is clicked. Doesn't require any data from .js file
    */
-  $("#info_button").on("click", function () {
+  $("#info_button").on("click", function() {
     if (!$("#middle-slide").hasClass("active")) {
       $("#middle-slide").addClass("active");
       $("#middle-slide-title").addClass("active");
       $("#middle-slide-content").addClass("active");
-    } else if ($("#middle-slide").hasClass("active")) {
+    } else {
       $("#middle-slide").removeClass("active");
       $("#middle-slide-title").removeClass("active");
       $("#middle-slide-content").removeClass("active");
@@ -105,12 +116,11 @@ $(document).ready(function () {
     }
   }
 
-
   // load the mills into parish dictionary
   /**
-   * Load mills into a dict. 
-   * @param {*} parish 
-   * @param {*} mill_by_parish_var 
+   * Load mills into a dict.
+   * @param {*} parish
+   * @param {*} mill_by_parish_var
    */
   function add_mills_to_parish_dic(parish, mill_by_parish_var) {
     var parish_has_info = false;
@@ -121,6 +131,7 @@ $(document).ready(function () {
       if (mill_name in new_mill_data) {
         mills_by_parishes_array[parish].push(mill_name);
         parish_has_info = true;
+        new_mill_data[mill_name].parish = parish;
       }
     }
     if (parish_has_info) {
@@ -133,7 +144,6 @@ $(document).ready(function () {
   add_mills_to_parish_dic("stpeter", stpeter_mill_locations);
   add_mills_to_parish_dic("stpaul", stpaul_mill_locations);
   add_mills_to_parish_dic("stphilip", stphilip_mill_locations);
-
 
   // sort the mill names inside the list
   mills_array.sort();
@@ -152,29 +162,39 @@ $(document).ready(function () {
 
   /**
    * Capitalize the first character of a string
-   * @param {*} s: string to convert 
+   * @param {*} s: string to convert
    */
-  String.prototype.capitalizeFirstLetter = function () {
+  String.prototype.capitalizeFirstLetter = function() {
     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
-  }
+  };
 
   // add parishes to menu
   var $parish_list = $("#parish_list");
   for (var a_parish of parishes_array) {
     // Convert name to propername
-    var parish_name = a_parish.substring(0, 2).capitalizeFirstLetter() + "." + a_parish.substring(2).capitalizeFirstLetter();
+    var parish_name =
+      a_parish.substring(0, 2).capitalizeFirstLetter() +
+      "." +
+      a_parish.substring(2).capitalizeFirstLetter();
     var t = jQuery("<div/>", {
       id: a_parish,
       class: "menu_list_item parish",
       text: parish_name
-    })
+    });
     t.appendTo($parish_list);
-    t.hover(function () {
+    t.hover(
+      function() {
+        var parish_path_id = "#" + this.id + "-path";
+        $(parish_path_id)[0].style.fill = "rgba(0, 0, 0, 0.5)";
+      },
+      function() {
+        var parish_path_id = "#" + this.id + "-path";
+        $(parish_path_id)[0].style.fill = "rgba(0, 0, 0, 0)";
+      }
+    );
+    t.click(function() {
       var parish_path_id = "#" + this.id + "-path";
-      $(parish_path_id)[0].style.fill = "rgba(0, 0, 0, 0.5)";
-    }, function () {
-      var parish_path_id = "#" + this.id + "-path";
-      $(parish_path_id)[0].style.fill = "rgba(0, 0, 0, 0)";
+      $(parish_path_id).trigger("click");
     });
   }
 
@@ -192,14 +212,27 @@ $(document).ready(function () {
         id: mill_name,
         class: "menu_list_item mill",
         text: new_mill_data[mill_name].display_name
-      })
+      });
       t.appendTo($mill_list);
-      t.hover(function () {
-        var mill_id = "#" + this.id + "_marker";
-        $(parish_path_id)[0].style.fill = "rgba(0, 0, 0, 0.5)";
-      }, function () {
-        var parish_path_id = "#" + this.id + "-path";
-        $(parish_path_id)[0].style.fill = "rgba(0, 0, 0, 0)";
+      t.hover(
+        function() {
+          var mill_id = "#" + this.id + "_marker";
+        },
+        function() {
+          var parish_path_id = "#" + this.id + "-path";
+        }
+      );
+      t.click(function() {
+        if ($current_map[0] == $("#antigua_map")[0]) {
+          var parish = new_mill_data[this.id].parish;
+          var parish_path_id = "#" + parish + "-path";
+          $(parish_path_id).trigger("click");
+          var mill_id = "#" + this.id + "_marker";
+          $(mill_id).trigger("click");
+        } else {
+          var mill_id = "#" + this.id + "_marker";
+          $(mill_id).trigger("click");
+        }
       });
     }
   }
@@ -223,14 +256,11 @@ $(document).ready(function () {
         $current_map.append(new_marker);
       }
     }
-    /**
-     * Card active and inactive.
-     */
-    $(".marker").bind("click", function () {
+    $(".marker").bind("click", function() {
       var t = $(this)[0];
       $(".card").addClass("active");
       $(".card").attr("id", t.id);
-      $(".marker").each(function () {
+      $(".marker").each(function() {
         if ($(this)[0] != t) {
           $(this).addClass("inactive");
         }
@@ -261,19 +291,20 @@ $(document).ready(function () {
 
   // ------------------ INTERACTIVE FUNCTIONS --------------------------
 
-
   // highlight parishes when hover over
-  $(".parish-path").hover(function () {
-    this.style.fill = "rgba(0, 0, 0, 0.5)";
-  }, function () {
-    this.style.fill = "rgba(0, 0, 0, 0)";
-  });
-
+  $(".parish-path").hover(
+    function() {
+      this.style.fill = "rgba(0, 0, 0, 0.5)";
+    },
+    function() {
+      this.style.fill = "rgba(0, 0, 0, 0)";
+    }
+  );
 
   /**
    * switch to different parishes on click
    */
-  $("#stjohn-path").on("click", function () {
+  $("#stjohn-path").on("click", function() {
     $current_map.fadeOut();
     $("#stjohn_map").fadeIn();
     $current_map = $("#stjohn_map");
@@ -282,7 +313,7 @@ $(document).ready(function () {
     add_mills_to_menu();
   });
 
-  $("#stpaul-path").on("click", function () {
+  $("#stpaul-path").on("click", function() {
     $current_map.fadeOut();
     $("#stpaul_map").fadeIn();
     $current_map = $("#stpaul_map");
@@ -291,7 +322,7 @@ $(document).ready(function () {
     add_mills_to_menu();
   });
 
-  $("#stpeter-path").on("click", function () {
+  $("#stpeter-path").on("click", function() {
     $current_map.fadeOut();
     $("#stpeter_map").fadeIn();
     $current_map = $("#stpeter_map");
@@ -301,7 +332,7 @@ $(document).ready(function () {
     add_mills_to_menu();
   });
 
-  $("#stphilip-path").on("click", function () {
+  $("#stphilip-path").on("click", function() {
     $current_map.fadeOut();
     $("#stphilip_map").fadeIn();
     $current_map = $("#stphilip_map");
@@ -310,7 +341,7 @@ $(document).ready(function () {
     add_mills_to_menu();
   });
 
-  $("#stmary-path").on("click", function () {
+  $("#stmary-path").on("click", function() {
     $current_map.fadeOut();
     $("#stmary_map").fadeIn();
     $current_map = $("#stmary_map");
@@ -319,7 +350,7 @@ $(document).ready(function () {
     add_mills_to_menu();
   });
 
-  $("#stgeorge-path").on("click", function () {
+  $("#stgeorge-path").on("click", function() {
     $current_map.fadeOut();
     $("#stgeorge_map").fadeIn();
     $current_map = $("#stgeorge_map");
@@ -332,7 +363,8 @@ $(document).ready(function () {
    * What to do when map button is clicked.
    *
    */
-  $("#map_button").on("click", function () {
+  $("#map_button").on("click", function() {
+    $(".card").removeClass("active");
     if ($current_map[0] != $("#antigua_map")[0]) {
       $current_map.fadeOut();
       $("#antigua_map").fadeIn();
@@ -348,12 +380,12 @@ $(document).ready(function () {
   var $card = $(".blueprint .card");
   var $modal = $(".blueprint .modal");
 
-  $(".card .button-secondary").on("click", function () {
+  $(".card .button-secondary").on("click", function() {
     $(".card").removeClass("active");
     $(".marker").removeClass("inactive");
   });
 
-  $(".card .button-primary").on("click", function () {
+  $(".card .button-primary").on("click", function() {
     show_full_info();
   });
 
@@ -396,11 +428,11 @@ $(document).ready(function () {
     for (var year in chronology) {
       $(".timeline").append(
         $("<li>")
-        .attr({
-          class: "event",
-          "data-date": year.toString()
-        })
-        .append($("<p>").text(chronology[year]))
+          .attr({
+            class: "event",
+            "data-date": year.toString()
+          })
+          .append($("<p>").text(chronology[year]))
       );
     }
 
@@ -411,7 +443,7 @@ $(document).ready(function () {
     modal.css("transform", "translateY(0)");
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
+    span.onclick = function() {
       modal.css("transform", "translateY(100%)");
     };
   }
