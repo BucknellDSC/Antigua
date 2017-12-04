@@ -2,30 +2,32 @@ var mill_data = [
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
         "chronology": {
-            "1994": "Murph was born"
+            "1994": "Murph was born",
+            "1996": "Patrick was born"
         },
-        "date_of_establishment": "1996.33",
+        "date_of_establishment": "1996",
         "display_name": "Barnacle Point",
         "enslaved_peoples": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
         "extant_or_ruin": "Extant",
         "lat": "Extant",
-        "long": "lalala",
+        "long": "17823",
         "name": "Barnacle Point",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
-        "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
+        "additional_info": "THIS WAS CHANGED",
         "chronology": {
-            "1994": "Murph was born"
+            "1994": "Murph was born",
+            "1996": "Patrick was born"
         },
-        "date_of_establishment": "1996.33",
-        "display_name": "Blackman's",
+        "date_of_establishment": "1993",
+        "display_name": "Barnacle Point",
         "enslaved_peoples": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
-        "extant_or_ruin": "",
-        "lat": "Extant",
-        "long": "lalala",
+        "extant_or_ruin": "Extant",
+        "lat": "17823",
+        "long": "17823",
         "name": "Barnes Hill",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -39,7 +41,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "BlackmansMount Lucie",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -53,7 +55,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Carlisles",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -67,7 +69,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Date Hill",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -81,7 +83,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Donovans (Vaughans)",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -95,7 +97,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Fitches Creek",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -109,7 +111,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Giles Blizzard",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -123,7 +125,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Gravenors",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -137,7 +139,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Gunthorpes (ASF)",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -151,7 +153,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Hight Point",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -165,7 +167,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Judge Blizzards",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -179,7 +181,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "LightfootsThe Grove",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -193,7 +195,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Long Island",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -207,7 +209,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Millars",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -221,7 +223,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Nibbs",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -235,7 +237,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "North Sound (Thomass HillCol. Thomas North Sound Plantation",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -249,7 +251,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Paynters",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -263,7 +265,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "SherwoodsLebanon",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -277,7 +279,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Weirs (WaresGlanvillesLittle Zoar)",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -291,7 +293,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Will Blizzards",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
@@ -305,7 +307,7 @@ var mill_data = [
         "lat": "Extant",
         "long": "lalala",
         "name": "Winthorpes",
-        "parish": "1750"
+        "parish": "St. George's"
     },
     {
         "additional_info": "",
@@ -317,7 +319,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Allens Plantation (a.k.a. Mountains View)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -329,7 +331,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Belle VueStony Hill Plantation",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -341,7 +343,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "BelmontMurrays",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -353,7 +355,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Belvedere Plantation (a.k.a. Hornes)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -365,7 +367,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Bendals Plantation",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -377,7 +379,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Body Ponds Plantation (a.k.a. Carleton)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -389,7 +391,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Boones",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -401,7 +403,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Brecknocks Plantation",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -413,7 +415,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Briggins (Little Zoar)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -425,7 +427,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Buckleys Plantation",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -437,7 +439,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Cassandra Gardens",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -449,7 +451,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Cedar Valley Plantation",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -461,7 +463,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Clare Hall",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -473,7 +475,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Cooks",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -485,7 +487,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Creek SideThibous Plantation",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -497,7 +499,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Crosbies",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -509,7 +511,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Denfields",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -521,7 +523,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Drews Hill",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -533,7 +535,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Dunbars",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -545,7 +547,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Five Islands Plantation (Upper and Lower Pelican)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -557,7 +559,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Friars Hill",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -569,7 +571,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Galley Bay Plantation",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -581,7 +583,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Gambles",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -593,7 +595,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "George Byams Plantation",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -605,7 +607,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Golden Grove (Pauls)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -617,7 +619,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "GraysTurnbils",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -629,7 +631,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Hallidays Mountation (a.k.a. Gilleads, Gilliats, or Providence)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -641,7 +643,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Harts and Royals",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -653,7 +655,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Hawkebills Plantation (a.k.a. Hansons)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -665,7 +667,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Herberts",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -677,7 +679,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Hill HouseDry Hill",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -689,7 +691,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Hodges",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -701,7 +703,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Langfords",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -713,7 +715,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Marble Hill",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -725,7 +727,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "McKinnon",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -737,7 +739,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Mount Pleasant",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -749,7 +751,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Olivers (Stock Estate)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -761,7 +763,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Ottos",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -773,7 +775,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Potters Plantation",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -785,7 +787,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Renfrews",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -797,7 +799,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Rose Hill and Hammersfield",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -809,7 +811,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "St. ClareWilliams Plantation (Originally known as The Body)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -821,7 +823,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "The Folly (Bath Lodge) Plantation (a.k.a. Duncombs Folly)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -833,7 +835,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "The Union Plantation (HaddonHatton or Weekes)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -845,7 +847,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "The Wood Plantation",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -857,7 +859,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "ThibouJarvis Plantation (a.k.a. Mt. Joshua)",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -869,7 +871,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Tomlinson",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -881,7 +883,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Villa",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -893,7 +895,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Weatherills",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -905,7 +907,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Williams",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -917,7 +919,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "YeptonsYapton Farm Plantation",
-        "parish": ""
+        "parish": "St. John's"
     },
     {
         "additional_info": "",
@@ -929,7 +931,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Barbuda",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -941,7 +943,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Bettys Hope",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -953,7 +955,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Big Duers",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -965,7 +967,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Brookes",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -977,7 +979,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Cedar Hill (Hall)",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -989,7 +991,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Cochrans",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1001,7 +1003,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Cocoa Nut Hall & Hawes",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1013,7 +1015,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Cotton Garden",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1025,7 +1027,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Cotton New Works",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1037,7 +1039,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Crabbs",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1049,7 +1051,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Freemans Upper",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1061,7 +1063,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Gilberts",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1073,7 +1075,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Guiana Island",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1085,7 +1087,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Jonas",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1097,7 +1099,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Little Duers",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1109,7 +1111,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Lower Freemans",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1121,7 +1123,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "MartinsDiamond",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1133,7 +1135,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Mercers Creek",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1145,7 +1147,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Pares",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1157,7 +1159,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Parham Hill & Parham Lodge",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1169,7 +1171,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Parham New Works",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1181,7 +1183,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Parrys",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1193,7 +1195,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "SandersonsOsbornes",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1205,7 +1207,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Vernons (Wakering Hall)",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1217,7 +1219,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Yeamons",
-        "parish": ""
+        "parish": "St. Peter's"
     },
     {
         "additional_info": "",
@@ -1229,7 +1231,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Christian Hill  Cussacks",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1241,7 +1243,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Rooms",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1253,7 +1255,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Parsons Maul  Parson Maules",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1265,7 +1267,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Glanvilles",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1277,7 +1279,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Collins",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1289,7 +1291,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Grants",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1301,7 +1303,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Jefferson  Zion Hill",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1313,7 +1315,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Mayers  Benlomand",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1325,7 +1327,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Retreat  Montgomery",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1337,7 +1339,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Comfort Hall",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1349,7 +1351,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Grays Belfast  Lambert Hall",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1361,7 +1363,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Wickhams  Upper Freemans",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1373,7 +1375,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Elliott  Frenchs",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1385,7 +1387,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Lon Lane",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1397,7 +1399,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Gaynors",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1409,7 +1411,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "The Grange",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1421,7 +1423,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Elme Creek",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1433,7 +1435,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Goble  Gables",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1445,7 +1447,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Montpelie  Murrays",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1457,7 +1459,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Archbolds",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1469,7 +1471,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Brown Bay harmony Hall",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1481,7 +1483,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Skerret & Folly  Nugents",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1493,7 +1495,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Colebrooks",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1505,7 +1507,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Walrond Upper",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1517,7 +1519,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Walrond Lower",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1529,7 +1531,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Frye  Frys",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1541,7 +1543,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Th Hope",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1553,7 +1555,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Harman  Harmons  Lloyds",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1565,7 +1567,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Lavingtons",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1577,7 +1579,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Lynchs",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1589,7 +1591,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Lyon (Upper & Lower)",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1601,7 +1603,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Mannings",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1613,7 +1615,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Sheriff (Exchange)",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1625,7 +1627,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Watsons",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1637,7 +1639,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Gree Island",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1649,7 +1651,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Harr Hardings",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1661,7 +1663,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Th Grange",
-        "parish": ""
+        "parish": "St. Philip's"
     },
     {
         "additional_info": "",
@@ -1673,7 +1675,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Matthews",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1685,7 +1687,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Burkes",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1697,7 +1699,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Blakes",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1709,7 +1711,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "L Roche",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1721,7 +1723,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Luca  Rock Hill",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1733,7 +1735,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Delaps",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1745,7 +1747,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Thomas",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1757,7 +1759,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Cochran (Bethesda)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1769,7 +1771,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Gale (Table Hill Gordon)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1781,7 +1783,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Morri Loobys",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1793,7 +1795,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Bodkins",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1805,7 +1807,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Willi Freemans",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1817,7 +1819,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Tyrrel (Formerly Tankards or Orleans)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1829,7 +1831,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Mill Byams (Folly  Byam)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1841,7 +1843,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Savannah",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1853,7 +1855,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Picadilly",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1865,7 +1867,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Richmonds",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1877,7 +1879,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Howards",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1889,7 +1891,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Horsefords",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1901,7 +1903,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Pattersons",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1913,7 +1915,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Swete (Sweets)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1925,7 +1927,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Buckshornes",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1937,7 +1939,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Barter (Osbornes  Windward)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1949,7 +1951,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Doigs",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1961,7 +1963,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Dimsdal (Michaels Mount  Langhams)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1973,7 +1975,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Dee Bay  Dieppe Bay",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1985,7 +1987,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Fry Pasture",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -1997,7 +1999,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Isaac Hill",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -2009,7 +2011,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Guine Bush (Monks Hill)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -2021,7 +2023,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Cherr Hill (miscellaneous)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -2033,7 +2035,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Wind Hill (miscellaneous)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -2045,7 +2047,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Tuck (Farley Bay miscellaneous)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -2057,7 +2059,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Farley (Tucks miscellaneous)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -2069,7 +2071,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Freeman Rest (Fig Tree Hill - miscellaneous)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -2081,7 +2083,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Cabadg (Cabbage) Tree Plantation (miscellaneous)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -2093,7 +2095,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Barre Beef Estate (miscellaneous)",
-        "parish": ""
+        "parish": "St. Paul's"
     },
     {
         "additional_info": "",
@@ -2105,7 +2107,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Seaforths",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2117,7 +2119,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Smith (Darby)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2129,7 +2131,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Rigby (Perrys)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2141,7 +2143,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Gree Castle",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2153,7 +2155,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Monteros",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2165,7 +2167,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Ne Division (Tremills)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2177,7 +2179,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Hermitage",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2189,7 +2191,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Joll Hill",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2201,7 +2203,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Blubbe Valley (Rose Valley)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2213,7 +2215,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Tranquil Vale",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2225,7 +2227,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Tottenham Park",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2237,7 +2239,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Willocks",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2249,7 +2251,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Ffry (Frys)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2261,7 +2263,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Orang Valley (Furlongs)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2273,7 +2275,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Picart (Herman Vale)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2285,7 +2287,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Sawcolts",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2297,7 +2299,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Sag Hill (Tom Moores Mill  Upper)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2309,7 +2311,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Mil Hill",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2321,7 +2323,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Claremon (see #178)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2333,7 +2335,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Tremontain  The Mountain",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2345,7 +2347,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Youngs",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2357,7 +2359,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Young  Nantons",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2369,7 +2371,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Brook (Old Road)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2381,7 +2383,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Morris (Old Mill  Brambles)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2393,7 +2395,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Douglas Estate (Ravenscroft)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2405,7 +2407,7 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Yorke (Musketo Cove & Bear Gardens)",
-        "parish": ""
+        "parish": "St. Mary's"
     },
     {
         "additional_info": "",
@@ -2417,6 +2419,6 @@ var mill_data = [
         "lat": "",
         "long": "",
         "name": "Christia Valley  Biffins",
-        "parish": ""
+        "parish": "St. Mary's"
     }
 ]

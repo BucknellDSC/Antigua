@@ -1,8 +1,8 @@
 
 # Antigua Researcher's GUI
 # Author: Alexander Murph
-# Last Edited: 9/30 by Murph
-# Please run on Python 3
+# Last Edited: 12/3 by Murph
+# Please run on Python 3 & download necessary packages
 
 import tkinter as tk				# python 3
 from tkinter import font  as tkfont # python 3
@@ -22,12 +22,13 @@ from PIL import Image, ImageTk
 SECTIONS = ["Extant or Ruin", "Founding Date", "Chronology", "Additional Information", "Enslaved Peoples"]
 SECTIONS_NOSPACE = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInformation", "EnslavedPeoples"]
 
+# Different lists for finding particular files.
 SECTIONS = ["Chronology", "Additional Information", "Enslaved Peoples"]
 SECTIONS_NOSPACE = ["Chronology", "AdditionalInformation", "EnslavedPeoples"]
 SUB_SECTIONS = ["Display Name", "Date of Establishment", "Longitude", "Latitude", "Extant or Ruin"]
-SUB_SECTIONS_NOSPACE = ["DisplayName", "NameOfParish", "DateOfEstablishment", "Longitude", "Latitude", "ExtantOrRuin"]
+SUB_SECTIONS_NOSPACE = ["DisplayName", "DateOfEstablishment", "Longitude", "Latitude", "ExtantOrRuin"]
 
-
+# All of the mill names in question
 MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisles', 'Date Hill', \
 "Donovan's (Vaughans)", 'Fitches Creek', 'Giles Blizzard', "Gravenor's", 'Gunthorpes (ASF)', 'Hight Point', \
 "Judge Blizzard's", "Lightfoot's/The Grove", 'Long Island', 'Millars', "Nibb's", \
@@ -75,24 +76,31 @@ def popupBonus(image_name):
 	"""
 		General seperate method that procures a popup
 	"""
+	# Create an image object and open the image in question.
 	toplevel = Toplevel()
 	image = Image.open(image_name)
 	image_copy = image.copy()
+
+	# Resize the image
 	image = image_copy.resize((650, 500))
 
+	# Place the image in a Tk frame
 	background_image = ImageTk.PhotoImage(image)
 
+	# place the frame in a pop-up
 	label = tk.Label(toplevel,image=background_image)
 	label.pack(fill=BOTH, expand=YES)
 
 	label.image = background_image
 
+	# Show the pop-up
 	label.place(x=0, y=0, relwidth=1.0, relheight=1.0, anchor="nw")
 	toplevel.geometry('650x500')
 
 def edit_file_name(filename):
 	"""
 		General method for the many times I have to play with filenames (oh so many).
+		Removes all types of characters that make directory finding/writing difficult. 
 	"""
 	filename = filename + ".txt"
 	filename = filename.replace("/", "")
@@ -145,6 +153,7 @@ class ResearcherGUI(tk.Tk):
 	def show_frame(self, page_name, mill_name):
 		"""
 			When called, swaps the current frame to be the page we wish to see.
+			Fairly generalizable
 		"""
 		frame = self.frames[page_name]
 		if page_name == "StartPage":
@@ -210,7 +219,7 @@ class StartPage(tk.Frame):
 			Change to a specific mill's page.  Remove all information for the start page and tell
 			Root to swap pages.
 		"""
-		# We first check to see if there is any input at all
+		# We first check to see if there is any input at all, not doing anything if there isn't.
 		if box_input:
 			self.listbox.grid_forget()
 			self.controller.show_frame(page_info, MILL_DATA[box_input[0]])
@@ -220,7 +229,7 @@ class StartPage(tk.Frame):
 
 	def show_again(self):
 		"""
-			Put things back on the root frame.
+			Put things back on the root frame.  Resets the geometry in case the user changed the size of the frame.
 		"""
 		self.label.grid(row=0)
 		self.button_frame.grid(row=1)
@@ -231,6 +240,7 @@ class StartPage(tk.Frame):
 	def push_changes(self):
 		"""
 			Pushes changes to the Mill Files to the remote repository.
+			Only pushes files that the GUI might change.
 		"""
 		call(["git", "remote", "set-url", "origin", "git@github.com:particknewhart/Antigua.git"])
 		call(["git", "add", "Mill_Files"])
@@ -252,6 +262,8 @@ class PageOne(tk.Frame):
 		"""
 			Create all relevant frames, and lists of widgets that will need to disappear later.
 		"""
+		# Allowing the frames to be members of our object makes things easy when we later want the
+		# main app to forget the frames.
 		tk.Frame.__init__(self, parent)
 		self.controller = controller
 		self.main_label_frame = tk.Frame(self.controller)
@@ -268,8 +280,17 @@ class PageOne(tk.Frame):
 			must be displayed.
 		"""
 
+		# To put the parish name on the title, we first read it from our text files....
+		parish_name_path = "Mill_Files/NameOfParish/" + edit_file_name(mill_name)
+
+		with open(parish_name_path, 'r') as text_file:
+				try:
+					parish_name = text_file.read()
+				except AttributeError:
+					pass
+
 		# Display relevant mill's name
-		self.main_label = tk.Label(self.main_label_frame, text=mill_name, \
+		self.main_label = tk.Label(self.main_label_frame, text=mill_name + " - " + parish_name, \
 			font=self.controller.title_font, bg='steelblue')
 		self.main_label.pack()
 		self.main_label_frame.grid(row=0, sticky=E+W+N+S)
@@ -281,12 +302,14 @@ class PageOne(tk.Frame):
 		self.image_label = tk.Label(self.image_frame, text = "Mill's Image (JPEGs Only):", \
 			font=12, bg = 'dark turquoise')
 
+		# Grab the image filepath for this particular mill
 		updated_mill_name = "Mill_Files/Photos/" + edit_file_name(mill_name)[:-4] + ".jpeg"
 		self.image_view = ttk.Button(self.image_frame, text="View Current Image", style='green/black.TButton',\
 			command=lambda: self.find_and_view_image(updated_mill_name))
 		self.image_upload = ttk.Button(self.image_frame, text="Upload New Image", style='green/black.TButton',\
 			command=lambda: self.find_and_upload_image(updated_mill_name))
 
+		# Place all of the buttons that we just made!  Yay!
 		self.image_label.grid(row=0, column=0)
 		self.image_view.grid(row=0, column=1)
 		self.image_upload.grid(row=0, column=2)
@@ -294,10 +317,10 @@ class PageOne(tk.Frame):
 
 		# Prepare to find the file name for the specific information
 		orig_filename = mill_name
-
+		# Prepare the new overall frame
 		new_frame = tk.Frame(self.controller, bg = 'steelblue')
 
-
+		# Placing the main text boxes (title, etc)
 		for index in range(2):
 			filename = edit_file_name(mill_name)
 			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
@@ -316,12 +339,14 @@ class PageOne(tk.Frame):
 			self.sub_label_list += [temp_label]
 			self.entry_list += [temp_box]
 
+		# Preparing to place the input boxes for all the different types of mill information
 		new_frame.grid(row = 2)
 		new_frame.grid_rowconfigure(2, weight=1)
 		self.frame_list += [new_frame]
 
 		new_frame = tk.Frame(self.controller, bg = 'steelblue')
 
+		# Going through all sections that are placed in this way (all the text boxes)
 		for index in range(2,5):
 			filename = edit_file_name(mill_name)
 			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
@@ -393,6 +418,8 @@ class PageOne(tk.Frame):
 	def add_in_chronology(self, new_frame, index, temp_box):
 		"""
 			We want our chronology to be special.  So here we are.
+			Basically, we are providing a specific label, and undertaking certain assumptions when writing
+			to these files.
 		"""
 		temp_label_1 = tk.Label(new_frame, text=SECTIONS[index], font=12, bg = 'dark turquoise')
 		temp_label_2 = tk.Label(new_frame, text="Please Input using Format =>\n[YEAR]:[INFORMATION ABOUT YEAR]\nexample -> 1994:Murph was born",
@@ -433,6 +460,7 @@ class PageOne(tk.Frame):
 		"""
 		my_input_list = [x.get("1.0",END) for x in self.entry_list]
 
+		# Scroll through all the text boxes and write them to the relevent files.
 		for index in range(len(SUB_SECTIONS)):
 			filename = edit_file_name(orig_filename)
 			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
