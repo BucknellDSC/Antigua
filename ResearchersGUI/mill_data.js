@@ -5,7 +5,7 @@ var mill_data = [
             "1994": "Murph was born",
             "1996": "Patrick was born"
         },
-        "date_of_establishment": "1996.33",
+        "date_of_establishment": "1996",
         "display_name": "Barnacle Point",
         "enslaved_peoples": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
         "extant_or_ruin": "Extant",
@@ -15,16 +15,17 @@ var mill_data = [
         "parish": "St. George's"
     },
     {
-        "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
+        "additional_info": "THIS WAS CHANGED",
         "chronology": {
-            "1994": "Murph was born"
+            "1994": "Murph was born",
+            "1996": "Patrick was born"
         },
-        "date_of_establishment": "1996.33",
-        "display_name": "Blackman's",
+        "date_of_establishment": "1993",
+        "display_name": "Barnacle Point",
         "enslaved_peoples": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
-        "extant_or_ruin": "",
-        "lat": "Extant",
-        "long": "lalala",
+        "extant_or_ruin": "Extant",
+        "lat": "17823",
+        "long": "17823",
         "name": "Barnes Hill",
         "parish": "St. George's"
     },
