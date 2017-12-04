@@ -2,14 +2,15 @@ var mill_data = [
     {
         "additional_info": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
         "chronology": {
-            "1994": "Murph was born"
+            "1994": "Murph was born",
+            "1996": "Patrick was born"
         },
         "date_of_establishment": "1996.33",
         "display_name": "Barnacle Point",
         "enslaved_peoples": "The sun was shining on the sea,\nShining with all his might:\nHe did his very best to make\nThe billows smooth and bright--\nAnd this was odd, because it was\nThe middle of the night.",
         "extant_or_ruin": "Extant",
         "lat": "Extant",
-        "long": "lalala",
+        "long": "17823",
         "name": "Barnacle Point",
         "parish": "St. George's"
     },
