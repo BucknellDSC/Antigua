@@ -26,7 +26,7 @@ SECTIONS_NOSPACE = ["ExtantOrRuin", "FoundingDate", "Chronology", "AdditionalInf
 SECTIONS = ["Chronology", "Additional Information", "Enslaved Peoples"]
 SECTIONS_NOSPACE = ["Chronology", "AdditionalInformation", "EnslavedPeoples"]
 SUB_SECTIONS = ["Display Name", "Date of Establishment", "Longitude", "Latitude", "Extant or Ruin"]
-SUB_SECTIONS_NOSPACE = ["DisplayName", "NameOfParish", "DateOfEstablishment", "Longitude", "Latitude", "ExtantOrRuin"]
+SUB_SECTIONS_NOSPACE = ["DisplayName", "DateOfEstablishment", "Longitude", "Latitude", "ExtantOrRuin"]
 
 # All of the mill names in question
 MILL_DATA = ['Barnacle Point', 'Barnes Hill', "Blackman's/Mount Lucie", 'Carlisles', 'Date Hill', \
