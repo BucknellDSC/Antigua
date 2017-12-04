@@ -12,6 +12,9 @@
     --text-font: 'Libre Baskerville', serif;
     --text-font-2: 'Playfair Display Black', serif;
 }
+a {
+    color: var(--text-color);
+}
 
 body,
 html {
