@@ -242,7 +242,7 @@ class StartPage(tk.Frame):
 			Pushes changes to the Mill Files to the remote repository.
 			Only pushes files that the GUI might change.
 		"""
-		call(["git", "remote", "set-url", "origin", "git@github.com:particknewhart/Antigua.git"])
+		call(["git", "remote", "set-url", "origin", "git@github.com:patricknewhart/Antigua.git"])
 		call(["git", "add", "Mill_Files"])
 		#call(["git", "add", "mill_data.json"])
 		call(["git", "add", "mill_data.js"])
