@@ -607,8 +607,13 @@ $(document).ready(function () {
       );
     }
 
+<<<<<<< HEAD
     $("#modal-images").empty();
     $("#modal-images").html("<img src='ResearchersGUI/Mill_Files/Photos/Archbolds.jpeg'");
+=======
+    $("#Images").empty();
+    $("#Images").html("<img src='../ResearchersGUI/Mill_Files/Photos/" + a_mill.true_name + ".jpeg'>");
+>>>>>>> 59c321ddbda5ceb803b4577508bba6e3a4d0bae8
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
