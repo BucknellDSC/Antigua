@@ -1,3 +1,5 @@
+  // -------------- CONSTANTS DECLARATION --------------------
+
 var ANTIGUA_TEXT = "<p>Originally colonized by England in 1632, Antigua is a Caribbean island with a profoundly revelatory historical " +
   "landscape that includes, along with the other islands of the region, a legacy of centuries of enslavement, " +
   "oppression, exploitation, and murder of Africans and people of African descent. Many scholars of the Caribbean, " +
