@@ -3,7 +3,7 @@ var mill_data = [
         "additional_info": "\nwell lets see about that",
         "chronology": {
             "1963": " Damn yeah it works",
-            "1994": " Does it work?"
+            "1994": "Murph was born"
         },
         "date_of_establishment": "1963",
         "display_name": "Barnacle Point\t",
@@ -19,7 +19,7 @@ var mill_data = [
         "additional_info": "\nwell lets see about that",
         "chronology": {
             "1963": " Damn yeah it works",
-            "1994": " Does it work?"
+            "1994": "Murph was born"
         },
         "date_of_establishment": "1963",
         "display_name": "Barnacle Point\t",
