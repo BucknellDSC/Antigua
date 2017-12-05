@@ -1,6 +1,7 @@
   // -------------- CONSTANTS DECLARATION --------------------
 
-var ANTIGUA_TEXT = "<p>Originally colonized by England in 1632, Antigua is a Caribbean island with a profoundly revelatory historical " +
+var ANTIGUA_TEXT =
+  "<p>Originally colonized by England in 1632, Antigua is a Caribbean island with a profoundly revelatory historical " +
   "landscape that includes, along with the other islands of the region, a legacy of centuries of enslavement, " +
   "oppression, exploitation, and murder of Africans and people of African descent. Many scholars of the Caribbean, " +
   "have written about the plantation, specifically the sugar mill, as the primary symbol of the enterprise, " +
@@ -13,15 +14,16 @@ var ANTIGUA_TEXT = "<p>Originally colonized by England in 1632, Antigua is a Car
   "that were used for centuries to process sugarcane on the island.</p>" +
   "<p>According to the 2013 report of the Museum of Antigua and Barbuda, there are more than 200 windmill bases extant " +
   "on the island. The Museum of Antigua and Barbuda has been engaged in documenting the sugar mills of Antigua " +
-  "in conjunction with the especial work of independent scholar <a href='interview.pdf'> Agnes Meeker</a>. Her years of field work and research " +
+  "in conjunction with the especial work of independent scholar <a target='_blank' href='interview.pdf'> Agnes Meeker</a>. Her years of field work and research " +
   "instigated the idea of using her work to digitize, map, and historicize each of the mills electronically " +
   "for access to scholars and for lay people interested in studying Antiguan and Caribbean histories, as well " +
   "as for tourists visiting the island—The Antigua Sugar Mills Project.</p>";
 
-var CREDITS_TEXT = "<p>The Bucknell University Griot Institute for Africana Studies Antigua Sugar Mills project is grounded entirely on the decades-long work and research of <a href='interview.pdf'> Agnes Meeker</a>, an independent researcher and lay historian whose passion has been gathering information on the sugar mills and plantations of the island.</p>" +
+var CREDITS_TEXT =
+  "<p>The Bucknell University Griot Institute for Africana Studies Antigua Sugar Mills project is grounded entirely on the decades-long work and research of <a target='_blank' href='interview.pdf'> Agnes Meeker</a>, an independent researcher and lay historian whose passion has been gathering information on the sugar mills and plantations of the island.</p>" +
   "<p>While in Antigua, in 2016 with Bucknell in the Caribbean students, during a tour with a local professor, we learned about the important work the Museum of Antigua and Barbuda has been engaged in documenting the sugar mills of Antigua. That encounter instigated the idea of digitizing, mapping, and historicizing each of the mills electronically for access to scholars and for lay people interested in studying Antiguan and Caribbean histories, as well as for tourists visiting the island.</p>" +
-  "<p>In partnership with Bucknell&rsquo;s Digital Humanities staff, the Museum of Antigua and Barbuda, <a href='interview.pdf'> Agnes Meeker</a>, and Bucknell students, this website is the manifestation of that scholarly and pedagogical project.</p>" +
-  "<p>Special thanks go to <a href='interview.pdf'> Agnes Meeker</a> and to the <a href='http://www.antiguamuseums.net/'>Museum of Antigua and Barbuda.</a></p>" +
+  "<p>In partnership with Bucknell&rsquo;s Digital Humanities staff, the Museum of Antigua and Barbuda, <a target='_blank' href='interview.pdf'> Agnes Meeker</a>, and Bucknell students, this website is the manifestation of that scholarly and pedagogical project.</p>" +
+  "<p>Special thanks go to <a target='_blank' href='interview.pdf'> Agnes Meeker</a> and to the <a href='http://www.antiguamuseums.net/'>Museum of Antigua and Barbuda.</a></p>" +
   "<p>The project would not have materialized so expertly and eloquently without the hard work and passion of Bucknell&rsquo;s expert engineering and computer science team Khoi Le &rsquo;18, Patrick Newhart &rsquo;18, Khai Nguyen &rsquo;18, and Alexander Murph &rsquo;18.</p>" +
   "<p>About the project, they have written, &ldquo;In just the few paragraphs provided in the proposal submitted by the Griot, we were all entranced by Antigua. In our minds, Antigua is a place deserving of attention: a place that should be shared in a beautiful and creative way. We would say that the main motivating factor of our involvement has been this interest in Antigua&rsquo;s history, and a respect for the noble cause of presenting what has been a long history of colonialism, slavery, and African diaspora. We wanted to help the Griot Institute achieve this goal.&rdquo;</p>" +
   "<p>Also instrumental to the manifestation and success of the Antigua Sugar Mills map project are the following individuals: Diane Jackaki, Sam Lauer, Michelle Lauver, Eddie Lopez, Sarah Rosecky, Annie Girton, Christine Cha, Amber Quinlan, students from Bucknell in the Caribbean.</p>" +
