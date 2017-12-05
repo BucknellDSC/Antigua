@@ -380,6 +380,32 @@ footer {
     -webkit-animation: shadow 1s ease-in-out infinite alternate;
     animation: shadow 1s ease-in-out infinite alternate;
 }
+
+.marker .label {
+    min-width: max-content;
+    visibility: hidden;
+    background-color: var(--bg-color-2);
+    color: var(--text-color);
+    text-align: center;
+    padding: 0.5vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 160%;
+    opacity: 0;
+    font-size: 1vw;
+    transition: opacity .5s;
+}
+
+.marker:hover .label {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+
 .card {
     position: absolute;
     width: 15%;
