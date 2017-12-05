@@ -202,6 +202,7 @@ $(document).ready(function () {
   // Specifically, we need a list of mill names | a list of parishes name | a list of mill names based on parishes
   for (var index in mill_data) {
     var a_mill = mill_data[index];
+    a_mill.name = a_mill.name.replace(/\s+/g, '');
     var display_name = a_mill.display_name;
     var mill_name = a_mill.name;
     // only add in if mill have enough information
@@ -222,6 +223,7 @@ $(document).ready(function () {
     mills_by_parishes_array[parish] = [];
     for (var index in mill_by_parish_var) {
       var a_mill = mill_by_parish_var[index];
+      a_mill.name = a_mill.name.replace(/\s+/g, '');
       var mill_name = a_mill.name;
       if (mill_name in new_mill_data) {
         mills_by_parishes_array[parish].push(mill_name);
@@ -314,10 +316,10 @@ $(document).ready(function () {
       t.appendTo($mill_list);
       t.hover(
         function () {
-          var mill_id = "#" + this.id + "_marker";
+          var mill_id = "#" + mill_name.id + "_marker";
         },
         function () {
-          var parish_path_id = "#" + this.id + "-path";
+          var parish_path_id = "#" + mill_name.id + "-path";
         }
       );
       t.click(function () {
@@ -325,17 +327,14 @@ $(document).ready(function () {
         $("#middle-slide-title").removeClass("active");
         $("#middle-slide-content").removeClass("active");
         if ($current_map[0] == $("#antigua_map")[0]) {
-          var parish = new_mill_data[this.id].parish;
+          var parish = new_mill_data[mill_name].parish;
           var parish_path_id = "#" + parish + "-path";
           $(parish_path_id).trigger("click");
-          var mill_id = "#" + this.id + "_marker";
-          setTimeout(function () {
-            $(mill_id).trigger("click");
-          }, )
-
+          var mill_id = "#" + mill_name + "_marker";
+          $(mill_id)[0].click();
         } else {
-          var mill_id = "#" + this.id + "_marker";
-          $(mill_id).trigger("click");
+          var mill_id = "#" + mill_name + "_marker";
+          $(mill_id)[0].click();
         }
       });
     }
