@@ -354,8 +354,8 @@ footer {
 
 .marker svg path {
   fill: rgba(34, 57, 58, 0.9);
-  transform: translate(-20%, 0%);
-  -webkit-transform: translate(-20%, 0%);
+  transform: translate(-18%, -5%);
+  -webkit-transform: translate(-18%, -5%);
 }
 
 .marker svg:hover {
