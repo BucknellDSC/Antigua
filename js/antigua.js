@@ -246,6 +246,7 @@ $(document).ready(function () {
   // Specifically, we need a list of mill names | a list of parishes name | a list of mill names based on parishes
   for (var index in mill_data) {
     var a_mill = mill_data[index];
+    a_mill.true_name = a_mill.name;
     a_mill.name = a_mill.name.replace(/\s+/g, '');
     var display_name = a_mill.display_name;
     var mill_name = a_mill.name;
@@ -255,6 +256,7 @@ $(document).ready(function () {
       new_mill_data[mill_name] = a_mill;
     }
   }
+  console.log(new_mill_data);
 
   // load the mills into parish dictionary
   /**
