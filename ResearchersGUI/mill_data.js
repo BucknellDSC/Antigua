@@ -2,10 +2,11 @@ var mill_data = [
     {
         "additional_info": "\nwell lets see about that",
         "chronology": {
-            "1963": " Damn yeah it works"
+            "1963": " Damn yeah it works",
+            "1994": " Does it work?"
         },
         "date_of_establishment": "1963",
-        "display_name": "\nBarnacle Point\t",
+        "display_name": "Barnacle Point\t",
         "enslaved_peoples": "\nOh wow",
         "extant_or_ruin": "\nExtant",
         "image": "Mill_Files/Photos/Barnacle Point.jpeg",
@@ -15,15 +16,18 @@ var mill_data = [
         "parish": "St. George's"
     },
     {
-        "additional_info": "",
-        "chronology": {},
-        "date_of_establishment": "",
-        "display_name": "",
-        "enslaved_peoples": "",
-        "extant_or_ruin": "",
+        "additional_info": "\nwell lets see about that",
+        "chronology": {
+            "1963": " Damn yeah it works",
+            "1994": " Does it work?"
+        },
+        "date_of_establishment": "1963",
+        "display_name": "Barnacle Point\t",
+        "enslaved_peoples": "\nOh wow",
+        "extant_or_ruin": "\nExtant",
         "image": "Mill_Files/Photos/Barnes Hill.jpeg",
-        "lat": "",
-        "long": "",
+        "lat": "1232",
+        "long": "1234",
         "name": "Barnes Hill",
         "parish": "St. George's"
     },
