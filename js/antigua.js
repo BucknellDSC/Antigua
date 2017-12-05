@@ -151,7 +151,7 @@ $(document).ready(function () {
               break;
       }
     } else if ($("#middle-slide").hasClass("active")) {
-      if ($("#middle-slide-title").html()) {
+      if ($("#middle-slide-title").html() === "Credits" || $("#middle-slide-title").html() === "Bibliography") {
           switch ($current_map.attr('id')) {
               case "antigua_map":
                   $("#middle-slide-content").html(ANTIGUA_TEXT);
