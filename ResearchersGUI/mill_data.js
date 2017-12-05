@@ -22,7 +22,7 @@ var mill_data = [
             "1994": "Murph was born"
         },
         "date_of_establishment": "1963",
-        "display_name": "Barnacle Point\t",
+        "display_name": "Barnes Hill\t",
         "enslaved_peoples": "\nOh wow",
         "extant_or_ruin": "\nExtant",
         "image": "Mill_Files/Photos/Barnes Hill.jpeg",
