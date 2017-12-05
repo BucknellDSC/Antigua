@@ -342,12 +342,12 @@ footer {
 
 .marker {
     width: 2.5vw;
-    height: 2.5vw;
+    height: 2.5vh;
     position: absolute;
     font-size: 0;
     cursor: pointer;
     -webkit-transform: perspective(600px) rotateY(0deg);
-    transform: perspective(600px) rotateY(0deg) translate(-50%, -50%);
+    transform: perspective(600px) rotateY(0deg) translate(-30%, -30%);
     opacity: 1;
  
 }
