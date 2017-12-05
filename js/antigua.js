@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // -------------- VARIABLE DECLARATION --------------------
 
   // the map which is currently active and show on the screen. jquery object
@@ -24,12 +24,12 @@ $(document).ready(function() {
   /**
    * Menu button styling on mouse over
    */
-  $(".menu_button").on("mouseover", function() {
+  $(".menu_button").on("mouseover", function () {
     $(this).css("border", " 1px ridge rgba(242, 207, 141, 1)");
   });
 
   // menu item click
-  $(".menu_button").on("click", function() {
+  $(".menu_button").on("click", function () {
     // Calculate the dropdown length of parish and mill list so that they dont go over the screen
     var distance_to_bottom =
       $(window).height() -
@@ -55,7 +55,7 @@ $(document).ready(function() {
   /**
    * Menu button styling on mouse leave
    */
-  $(".menu_button").on("mouseleave", function() {
+  $(".menu_button").on("mouseleave", function () {
     $(this).css("border", " 1px ridge transparent");
     $(".expandable_list", this).css({
       height: "0vh",
@@ -69,13 +69,35 @@ $(document).ready(function() {
   /**
    * What to do when info button is clicked. Doesn't require any data from .js file
    */
-  $("#info_button").on("click", function() {
+  $("#info_button").on("click", function () {
     if (!$("#middle-slide").hasClass("active")) {
       $("#middle-slide").addClass("active");
       $("#middle-slide-title").addClass("active");
       $("#middle-slide-content").addClass("active");
       $("#middle-slide-content").html(
         "<p>Originally colonized by England in 1632, Antigua is a Caribbean island with a profoundly revelatory historical " +
+        "landscape that includes, along with the other islands of the region, a legacy of centuries of enslavement, " +
+        "oppression, exploitation, and murder of Africans and people of African descent. Many scholars of the Caribbean, " +
+        "have written about the plantation, specifically the sugar mill, as the primary symbol of the enterprise, " +
+        "of the machinery that created and sustained European colonization, empire, and economic prosperity for generations, " +
+        "while, at the same time, decimating black lives and bodies, contorted to support the production of sugar. " +
+        "The sugar mill factory was the technological implement of the Caribbean plantation and was the mechanism " +
+        "through which sugar, whose worth throughout the peak centuries of Caribbean sugar cane production, was equivalent " +
+        "to the value of crude oil today. In contemporary times, the Antiguan landscape is marked with the physical " +
+        "markers of the brutal and perfidious realities of the plantation in the form of the remnants of the windmills " +
+        "that were used for centuries to process sugarcane on the island.</p>" +
+        "<p>According to the 2013 report of the Museum of Antigua and Barbuda, there are more than 200 windmill bases extant " +
+        "on the island. The Museum of Antigua and Barbuda has been engaged in documenting the sugar mills of Antigua " +
+        "in conjunction with the especial work of independent scholar Agnes Meeker. Her years of field work and research " +
+        "instigated the idea of using her work to digitize, map, and historicize each of the mills electronically " +
+        "for access to scholars and for lay people interested in studying Antiguan and Caribbean histories, as well " +
+        "as for tourists visiting the island—The Antigua Sugar Mills Project.</p>"
+      );
+      $("#middle-slide-title").html("Sugar Mill Project");
+    } else if ($("#middle-slide").hasClass("active")) {
+      if ($("#middle-slide-title").html() !== "Sugar Mill Project") {
+        $("#middle-slide-content").html(
+          "<p>Originally colonized by England in 1632, Antigua is a Caribbean island with a profoundly revelatory historical " +
           "landscape that includes, along with the other islands of the region, a legacy of centuries of enslavement, " +
           "oppression, exploitation, and murder of Africans and people of African descent. Many scholars of the Caribbean, " +
           "have written about the plantation, specifically the sugar mill, as the primary symbol of the enterprise, " +
@@ -92,28 +114,6 @@ $(document).ready(function() {
           "instigated the idea of using her work to digitize, map, and historicize each of the mills electronically " +
           "for access to scholars and for lay people interested in studying Antiguan and Caribbean histories, as well " +
           "as for tourists visiting the island—The Antigua Sugar Mills Project.</p>"
-      );
-      $("#middle-slide-title").html("Sugar Mill Project");
-    } else if ($("#middle-slide").hasClass("active")) {
-      if ($("#middle-slide-title").html() !== "Sugar Mill Project") {
-        $("#middle-slide-content").html(
-          "<p>Originally colonized by England in 1632, Antigua is a Caribbean island with a profoundly revelatory historical " +
-            "landscape that includes, along with the other islands of the region, a legacy of centuries of enslavement, " +
-            "oppression, exploitation, and murder of Africans and people of African descent. Many scholars of the Caribbean, " +
-            "have written about the plantation, specifically the sugar mill, as the primary symbol of the enterprise, " +
-            "of the machinery that created and sustained European colonization, empire, and economic prosperity for generations, " +
-            "while, at the same time, decimating black lives and bodies, contorted to support the production of sugar. " +
-            "The sugar mill factory was the technological implement of the Caribbean plantation and was the mechanism " +
-            "through which sugar, whose worth throughout the peak centuries of Caribbean sugar cane production, was equivalent " +
-            "to the value of crude oil today. In contemporary times, the Antiguan landscape is marked with the physical " +
-            "markers of the brutal and perfidious realities of the plantation in the form of the remnants of the windmills " +
-            "that were used for centuries to process sugarcane on the island.</p>" +
-            "<p>According to the 2013 report of the Museum of Antigua and Barbuda, there are more than 200 windmill bases extant " +
-            "on the island. The Museum of Antigua and Barbuda has been engaged in documenting the sugar mills of Antigua " +
-            "in conjunction with the especial work of independent scholar Agnes Meeker. Her years of field work and research " +
-            "instigated the idea of using her work to digitize, map, and historicize each of the mills electronically " +
-            "for access to scholars and for lay people interested in studying Antiguan and Caribbean histories, as well " +
-            "as for tourists visiting the island—The Antigua Sugar Mills Project.</p>"
         );
         $("#middle-slide-title").html("Sugar Mill Project");
       } else {
@@ -124,13 +124,27 @@ $(document).ready(function() {
     }
   });
 
-  $("#credit_button").on("click", function() {
+  $("#credit_button").on("click", function () {
     if (!$("#middle-slide").hasClass("active")) {
       $("#middle-slide").addClass("active");
       $("#middle-slide-title").addClass("active");
       $("#middle-slide-content").addClass("active");
       $("#middle-slide-content").html(
         "<p>The Bucknell University Griot Institute for Africana Studies Antigua Sugar Mills project is grounded entirely on the decades-long work and research of Agnes Meeker, an independent researcher and lay historian whose passion has been gathering information on the sugar mills and plantations of the island.</p>" +
+        "<p>While in Antigua, in 2016 with Bucknell in the Caribbean students, during a tour with a local professor, we learned about the important work the Museum of Antigua and Barbuda has been engaged in documenting the sugar mills of Antigua. That encounter instigated the idea of digitizing, mapping, and historicizing each of the mills electronically for access to scholars and for lay people interested in studying Antiguan and Caribbean histories, as well as for tourists visiting the island.</p>" +
+        "<p>In partnership with Bucknell&rsquo;s Digital Humanities staff, the Museum of Antigua and Barbuda, Agnes Meeker, and Bucknell students, this website is the manifestation of that scholarly and pedagogical project.</p>" +
+        "<p>Special thanks go to Agnes Meeker and to the <a href='http://www.antiguamuseums.net/'>Museum of Antigua and Barbuda.</a></p>" +
+        "<p>The project would not have materialized so expertly and eloquently without the hard work and passion of Bucknell&rsquo;s expert engineering and computer science team Khoi Le &rsquo;18, Patrick Newhart &rsquo;18, Khai Nguyen &rsquo;18, and Alexander Murph &rsquo;18.</p>" +
+        "<p>About the project, they have written, &ldquo;In just the few paragraphs provided in the proposal submitted by the Griot, we were all entranced by Antigua. In our minds, Antigua is a place deserving of attention: a place that should be shared in a beautiful and creative way. We would say that the main motivating factor of our involvement has been this interest in Antigua&rsquo;s history, and a respect for the noble cause of presenting what has been a long history of colonialism, slavery, and African diaspora. We wanted to help the Griot Institute achieve this goal.&rdquo;</p>" +
+        "<p>Also instrumental to the manifestation and success of the Antigua Sugar Mills map project are the following individuals: Diane Jackaki, Sam Lauer, Michelle Lauver, Eddie Lopez, Sarah Rosecky, Annie Girton, Christine Cha, Amber Quinlan, students from Bucknell in the Caribbean.</p>" +
+        "<p>Thanks to all.</p>" +
+        "<p>If you have information that could be included in this project or have questions, please contact Carmen Gillespie at griot@bucknell.edu</p>"
+      );
+      $("#middle-slide-title").html("Credits");
+    } else if ($("#middle-slide").hasClass("active")) {
+      if ($("#middle-slide-title").html() !== "Credits") {
+        $("#middle-slide-content").html(
+          "<p>The Bucknell University Griot Institute for Africana Studies Antigua Sugar Mills project is grounded entirely on the decades-long work and research of Agnes Meeker, an independent researcher and lay historian whose passion has been gathering information on the sugar mills and plantations of the island.</p>" +
           "<p>While in Antigua, in 2016 with Bucknell in the Caribbean students, during a tour with a local professor, we learned about the important work the Museum of Antigua and Barbuda has been engaged in documenting the sugar mills of Antigua. That encounter instigated the idea of digitizing, mapping, and historicizing each of the mills electronically for access to scholars and for lay people interested in studying Antiguan and Caribbean histories, as well as for tourists visiting the island.</p>" +
           "<p>In partnership with Bucknell&rsquo;s Digital Humanities staff, the Museum of Antigua and Barbuda, Agnes Meeker, and Bucknell students, this website is the manifestation of that scholarly and pedagogical project.</p>" +
           "<p>Special thanks go to Agnes Meeker and to the <a href='http://www.antiguamuseums.net/'>Museum of Antigua and Barbuda.</a></p>" +
@@ -139,20 +153,6 @@ $(document).ready(function() {
           "<p>Also instrumental to the manifestation and success of the Antigua Sugar Mills map project are the following individuals: Diane Jackaki, Sam Lauer, Michelle Lauver, Eddie Lopez, Sarah Rosecky, Annie Girton, Christine Cha, Amber Quinlan, students from Bucknell in the Caribbean.</p>" +
           "<p>Thanks to all.</p>" +
           "<p>If you have information that could be included in this project or have questions, please contact Carmen Gillespie at griot@bucknell.edu</p>"
-      );
-      $("#middle-slide-title").html("Credits");
-    } else if ($("#middle-slide").hasClass("active")) {
-      if ($("#middle-slide-title").html() !== "Credits") {
-        $("#middle-slide-content").html(
-          "<p>The Bucknell University Griot Institute for Africana Studies Antigua Sugar Mills project is grounded entirely on the decades-long work and research of Agnes Meeker, an independent researcher and lay historian whose passion has been gathering information on the sugar mills and plantations of the island.</p>" +
-            "<p>While in Antigua, in 2016 with Bucknell in the Caribbean students, during a tour with a local professor, we learned about the important work the Museum of Antigua and Barbuda has been engaged in documenting the sugar mills of Antigua. That encounter instigated the idea of digitizing, mapping, and historicizing each of the mills electronically for access to scholars and for lay people interested in studying Antiguan and Caribbean histories, as well as for tourists visiting the island.</p>" +
-            "<p>In partnership with Bucknell&rsquo;s Digital Humanities staff, the Museum of Antigua and Barbuda, Agnes Meeker, and Bucknell students, this website is the manifestation of that scholarly and pedagogical project.</p>" +
-            "<p>Special thanks go to Agnes Meeker and to the <a href='http://www.antiguamuseums.net/'>Museum of Antigua and Barbuda.</a></p>" +
-            "<p>The project would not have materialized so expertly and eloquently without the hard work and passion of Bucknell&rsquo;s expert engineering and computer science team Khoi Le &rsquo;18, Patrick Newhart &rsquo;18, Khai Nguyen &rsquo;18, and Alexander Murph &rsquo;18.</p>" +
-            "<p>About the project, they have written, &ldquo;In just the few paragraphs provided in the proposal submitted by the Griot, we were all entranced by Antigua. In our minds, Antigua is a place deserving of attention: a place that should be shared in a beautiful and creative way. We would say that the main motivating factor of our involvement has been this interest in Antigua&rsquo;s history, and a respect for the noble cause of presenting what has been a long history of colonialism, slavery, and African diaspora. We wanted to help the Griot Institute achieve this goal.&rdquo;</p>" +
-            "<p>Also instrumental to the manifestation and success of the Antigua Sugar Mills map project are the following individuals: Diane Jackaki, Sam Lauer, Michelle Lauver, Eddie Lopez, Sarah Rosecky, Annie Girton, Christine Cha, Amber Quinlan, students from Bucknell in the Caribbean.</p>" +
-            "<p>Thanks to all.</p>" +
-            "<p>If you have information that could be included in this project or have questions, please contact Carmen Gillespie at griot@bucknell.edu</p>"
         );
         $("#middle-slide-title").html("Credits");
       } else {
@@ -163,7 +163,7 @@ $(document).ready(function() {
     }
   });
 
-  $("#biblio_button").on("click", function() {
+  $("#biblio_button").on("click", function () {
     if (!$("#middle-slide").hasClass("active")) {
       $("#middle-slide").addClass("active");
       $("#middle-slide-title").addClass("active");
@@ -259,7 +259,7 @@ $(document).ready(function() {
    * Capitalize the first character of a string
    * @param {*} s: string to convert
    */
-  String.prototype.capitalizeFirstLetter = function() {
+  String.prototype.capitalizeFirstLetter = function () {
     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
   };
 
@@ -278,16 +278,16 @@ $(document).ready(function() {
     });
     t.appendTo($parish_list);
     t.hover(
-      function() {
+      function () {
         var parish_path_id = "#" + this.id + "-path";
         $(parish_path_id)[0].style.fill = "rgba(0, 0, 0, 0.5)";
       },
-      function() {
+      function () {
         var parish_path_id = "#" + this.id + "-path";
         $(parish_path_id)[0].style.fill = "rgba(0, 0, 0, 0)";
       }
     );
-    t.click(function() {
+    t.click(function () {
       $("#middle-slide").removeClass("active");
       $("#middle-slide-title").removeClass("active");
       $("#middle-slide-content").removeClass("active");
@@ -313,14 +313,14 @@ $(document).ready(function() {
       });
       t.appendTo($mill_list);
       t.hover(
-        function() {
+        function () {
           var mill_id = "#" + this.id + "_marker";
         },
-        function() {
+        function () {
           var parish_path_id = "#" + this.id + "-path";
         }
       );
-      t.click(function() {
+      t.click(function () {
         $("#middle-slide").removeClass("active");
         $("#middle-slide-title").removeClass("active");
         $("#middle-slide-content").removeClass("active");
@@ -329,10 +329,10 @@ $(document).ready(function() {
           var parish_path_id = "#" + parish + "-path";
           $(parish_path_id).trigger("click");
           var mill_id = "#" + this.id + "_marker";
-          setTimeout(function() {
+          setTimeout(function () {
             $(mill_id).trigger("click");
-          },)
-          
+          }, )
+
         } else {
           var mill_id = "#" + this.id + "_marker";
           $(mill_id).trigger("click");
@@ -360,11 +360,11 @@ $(document).ready(function() {
         $current_map.append(new_marker);
       }
     }
-    $(".marker").bind("click", function() {
+    $(".marker").bind("click", function () {
       var t = $(this)[0];
       $(".card").addClass("active");
       $(".card").attr("id", t.id);
-      $(".marker").each(function() {
+      $(".marker").each(function () {
         if ($(this)[0] != t) {
           $(this).addClass("inactive");
         }
@@ -395,34 +395,16 @@ $(document).ready(function() {
         lat +
         "</b> latitude.";
     });
-
-      $(".marker").on("mouseenter", function() {
-          var t = $(this)[0];
-          $(".marker").each(function () {
-              if ($(this)[0] != t) {
-                  $(this).addClass("inactive");
-              }
-          });
-      });
-
-      $(".marker").on("mouseleave", function() {
-          var t = $(this)[0];
-          $(".marker").each(function () {
-              if ($(this)[0] != t) {
-                  $(this).removeClass("inactive");
-              }
-          });
-      });
   }
 
   // ------------------ INTERACTIVE FUNCTIONS --------------------------
 
   // highlight parishes when hover over
   $(".parish-path").hover(
-    function() {
+    function () {
       this.style.fill = "rgba(0, 0, 0, 0.5)";
     },
-    function() {
+    function () {
       this.style.fill = "rgba(0, 0, 0, 0)";
     }
   );
@@ -430,7 +412,7 @@ $(document).ready(function() {
   /**
    * switch to different parishes on click
    */
-  $("#stjohn-path").on("click", function() {
+  $("#stjohn-path").on("click", function () {
     $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stjohn_map").fadeIn();
@@ -440,7 +422,7 @@ $(document).ready(function() {
     add_mills_to_menu();
   });
 
-  $("#stpaul-path").on("click", function() {
+  $("#stpaul-path").on("click", function () {
     $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stpaul_map").fadeIn();
@@ -450,7 +432,7 @@ $(document).ready(function() {
     add_mills_to_menu();
   });
 
-  $("#stpeter-path").on("click", function() {
+  $("#stpeter-path").on("click", function () {
     $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stpeter_map").fadeIn();
@@ -461,7 +443,7 @@ $(document).ready(function() {
     add_mills_to_menu();
   });
 
-  $("#stphilip-path").on("click", function() {
+  $("#stphilip-path").on("click", function () {
     $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stphilip_map").fadeIn();
@@ -471,7 +453,7 @@ $(document).ready(function() {
     add_mills_to_menu();
   });
 
-  $("#stmary-path").on("click", function() {
+  $("#stmary-path").on("click", function () {
     $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stmary_map").fadeIn();
@@ -481,7 +463,7 @@ $(document).ready(function() {
     add_mills_to_menu();
   });
 
-  $("#stgeorge-path").on("click", function() {
+  $("#stgeorge-path").on("click", function () {
     $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#stgeorge_map").fadeIn();
@@ -495,7 +477,7 @@ $(document).ready(function() {
    * What to do when map button is clicked.
    *
    */
-  $("#map_button").on("click", function() {
+  $("#map_button").on("click", function () {
     $(".card").removeClass("active");
     $current_map.fadeOut();
     $("#antigua_map").fadeIn();
@@ -510,12 +492,12 @@ $(document).ready(function() {
   var $card = $(".blueprint .card");
   var $modal = $(".blueprint .modal");
 
-  $(".card .button-secondary").on("click", function() {
+  $(".card .button-secondary").on("click", function () {
     $(".card").removeClass("active");
     $(".marker").removeClass("inactive");
   });
 
-  $(".card .button-primary").on("click", function() {
+  $(".card .button-primary").on("click", function () {
     show_full_info();
   });
 
@@ -531,10 +513,10 @@ $(document).ready(function() {
     var display_name = a_mill.display_name;
     var a_parish = a_mill.parish;
     var parish_name = a_parish
-        .substring(0, 2)
-        .capitalizeFirstLetter() + "." + a_parish
-        .substring(2)
-        .capitalizeFirstLetter();
+      .substring(0, 2)
+      .capitalizeFirstLetter() + "." + a_parish
+      .substring(2)
+      .capitalizeFirstLetter();
 
     var extant = a_mill.extant_or_ruin;
     var founding_date = a_mill.date_of_establishment;
@@ -564,11 +546,11 @@ $(document).ready(function() {
     for (var year in chronology) {
       $(".timeline").append(
         $("<li>")
-          .attr({
-            class: "event",
-            "data-date": year.toString()
-          })
-          .append($("<p>").text(chronology[year]))
+        .attr({
+          class: "event",
+          "data-date": year.toString()
+        })
+        .append($("<p>").text(chronology[year]))
       );
     }
 
@@ -579,7 +561,7 @@ $(document).ready(function() {
     modal.css("transform", "translateY(0)");
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    span.onclick = function () {
       modal.css("transform", "translateY(100%)");
     };
   }
