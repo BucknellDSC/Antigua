@@ -402,7 +402,7 @@ $(document).ready(function () {
         var top = location_array[i].top.toString() + "%";
         new_marker.css("left", left);
         new_marker.css("top", top);
-        new_marker.append("<div class='label'>" + location_array[i].name + "</div>");
+        new_marker.append("<div class='label'>" + new_mill_data[location_array[i].name].display_name + "</div>");
         $current_map.append(new_marker);
       }
     }
