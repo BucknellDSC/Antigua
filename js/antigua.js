@@ -605,8 +605,8 @@ $(document).ready(function () {
       );
     }
 
-    $("#modal-images").empty();
-    $("#modal-images").html("<img src='../ResearchersGUI/Mill_Files/Photos/" + a_mill.true_name + ".jpg>");
+    $("#Images").empty();
+    $("#Images").html("<img src='../ResearchersGUI/Mill_Files/Photos/" + a_mill.true_name + ".jpg'>");
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
