@@ -153,39 +153,39 @@ $(document).ready(function () {
           break;
       }
     } else if ($("#middle-slide").hasClass("active")) {
-      if ($("#middle-slide-title").html()) {
-        switch ($current_map.attr('id')) {
-          case "antigua_map":
-            $("#middle-slide-content").html(ANTIGUA_TEXT);
-            $("#middle-slide-title").html("Sugar Mill Project");
-            break;
-          case "stjohn_map":
-            $("#middle-slide-content").html(STJOHN_TEXT);
-            $("#middle-slide-title").html("About the Parish");
-            break;
-          case "stpaul_map":
-            $("#middle-slide-content").html(STPAUL_TEXT);
-            $("#middle-slide-title").html("About the Parish");
-            break;
-          case "stpeter_map":
-            $("#middle-slide-content").html(STPETER_TEXT);
-            $("#middle-slide-title").html("About the Parish");
-            break;
-          case "stmary_map":
-            $("#middle-slide-content").html(STMARY_TEXT);
-            $("#middle-slide-title").html("About the Parish");
-            break;
-          case "stgeorge_map":
-            $("#middle-slide-content").html(STGEORGE_TEXT);
-            $("#middle-slide-title").html("About the Parish");
-            break;
-          case "stphilip_map":
-            $("#middle-slide-content").html(STPHILIP_TEXT);
-            $("#middle-slide-title").html("About the Parish");
-            break;
-          default:
-            break;
-        }
+      if ($("#middle-slide-title").html() === "Credits" || $("#middle-slide-title").html() === "Bibliography") {
+          switch ($current_map.attr('id')) {
+              case "antigua_map":
+                  $("#middle-slide-content").html(ANTIGUA_TEXT);
+                  $("#middle-slide-title").html("Sugar Mill Project");
+                  break;
+              case "stjohn_map":
+                  $("#middle-slide-content").html(STJOHN_TEXT);
+                  $("#middle-slide-title").html("About the Parish");
+                  break;
+              case "stpaul_map":
+                  $("#middle-slide-content").html(STPAUL_TEXT);
+                  $("#middle-slide-title").html("About the Parish");
+                  break;
+              case "stpeter_map":
+                  $("#middle-slide-content").html(STPETER_TEXT);
+                  $("#middle-slide-title").html("About the Parish");
+                  break;
+              case "stmary_map":
+                  $("#middle-slide-content").html(STMARY_TEXT);
+                  $("#middle-slide-title").html("About the Parish");
+                  break;
+              case "stgeorge_map":
+                  $("#middle-slide-content").html(STGEORGE_TEXT);
+                  $("#middle-slide-title").html("About the Parish");
+                  break;
+              case "stphilip_map":
+                  $("#middle-slide-content").html(STPHILIP_TEXT);
+                  $("#middle-slide-title").html("About the Parish");
+                  break;
+              default:
+                  break;
+          }
       } else {
         $("#middle-slide").removeClass("active");
         $("#middle-slide-title").removeClass("active");
