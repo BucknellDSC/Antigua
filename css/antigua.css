@@ -341,8 +341,8 @@ footer {
 /*experimental part*/
 
 .marker {
-    width: 2vw;
-    height: 2vw;
+    width: 2.5vw;
+    height: 2.5vw;
     position: absolute;
     font-size: 0;
     cursor: pointer;
