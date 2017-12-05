@@ -22,7 +22,7 @@ html {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-image: url("../res/background.png");
+    background-image: url("../res/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -128,7 +128,7 @@ html {
     opacity: 0;
     transform: translateX(-100%);
     line-height: 150%;
-    font-size: 1.15em;
+    font-size: 1.05em;
     max-height: 55vh;
     overflow: auto;
     transition: transform 0.4s 0.3s, opacity 0.4s 0.3s
