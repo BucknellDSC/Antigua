@@ -347,7 +347,7 @@ footer {
     font-size: 0;
     cursor: pointer;
     -webkit-transform: perspective(600px) rotateY(0deg);
-    transform: perspective(600px) rotateY(0deg) translate(-30%, -30%);
+    transform: perspective(600px) rotateY(0deg) translate(-30%, -70%);
     opacity: 1;
  
 }
