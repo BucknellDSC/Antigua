@@ -341,11 +341,13 @@ footer {
 /*experimental part*/
 
 .marker {
+    width: 2vw;
+    height: 2vw;
     position: absolute;
     font-size: 0;
     cursor: pointer;
     -webkit-transform: perspective(600px) rotateY(0deg);
-    transform: perspective(600px) rotateY(0deg);
+    transform: perspective(600px) rotateY(0deg) translate(-100%, -100%);
     opacity: 1;
     -webkit-transition: all .5s ease .4s;
     transition: all .5s ease .4s;

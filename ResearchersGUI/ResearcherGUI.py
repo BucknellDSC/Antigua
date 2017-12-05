@@ -249,7 +249,7 @@ class StartPage(tk.Frame):
 		call(["git", "commit", "-m", '"Mill files updated"'])
 		call(["git", "pull"])
 		call(["git", "push"])
-		popupBonus("GriotTree.jpeg")
+		popupBonus("Image/GriotTree.jpeg")
 
 
 class PageOne(tk.Frame):
@@ -283,7 +283,7 @@ class PageOne(tk.Frame):
 		# To put the parish name on the title, we first read it from our text files....
 		parish_name_path = "Mill_Files/NameOfParish/" + edit_file_name(mill_name)
 
-		with open(parish_name_path, 'r') as text_file:
+		with open(parish_name_path, 'r+') as text_file:
 				try:
 					parish_name = text_file.read()
 				except AttributeError:
@@ -325,7 +325,7 @@ class PageOne(tk.Frame):
 			filename = edit_file_name(mill_name)
 			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
 			temp_box = tk.Text(new_frame, height=5, width=40, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
-			with open(filename, 'r') as text_file:
+			with open(filename, 'r+') as text_file:
 				try:
 					temp_box.insert(END, text_file.read())
 				except AttributeError:
@@ -351,7 +351,7 @@ class PageOne(tk.Frame):
 			filename = edit_file_name(mill_name)
 			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
 			temp_box = tk.Text(new_frame, height=5, width=40, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
-			with open(filename, 'r') as text_file:
+			with open(filename, 'r+') as text_file:
 				try:
 					temp_box.insert(END, text_file.read())
 				except AttributeError:
@@ -376,7 +376,7 @@ class PageOne(tk.Frame):
 			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 
 			temp_box = tk.Text(new_frame, height=5, width=130, background = 'goldenrod', borderwidth = 1, wrap = CHAR)
-			with open(filename, 'r') as text_file:
+			with open(filename, 'r+') as text_file:
 				try:
 					temp_box.insert(END, text_file.read())
 				except AttributeError:
@@ -465,21 +465,21 @@ class PageOne(tk.Frame):
 			filename = edit_file_name(orig_filename)
 			filename = "Mill_Files/" + SUB_SECTIONS_NOSPACE[index] + '/' + filename
 			print(filename)
-			with open(filename, 'w') as text_file:
+			with open(filename, 'w+') as text_file:
 				text_file.write(my_input_list[index])
 
 		for index in range(len(SECTIONS)):
 			filename = edit_file_name(orig_filename)
 			filename = "Mill_Files/" + SECTIONS_NOSPACE[index] + '/' + filename
 			print(filename)
-			with open(filename, 'w') as text_file:
+			with open(filename, 'w+') as text_file:
 				text_file.write(my_input_list[index+5])
 
 		To_Json = txt_to_json()
 		To_Json.convert_to_json()
 		# import txt_to_json
 
-		popupBonus("GriotTreeData.jpeg")
+		popupBonus("Image/GriotTreeData.jpeg")
 
 	def find_and_upload_image(self, mill_photo_name):
 		"""
@@ -491,7 +491,6 @@ class PageOne(tk.Frame):
 			return
 		image = Image.open(filename).convert('RGB')
 		image.save(mill_photo_name, format='JPEG')
-
 
 	def find_and_view_image(self, image_name):
 		"""

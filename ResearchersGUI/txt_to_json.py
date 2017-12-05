@@ -139,6 +139,7 @@ class txt_to_json:
             split_chronology = chronology.split("\n")
             double_split_chronology = [i.split(":") for i in split_chronology]
 
+            image_link = 'Mill_Files/Photos/' + mill_name + '.jpeg'
 
             chronology_dict = {}
             for date in double_split_chronology:
@@ -157,22 +158,47 @@ class txt_to_json:
             "lat": latitude,
             "chronology": chronology_dict,
             "additional_info": additional_info,
-            "enslaved_peoples": enslaved_peoples
+            "enslaved_peoples": enslaved_peoples,
+            "image": image_link
             }
 
             data.append(a_data)
 
 
         # Write JSON file
-        with io.open('mill_data.js', 'w', encoding='utf8') as outfile:
+        with io.open('mill_data.js', 'w+', encoding='utf8') as outfile:
             outfile.write("var mill_data = ")
 
-        with io.open('mill_data.js', 'a', encoding='utf8') as outfile:
+        with io.open('mill_data.js', 'a+', encoding='utf8') as outfile:
             str_ = json.dumps(data,
                             indent=4, sort_keys=True,
                             separators=(',', ': '), ensure_ascii=False)
             outfile.write(to_unicode(str_))
 
 
-Instance = txt_to_json()
-Instance.convert_to_json()
+# Instance = txt_to_json()
+# Instance.convert_to_json()
+
+
+# for name in MILL_DATA:
+
+#             mill_name = name[:-4]
+
+#             #Read each specific file
+#             date_of_establishment_file = open('Mill_Files/DateOfEstablishment/' + mill_name + '.txt','w+')
+
+#             additional_info_file = open('Mill_Files/AdditionalInformation/' + mill_name + '.txt','w+')
+
+#             extant_or_ruin_file = open('Mill_Files/ExtantOrRuin/' + mill_name + '.txt','w+')
+
+#             enslaved_peoples_file = open('Mill_Files/EnslavedPeoples/' + mill_name + '.txt','w+')
+
+#             chronology_file = open('Mill_Files/Chronology/' + mill_name + '.txt','w+')
+
+#             name_of_parish_file = open('Mill_Files/NameOfParish/' + mill_name + '.txt','w+')
+
+#             long_file = open('Mill_Files/Longitude/' + mill_name + '.txt','w+')
+
+#             lat_file = open('Mill_Files/Latitude/' + mill_name + '.txt','w+')
+
+#             display_name_file = open('Mill_Files/DisplayName/' + mill_name + '.txt','w+')
