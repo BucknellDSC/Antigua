@@ -5,13 +5,13 @@ var mill_data = [
             "1963": " Damn yeah it works",
             "1994": " Murph was born"
         },
-        "date_of_establishment": "1963",
+        "date_of_establishment": "1750",
         "display_name": "Barnacle Point\t",
         "enslaved_peoples": "\nOh wow",
-        "extant_or_ruin": "\nExtant",
+        "extant_or_ruin": "Ruin",
         "image": "Mill_Files/Photos/Barnacle Point.jpeg",
-        "lat": "1232",
-        "long": "1234",
+        "lat": "-61.778625",
+        "long": "17.139147",
         "name": "Barnacle Point",
         "parish": "St. George's"
     },
