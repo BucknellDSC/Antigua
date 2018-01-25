@@ -1,15 +1,15 @@
-Ownership from 1750 Jeremiah Nibbs   
-1790: Jeremiah Nibbs.               Bapt. 1728      1877/78 Luffman map
-1798: Bertie Entwhistle             d.1803  
-1829: Bertie Entwhistle             Leased to Shand & Co.   
-1843: Heirs of Bertie Entwhistle   
-1868: Francis Shand                 b.1800  d.1868
-1878: Heirs of Francis Shand        1872: Horsford Almanac lessee 
-1933: Mrs. M.T. Camacho             1933: Camacho map
-1940: Leased to the U.S. Forces.  
-1966: Coolidge Airport extended (Later renamed The V.C.  Bird Intl. Airport).
-1968: Antigua Government – Crown Land  
-2003: R. Allen Stanford – area surrounding airport.  b.1950
+Ownership from 1680 William Barnes (1656-1695)
+1695-1719: Sold by John Barnes
+1719: John Richardson (w.1705)
+1705: John Richardson (d.1734)
+1823: John S. Jarvis (c.1827-c.1898)   
+1871 James Law.      1872 Horsford Almanac
+1878 John Freeland   md. Eleanor Foote 1819
+1933 Adina Davis
+1940 Mrs. Mary T. Camacho
+1949 Antigua Syndicate Estates, Ltd. along with Carlisle’s (#60).
+1969 Government of Antigua   –  Crown Land
+
 
 
 
@@ -18,4 +18,5 @@ HEAD
 
 =======
 >>>>>>> d768156c536e76b05ded1a5495e7f7cf0b25d06d
+
 
