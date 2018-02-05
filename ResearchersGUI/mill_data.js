@@ -20,7 +20,7 @@ var mill_data = [
         "extant_or_ruin": "Ruin",
         "image": "Mill_Files/Photos/Barnacle Point.jpeg",
         "lat": "-61.778625",
-        "long": "17.139147",
+        "long": "17.1391478",
         "name": "Barnacle Point",
         "parish": "St. George's"
     },
