@@ -1266,7 +1266,7 @@ var mill_data = [
         "additional_info": "",
         "chronology": {},
         "date_of_establishment": "",
-        "display_name": "",
+        "display_name": "Hey Hey it's the Monkees",
         "enslaved_peoples": "",
         "extant_or_ruin": "",
         "image": "Mill_Files/Photos/Mercers Creek.jpeg",
