@@ -720,7 +720,7 @@ var mill_data = [
         "additional_info": "",
         "chronology": {},
         "date_of_establishment": "",
-        "display_name": "",
+        "display_name": "Giles Blizzard",
         "enslaved_peoples": "",
         "extant_or_ruin": "",
         "image": "Mill_Files/Photos/Hallidays Mountation (a.k.a. Gilleads, Gilliats, or Providence).jpeg",
