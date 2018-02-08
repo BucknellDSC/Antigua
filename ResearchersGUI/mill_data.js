@@ -20,7 +20,7 @@ var mill_data = [
         "extant_or_ruin": "Ruin",
         "image": "Mill_Files/Photos/Barnacle Point.jpeg",
         "lat": "-61.778625",
-        "long": "17.1391478",
+        "long": "17.1391478 9 ",
         "name": "Barnacle Point",
         "parish": "St. George's"
     },
@@ -499,7 +499,7 @@ var mill_data = [
         "additional_info": "",
         "chronology": {},
         "date_of_establishment": "",
-        "display_name": "",
+        "display_name": "Giles Blizzard",
         "enslaved_peoples": "",
         "extant_or_ruin": "",
         "image": "Mill_Files/Photos/Buckleys Plantation.jpeg",
