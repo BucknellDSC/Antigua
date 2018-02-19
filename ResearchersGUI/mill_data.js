@@ -147,7 +147,7 @@ var mill_data = [
             "1968": " The Antigua Government – Crown Land"
         },
         "date_of_establishment": "1678",
-        "display_name": "Carlisles\n\n\n\n\n\n\n<<<<<<< HEAD\n\n\n=======\n>>>>>>> d768156c536e76b05ded1a5495e7f7cf0b25d06d",
+        "display_name": "Date Hill\n\n\n\n\n\n\n<<<<<<< HEAD\n\n\n=======\n>>>>>>> d768156c536e76b05ded1a5495e7f7cf0b25d06d",
         "enslaved_peoples": "Based on contemporary research, we have little information to share about the enslaved peoples from this plantation at this time. We only know that the estate was awarded £5168 19 s 4 d for the freedoms of 395 enslaved persons after slavery was abolished in the Caribbean. We will continue our quest for more information about these vital individuals.\n\n\n\n\n\n\n<<<<<<< HEAD\n\n\n=======\n>>>>>>> d768156c536e76b05ded1a5495e7f7cf0b25d06d",
         "extant_or_ruin": "Extant",
         "image": "Mill_Files/Photos/Donovans (Vaughans).jpeg",
