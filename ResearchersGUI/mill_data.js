@@ -14,7 +14,7 @@ var mill_data = [
             "1968": " Antigua Government – Crown Land  ",
             "2003": " R. Allen Stanford – area surrounding airport.  b.1950"
         },
-        "date_of_establishment": "1750",
+        "date_of_establishment": "1990",
         "display_name": "Barnacle Point\t\n\n\n\n\n\n\n\n\n<<<<<<< HEAD\n\n\n=======\n>>>>>>> d768156c536e76b05ded1a5495e7f7cf0b25d06d",
         "enslaved_peoples": "Based on contemporary research, we have little information to share about the enslaved peoples from this plantation at this time.  However, we will continue our quest for more information about these vital individuals.\n\n\n\n\n\n\n\n\n<<<<<<< HEAD\n\n\n=======\n>>>>>>> d768156c536e76b05ded1a5495e7f7cf0b25d06d",
         "extant_or_ruin": "Ruin",
